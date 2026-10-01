@@ -248,8 +248,8 @@ async function resolvePhotosAsync(slug: string, category: string): Promise<strin
     slug.replace('camellia-', 'dongbaek-'),
     slug.replace('hye-ri', 'hyairi'),
     slug.replace('hallim-cactus-village', 'hallyeop-cactus'),
-    slug.replace('seongeup', 'seongeup'),
-    slug.replace('sangumbul', 'sangumbul'),
+    slug.replace('seongeup', 'seopjikoji'),
+    slug.replace('sangumbul', 'sangumburi'),
   ]
 
   for (const variant of slugVariants) {
