@@ -315,18 +315,54 @@ function parseSchedule(content: string): any {
     for (const line of lines.slice(1)) {
       if (line.startsWith('**路線：')) {
         day.route = line.replace('**路線：', '').replace('**', '').trim()
-      } else if (line.match(/^\d{2}:\d{2}/)) {
-        const timeMatch = line.match(/(\d{2}:\d{2})\s*-\s*(\d{2}:\d{2})\s+(.+)/)
-        if (timeMatch) {
+      } else if (line.match(/^-?\s*\d{2}:\d{2}/)) {
+        const timeRangeMatch = line.match(/(\d{2}:\d{2})\s*-\s*(\d{2}:\d{2})\s+(.+)/)
+        const singleTimeMatch = line.match(/(\d{2}:\d{2})\s+(.+)/)
+
+        if (timeRangeMatch) {
           currentStop = {
-            time: timeMatch[1],
-            endTime: timeMatch[2],
+            time: timeRangeMatch[1],
+            endTime: timeRangeMatch[2],
             type: 'activity',
             title: '',
             description: '',
           }
 
-          const rest = timeMatch[3]
+          const rest = timeRangeMatch[3]
+          const categoryMatch = rest.match(/【(.+?)】(.+)/)
+          if (categoryMatch) {
+            const categoryStr = categoryMatch[1]
+            const title = categoryMatch[2].trim()
+
+            if (categoryStr.includes('景點')) {
+              currentStop.type = 'attraction'
+            } else if (categoryStr.includes('Café') || categoryStr.includes('Cafe')) {
+              currentStop.type = 'cafe'
+            } else if (categoryStr.includes('午餐')) {
+              currentStop.type = 'restaurant'
+            } else if (categoryStr.includes('晚餐')) {
+              currentStop.type = 'restaurant'
+            } else if (categoryStr.includes('購物')) {
+              currentStop.type = 'souvenir'
+            } else if (categoryStr.includes('體驗')) {
+              currentStop.type = 'attraction'
+            }
+
+            currentStop.title = title
+          } else {
+            currentStop.title = rest
+          }
+
+          day.stops.push(currentStop)
+        } else if (singleTimeMatch) {
+          currentStop = {
+            time: singleTimeMatch[1],
+            type: 'activity',
+            title: '',
+            description: '',
+          }
+
+          const rest = singleTimeMatch[2]
           const categoryMatch = rest.match(/【(.+?)】(.+)/)
           if (categoryMatch) {
             const categoryStr = categoryMatch[1]

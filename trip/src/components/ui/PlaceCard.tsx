@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import type { Spot } from '../../data/types'
+import { photoUrl } from '../../lib/photoUrl'
 
 interface PlaceCardProps {
   spot: Spot
@@ -33,7 +34,7 @@ function PlaceCard({ spot }: PlaceCardProps) {
       className="bg-card border border-border rounded-card overflow-hidden no-underline text-ink shadow-[0_8px_24px_#15323a12] hover:shadow-[0_12px_32px_#15323a1a] transition-shadow"
     >
       <div className="relative h-[180px]">
-        <img src={photo} alt={spot.name} className="w-full h-full object-cover block" />
+        <img src={photoUrl(photo)} alt={spot.name} className="w-full h-full object-cover block" />
         <button className="absolute top-3.5 right-3.5 w-[34px] h-[34px] rounded-full bg-white/90 border-none cursor-pointer flex items-center justify-center">
           <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
