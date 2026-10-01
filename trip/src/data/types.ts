@@ -1,0 +1,110 @@
+export type Category = 'attraction' | 'restaurant' | 'cafe' | 'bakery' | 'souvenir' | 'accommodation';
+export type Region = 'east' | 'north' | 'west' | 'south' | 'central';
+
+export interface BaseSpot {
+  slug: string;
+  name: string;
+  nameZh?: string;
+  nameKo?: string;
+  category: Category;
+  region: Region;
+  type?: string;
+  address?: string;
+  addressKo?: string;
+  addressEn?: string;
+  phone?: string;
+  website?: string;
+  websiteLabel?: string;
+  features: string[];
+  notes?: string[];
+  links?: { label: string; url: string }[];
+  photos: string[];
+  status?: 'open' | 'closed';
+}
+
+export interface Attraction extends BaseSpot {
+  category: 'attraction';
+  hours?: HoursEntry[];
+  admission?: string;
+  transport?: string;
+  hikingInfo?: HikingInfo;
+  bestTime?: string;
+  recommendedTime?: string;
+  isUNESCO?: boolean;
+}
+
+export interface HoursEntry {
+  season: string;
+  time: string;
+}
+
+export interface HikingInfo {
+  duration: string;
+  distance: string;
+  difficulty: string;
+  routes?: string[];
+}
+
+export interface Restaurant extends BaseSpot {
+  category: 'restaurant';
+  hours?: string;
+}
+
+export interface Cafe extends BaseSpot {
+  category: 'cafe';
+  hours?: string;
+  bestTime?: string;
+}
+
+export interface Bakery extends BaseSpot {
+  category: 'bakery';
+}
+
+export interface Souvenir extends BaseSpot {
+  category: 'souvenir';
+}
+
+export interface Accommodation {
+  slug: string;
+  name: string;
+  nights: string;
+  dates: string;
+  region: string;
+  type: string;
+  address?: string;
+  bookingUrl?: string;
+  bookingPlatform?: string;
+  photos: string[];
+}
+
+export type Spot = Attraction | Restaurant | Cafe | Bakery | Souvenir;
+
+export interface ScheduleStop {
+  time: string;
+  endTime?: string;
+  duration?: string;
+  type: Category | 'transport' | 'checkin' | 'activity';
+  title: string;
+  slug?: string;
+  description?: string;
+  note?: string;
+}
+
+export interface DaySchedule {
+  day: number;
+  date: string;
+  weekday: string;
+  title: string;
+  route: string;
+  stops: ScheduleStop[];
+  accommodation?: {
+    name: string;
+    slug: string;
+    night: string;
+  };
+}
+
+export interface TripSchedule {
+  overview: string;
+  days: DaySchedule[];
+}
