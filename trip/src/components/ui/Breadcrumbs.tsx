@@ -6,12 +6,12 @@ interface BreadcrumbsProps {
 
 function Breadcrumbs({ items }: BreadcrumbsProps) {
   return (
-    <div className="flex gap-2 text-[13px] text-muted mb-4">
+    <div className="flex gap-3 text-[11px] text-muted mb-6 items-center">
       {items.map((item, idx) => (
-        <span key={idx} className="flex items-center gap-2">
+        <span key={idx} className="flex items-center gap-3">
           {idx > 0 && <span>/</span>}
           {item.to ? (
-            <Link to={item.to} className="text-muted hover:text-ink no-underline">
+            <Link to={item.to} className="text-teal font-semibold hover:underline no-underline">
               {item.label}
             </Link>
           ) : (

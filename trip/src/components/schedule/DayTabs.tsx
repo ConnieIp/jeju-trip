@@ -8,22 +8,22 @@ interface DayTabsProps {
 
 function DayTabs({ days, activeDay, onDayChange }: DayTabsProps) {
   return (
-    <div className="flex gap-2 overflow-x-auto">
+    <div className="grid grid-cols-5 gap-2.5">
       {days.map(day => (
         <button
           key={day.day}
           onClick={() => onDayChange(day.day)}
-          className={`flex flex-col p-3 border rounded-[10px] cursor-pointer min-w-[120px] transition-all ${
+          className={`flex flex-col text-left cursor-pointer h-[92px] px-[16px] py-[12px] border rounded-[14px] gap-[5px] transition-all ${
             activeDay === day.day
-              ? 'border-ink bg-ink text-white'
+              ? 'border-teal-dark bg-teal-dark text-white'
               : 'border-border bg-card hover:border-ink/30'
           }`}
         >
-          <small className={`text-[11px] ${activeDay === day.day ? 'text-white/70' : 'text-muted'}`}>
-            {day.date}
+          <small className={`text-[11px] font-bold uppercase ${activeDay === day.day ? 'text-amber' : 'text-muted'}`}>
+            {activeDay === day.day ? `${day.weekday} · DAY ${day.day}` : day.date}
           </small>
-          <b className="text-sm font-semibold">Day {day.day}</b>
-          <span className={`text-xs mt-1 ${activeDay === day.day ? 'opacity-70' : 'text-muted'}`}>
+          <b className="text-[20px] font-bold">Day {day.day}</b>
+          <span className={`text-[11px] ${activeDay === day.day ? 'text-[#c9d7d9]' : 'text-muted-light'}`}>
             {day.weekday}
           </span>
         </button>

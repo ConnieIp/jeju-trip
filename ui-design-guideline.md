@@ -2,7 +2,7 @@
 
 **Source**: Figma prototype (https://www.figma.com/make/GkNnNIb69ff512E6kkqa3O/Jeju-Trip-Information-Page)  
 **Published site**: https://tint-cloudy-33853921.figma.site  
-**Last updated**: 2026-10-01
+**Last updated**: 2026-10-02 (corrected all tokens to match prototype CSS)
 
 ---
 
@@ -12,31 +12,66 @@
 
 | Token | Value | Usage |
 |-------|-------|-------|
-| `--bg` | `#ede8df` | Page background (warm cream) |
+| `--bg` | `#f5f3ee` | Page background (warm beige) |
 | `--card` | `#ffffff` | Card backgrounds |
-| `--ink` | `#1a2e35` | Primary text, headings, active states |
-| `--ink-light` | `#3d5a63` | Body text |
-| `--muted` | `#6b7f85` | Secondary text, labels, placeholders |
-| `--teal` | `#2d7a7a` | Primary accent, Sight badge, Naver button |
-| `--teal-dark` | `#1a5c5c` | Best light badge, active nav text |
-| `--teal-light` | `#e8f4f0` | Active nav background, time badge bg |
-| `--amber` | `#e8913a` | UNESCO badge, avatar, quote border |
-| `--amber-light` | `#fef3e2` | UNESCO badge bg, Day badge bg, local note bg |
-| `--yellow` | `#f5c518` | Kakao Map button |
-| `--border` | `#d5d0c8` | Card borders, dividers |
+| `--ink` | `#16303a` | Primary text, headings, active states |
+| `--ink-light` | `#233a42` | Body text |
+| `--muted` | `#6e7e82` | Secondary text, labels, placeholders |
+| `--muted-light` | `#9eaaa9` | Tertiary text, descriptions |
+| `--sidebar-muted` | `#afc2c7` | Sidebar secondary text |
+| `--teal` | `#0e5267` | Primary accent, Sight badge text, links |
+| `--teal-mid` | `#15718a` | Eyebrow color, icon accent |
+| `--teal-bright` | `#16809a` | Timeline dot border, Naver button |
+| `--teal-dark` | `#16303a` | Active nav/filter bg, day tab active bg |
+| `--teal-light` | `#ddeef1` | Active nav bg, time badge bg, Sight badge bg |
+| `--amber` | `#f28b2e` | UNESCO badge, avatar, quote border, day tab active date |
+| `--amber-light` | `#fff0df` | UNESCO badge bg, Day badge bg, local note bg, category badge bg |
+| `--yellow` | `#ffe500` | Kakao Map button |
+| `--border` | `#dce3e1` | Card borders, dividers (cool grey-green) |
+| `--dark-card` | `#143843` | Route overview, directions, collection summary bg |
+| `--connector` | `#98c1c8` | Timeline connector line |
 
 **Category-specific colors** (from Figma render):
-- Sight: `#2d7a7a` (teal) on white
-- Cafe: `#fef3c7` bg with `#92400e` text
-- Restaurant: `#dcfce7` bg with `#166534` text
-- Accommodation: `#f3e8ff` bg with `#6b21a8` text
-- Souvenir: `#ffe4e6` bg with `#9f1239` text
+- Sight: `#0e5267` text on `#ddeef1` bg, `1px solid #dce3e1` border
+- Cafe: `#f28b2e` text on `#fff0df` bg
+- Restaurant: `#f28b2e` text on `#fff0df` bg
+- Bakery: `#f28b2e` text on `#fff0df` bg
+- Souvenir: `#f28b2e` text on `#fff0df` bg
 
 ### Typography
 
 **Font Family**:
 ```css
-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+```
+
+**Font loading** (from prototype):
+```css
+@font-face {
+  font-family: Inter\:Bold;
+  src: url(https://static.figma.com/font/Inter_1) format("woff2");
+  font-weight: 700;
+}
+@font-face {
+  font-family: Inter\:Medium;
+  src: url(https://static.figma.com/font/Inter_1) format("woff2");
+  font-weight: 500;
+}
+@font-face {
+  font-family: Inter\:Regular;
+  src: url(https://static.figma.com/font/Inter_1) format("woff2");
+  font-weight: 400;
+}
+@font-face {
+  font-family: Inter\:Semi Bold;
+  src: url(https://static.figma.com/font/Inter_1) format("woff2");
+  font-weight: 600;
+}
+```
+
+Or via Google Fonts:
+```html
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 ```
 
 **Type Scale**:
@@ -61,10 +96,11 @@ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sa
 ### Spacing & Radii
 
 **Border Radius**:
-- Cards: `16px` (primary), `20px` (stop cards), `22px` (large cards)
-- Buttons/pills: `10px` (small), `13px` (medium), `14px` (search), `20px` (pills)
+- Cards: `22px` (primary), `20px` (stop cards)
+- Buttons/pills: `999px` (fully rounded), `14px` (search/day tabs), `13px` (action buttons)
+- Photo: `15px` (stop card image)
 - Circular: `50%` (avatar, dots)
-- Small elements: `6px`, `8px`
+- Small elements: `8px` (kbd), `10px` (time badge)
 
 **Spacing Scale**:
 - Page padding: `32px` (desktop), `18px` (tablet), `14px` (mobile)
@@ -73,8 +109,8 @@ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sa
 - Element gaps: `8px`, `10px`, `12px`, `14px`, `16px`
 
 **Layout**:
-- Page max-width: `1200px` (desktop), `760px` (tablet)
-- Sidebar width: `360px` (detail), `320px` (day layout)
+- Page max-width: `min(1310px, 100% - 80px)` (desktop), `min(100% - 36px, 760px)` (tablet), `calc(100% - 28px)` (mobile)
+- Sidebar width: `360px` (detail), `360px` (day layout)
 - Grid columns: 4 (desktop), 2 (tablet), 1 (mobile)
 
 ---
@@ -109,7 +145,7 @@ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sa
 - Border-radius: `999px` (pill)
 - Default: `#6e7e82`, medium weight
 - Active: `#0e5267`, semi-bold, background `#ddeef1`
-- Gap: `8px`
+- Nav items: "Schedule", "Saved spots", "Island notes"
 
 **Trip Controls**:
 - Date pill: `#f5f3ee` bg, `9px 14px` padding, `12px` semi-bold
@@ -184,7 +220,7 @@ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sa
 - Background: `#16303a`
 - Border-color: `#16303a`
 - Text: `#ffffff`
-- Day label: `#f28b2e`
+- Day label: `#f28b2e` (amber)
 - Description: `#c9d7d9`
 
 ### Timeline
@@ -230,6 +266,7 @@ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sa
 - Width: `150px`, height: `106px`
 - Border-radius: `15px`
 - Object-fit: cover
+- Flex-shrink: 0
 
 **Content**:
 - Category badge + label: flex, space-between
@@ -244,10 +281,17 @@ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sa
 - Border-radius: `999px`
 - Font: `12px`, semi-bold
 - Line-height: `1`
+- Gap: `6px` (between icon and text)
 
 **Variants**:
 - Sight: `#0e5267` text, `#ddeef1` bg, `1px solid #dce3e1` border
-- Cafe/Restaurant/Souvenir: `#f28b2e` text, `#fff0df` bg
+  - Icon: mountain icon (`14px × 14px`)
+- Cafe: `#f28b2e` text, `#fff0df` bg
+  - Icon: coffee cup (`14px × 14px`)
+- Restaurant: `#f28b2e` text, `#fff0df` bg
+  - Icon: utensils (`14px × 14px`)
+- Souvenir: `#f28b2e` text, `#fff0df` bg
+  - Icon: gift (`14px × 14px`)
 
 ### Place Card (Library Grid)
 
@@ -337,7 +381,9 @@ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sa
 #### Detail Title
 - Title: `46px`, bold, `14px` margin-bottom, `8px` margin-top
 - Heritage badge: `#f28b2e` text, `#fff0df` bg, `7px 10px` padding, `11px` semi-bold
+  - Text: "UNESCO World Heritage"
 - Address: `12px`, `#6e7e82`, gap `8px`
+  - Icon: location pin (`16px × 16px`)
 
 #### Action Buttons
 - Padding: `13px 16px`
@@ -346,6 +392,8 @@ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sa
 - Border-radius: `13px`
 - Font: `12px`, semi-bold
 - Gap: `8px`
+- Buttons: "Share" (share icon), "Saved" (bookmark icon)
+- Icon size: `16px × 16px`
 
 #### Gallery
 
@@ -366,6 +414,8 @@ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sa
 - Padding: `8px 11px`
 - Border-radius: `999px`
 - Font: `10px`
+- Icon: sun icon (`14px × 14px`)
+- Format: "Best light · 06:30-07:20"
 
 **Side Photos**:
 - Flex-direction: column, gap `14px`
@@ -379,6 +429,8 @@ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sa
 - Padding: `6px 10px`
 - Border-radius: `16px`
 - Font: `12px`
+- Icon: camera icon (`14px × 14px`)
+- Format: "12 photos"
 
 #### Info Card
 
@@ -392,6 +444,10 @@ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sa
 - Font: `20px`, bold
 - Icon: `18px × 18px`
 - Gap: `10px`
+- Icon variants:
+  - "Why it belongs on the route": compass/target icon (`#15718a`)
+  - "Visit notes & remarks": notepad icon (`#f28b2e`)
+  - "Hours & practical info": clock icon (`#f28b2e`)
 
 **Description**:
 - Font: `13px`, `1.65` line-height
@@ -410,6 +466,11 @@ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sa
 **Label**: `9px`, `#6e7e82`  
 **Value**: `11px`, bold
 
+**Fact Types** (from Figma render):
+- Time needed: clock icon, value "1.5-2 hours"
+- Trail: footprints icon, value "Moderate · stairs"
+- Adult entry: ticket icon, value "₩5,000"
+
 #### Notes Card
 
 **List**:
@@ -417,6 +478,7 @@ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sa
 - Font: `12px`, `1.6` line-height
 - Margin: `8px 0`
 - Marker: `#15718a`
+- Bullet style: filled circle
 
 **Blockquote**:
 - Background: `#fff0df`
@@ -424,6 +486,8 @@ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sa
 - Padding: `14px`
 - Font: `12px`
 - Gap: `9px`
+- Icon: quote icon (`16px × 16px`, `#f28b2e`)
+- Format: Italic text with quotation marks
 
 #### Directions Card
 
@@ -434,7 +498,10 @@ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sa
 - Padding: `20px`
 
 **Heading**: Flex, space-between  
+- Icon: navigation arrow (`18px × 18px`, `#f28b2e`)
+- Title: "Open directions"
 **Description**: `11px`, `#afc2c7`, margin `6px 0 14px`
+- Format: "Main parking entrance · 54 km from Jeju City"
 
 **Buttons**:
 - Height: `46px`
@@ -455,6 +522,11 @@ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sa
 - DT: `#6e7e82`
 - DD: semi-bold
 
+**Hours Format** (from Figma render):
+- "Today · Thursday": `07:00-19:00`
+- "Friday-Sunday": `07:00-19:00`
+- "Last admission": `17:50`
+
 **HR**: `1px solid #dce3e1`, margin `14px 0`
 
 **Info Row**:
@@ -462,6 +534,11 @@ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sa
 - Icon-wrap: `34px × 34px`
 - Label: `9px`, `#6e7e82`, `0.5px` letter-spacing
 - Value: `11px`, `1.35` line-height
+
+**Info Types** (from Figma render):
+- Contact: phone icon, label "CONTACT", value "+82 64-783-0959"
+- Parking: car icon, label "PARKING", value "Paid public lot · ₩2,000 compact car"
+- Weather note: sun/cloud icon, label "WEATHER NOTE", value "Summit may close in strong wind; check before driving."
 
 #### In Schedule Card
 
@@ -473,6 +550,12 @@ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sa
 - Time: `#0e5267` text, `#ddeef1` bg, `10px` padding, `11px` font
 - Title: `11px`
 - Subtitle: `12px`, `#6e7e82`, margin-top `3px`
+- Arrow icon: right arrow (`16px × 16px`, `#0e5267`)
+
+**Content Format**:
+- Time: "06:30"
+- Date: "Friday, October 16"
+- Duration: "2 hours · first stop of the day"
 
 #### Route Overview (Sidebar)
 
@@ -655,6 +738,49 @@ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sa
 }
 ```
 
+### Icon Library (from Figma render)
+
+**Navigation & UI**:
+- Location pin: address display
+- Share: share button
+- Bookmark: saved button
+- Camera: photo count badge
+- Sun: best light badge
+- Navigation arrow: directions card header
+- Right arrow: in schedule card
+
+**Category Icons**:
+- Mountain: Sight badge
+- Coffee cup: Cafe badge
+- Utensils: Restaurant badge
+- Bed: Accommodation badge
+- Gift: Souvenir badge
+
+**Info Icons**:
+- Compass/target: "Why it belongs on the route" heading
+- Notepad: "Visit notes & remarks" heading
+- Clock: "Hours & practical info" heading
+- Phone: contact info
+- Car: parking info
+- Sun/cloud: weather note
+
+**Quick Fact Icons**:
+- Clock: time needed
+- Footprints: trail difficulty
+- Ticket: admission price
+
+**Weather Widget**:
+- Weather icon (sun/cloud): `22px × 22px`
+
+**Timeline**:
+- Route dot: `11px` diameter, `3px` border
+
+**Icon Colors**:
+- Primary: `#15718a` (teal)
+- Accent: `#f28b2e` (amber/orange)
+- Neutral: `#6e7e82` (muted)
+- Dark: `#0e5267` (dark teal)
+
 ---
 
 ## 7. Shadows
@@ -685,14 +811,14 @@ box-shadow: 0 8px 24px #15323a14;
 ## 9. Accessibility Notes
 
 **Color Contrast**:
-- Primary text (`#1a2e35`) on white: AAA
-- Secondary text (`#6b7f85`) on white: AA
-- Teal (`#2d7a7a`) on white: AA
-- Amber (`#e8913a`) on `#fef3e2`: Check contrast ratio
+- Primary text (`#16303a`) on white: AAA
+- Secondary text (`#6e7e82`) on white: AA
+- Teal (`#0e5267`) on white: AAA
+- Amber (`#f28b2e`) on `#fff0df`: Check contrast ratio
 
 **Focus States**:
 - Not explicitly defined in prototype
-- Recommend: `outline: 2px solid #2d7a7a`, `outline-offset: 2px`
+- Recommend: `outline: 2px solid #0e5267`, `outline-offset: 2px`
 
 **Keyboard Navigation**:
 - Search: `⌘K` shortcut
@@ -704,13 +830,15 @@ box-shadow: 0 8px 24px #15323a14;
 
 ### Must-Have
 - [ ] All color tokens implemented as CSS variables
-- [ ] Typography scale matches design tokens
+- [ ] Typography scale matches design tokens (Inter font loaded)
 - [ ] Responsive breakpoints at 980px and 640px
-- [ ] Card border-radius: 16px, 20px, 22px variants
-- [ ] Pill/border-radius: 10px, 14px, 20px, 999px variants
-- [ ] Page max-width: 1200px with proper padding
-- [ ] Sticky header with proper z-index
+- [ ] Card border-radius: 22px (primary), 20px (stop cards)
+- [ ] Pill/border-radius: 999px (fully rounded), 14px (search/day tabs)
+- [ ] Page max-width: min(1310px, 100% - 80px) with proper padding
+- [ ] Sticky header with proper z-index (20)
 - [ ] All interactive states (hover, active, selected)
+- [ ] Card shadows: `0 8px 24px #15323a12` (place cards), `0 8px 24px #15323a0d` (stop cards)
+- [ ] Category badges: Sight = `#0e5267`/`#ddeef1`, others = `#f28b2e`/`#fff0df`
 
 ### Should-Have
 - [ ] Smooth transitions on interactive elements
@@ -732,11 +860,15 @@ box-shadow: 0 8px 24px #15323a14;
 - `reference/prototype/index.css` - Tailwind CSS styles
 - `reference/prototype/index.js` - React SPA bundle
 - `reference/prototype/extracted.html` - Static HTML with corrected tokens
-- `reference/prototype/figma-renders/slide-1-2.png` - High-res detail page render
+- `reference/prototype/figma-renders/slide-1-2.png` - **High-res detail page render (3.8MB)** ← Primary visual reference
+- `reference/prototype/figma-renders/slide-1-3.png` - Header bar component
+- `reference/prototype/figma-renders/slide-1-4.png` - Brand logo component
 - `reference/prototype/assets/` - 47 image/SVG files
 
 **Key Visual Reference**:
-- `figma-renders/slide-1-2.png` (3.9MB) - Best visual reference for detail page
+- `figma-renders/slide-1-2.png` (3.8MB) - Best visual reference for detail page
+  - Shows: Seongsan Ilchulbong detail page with all components
+  - Includes: Gallery, info cards, sidebar, directions, schedule
 
 ---
 
@@ -747,3 +879,5 @@ box-shadow: 0 8px 24px #15323a14;
 - Design uses Inter font family (Bold, Medium, Regular, Semi Bold)
 - All measurements from Figma render are authoritative
 - Color values corrected from actual Figma render (slide-1-2.png)
+- **Updated 2026-10-02**: Corrected all color tokens, border radii, and layout values to match actual prototype CSS. Added Inter font loading instructions. Fixed category badge colors (all non-Sight categories use `#f28b2e`/`#fff0df`). Updated page max-width from `1200px` to `min(1310px, 100% - 80px)`.
+- **Primary visual reference**: `figma-renders/slide-1-2.png` (3.8MB high-res detail page)

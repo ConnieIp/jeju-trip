@@ -9,18 +9,20 @@ interface TimelineRowProps {
 
 function TimelineRow({ stop, spot, isLast }: TimelineRowProps) {
   return (
-    <div className="flex gap-4 mb-4">
-      <div className="min-w-[60px] text-right">
-        <b className="text-sm block">{stop.time}</b>
-        {stop.endTime && <small className="text-[11px] text-muted">{stop.endTime}</small>}
+    <div className="grid grid-cols-[74px_16px_1fr] gap-3 mb-[18px] relative max-[640px]:grid-cols-[48px_12px_1fr] max-[640px]:gap-[7px]">
+      <div className="flex flex-col text-right pt-[18px]">
+        <b className="text-[15px] font-bold">{stop.time}</b>
+        {stop.endTime && <small className="text-[10px] text-muted-light mt-[3px]">{stop.endTime}</small>}
       </div>
-      <div className="flex flex-col items-center">
-        <div className="w-2.5 h-2.5 rounded-full bg-ink mt-1.5 flex-shrink-0" />
-        {!isLast && <div className="w-0.5 flex-1 bg-border mt-2" />}
+      <div className="flex justify-center">
+        <div className="w-[11px] h-[11px] rounded-full bg-white border-[3px] border-teal-bright mt-2 flex-shrink-0 z-[1]" />
       </div>
-      <div className="flex-1">
+      <div>
         <StopCard stop={stop} spot={spot} />
       </div>
+      {!isLast && (
+        <div className="absolute top-4 bottom-[-22px] left-[94px] w-px bg-connector max-[640px]:left-[60px]" />
+      )}
     </div>
   )
 }

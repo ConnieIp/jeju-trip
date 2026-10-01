@@ -8,7 +8,7 @@ This project creates a React + TypeScript web application showcasing a 6-day Jej
 
 ## Prototype
 
-**All implementation must refer to the prototype under `/reference/prototype/`.**
+**All implementation must refer to the prototype under `/reference/prototype/` and the design guideline at `ui-design-guideline.md`.**
 
 The prototype contains the design reference:
 - `reference/prototype/index.html` - Main HTML structure
@@ -18,32 +18,15 @@ The prototype contains the design reference:
 - `reference/prototype/figma-renders/` - Figma design renders
 - `reference/prototype/extracted.html` - Extracted HTML reference
 
-### Design Tokens
+**IMPORTANT**: Before implementing any UI component or page, **read `ui-design-guideline.md`** for:
+- Complete design token reference (colors, typography, spacing, radii)
+- Component specifications (Header, DayTabs, StopCard, PlaceCard, etc.)
+- Layout patterns (page shell, two-column layout, grids)
+- Responsive breakpoints (980px tablet, 640px mobile)
+- Interactive states (hover, active, selected)
+- Icon system and shadow specifications
 
-| Token | Value | Usage |
-|-------|-------|-------|
-| Background | `#ede8df` | Page background (warm cream) |
-| Card | `#ffffff` | Card backgrounds |
-| Ink | `#1a2e35` | Primary text, headings |
-| Ink light | `#3d5a63` | Body text |
-| Muted | `#6b7f85` | Secondary text, labels |
-| Teal | `#2d7a7a` | Primary accent, Sight badge, Naver button |
-| Teal dark | `#1a5c5c` | Best light badge |
-| Teal light | `#e8f4f0` | Active nav bg, time badge bg |
-| Amber | `#e8913a` | UNESCO badge, avatar, quote border |
-| Amber light | `#fef3e2` | UNESCO/Day badge bg |
-| Yellow | `#f5c518` | Kakao Map button |
-| Border | `#d5d0c8` | Card borders, dividers |
-
-- **Font**: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif
-- **Hero title**: 42px / 800 weight / -1px letter-spacing
-- **Card heading**: 18px / 700 weight
-- **Body**: 14–15px / 1.6–1.7 line-height
-- **Card radius**: 16px, **pill radius**: 10–20px
-- **Card padding**: 24px, **page padding**: 32px
-- **Page max-width**: ~1200px
-
-Full details: `reference/prototype/README.md`
+Full prototype details: `reference/prototype/README.md`
 
 ## Page Structure
 
@@ -61,6 +44,7 @@ Full details: `reference/prototype/README.md`
 
 ```
 jeju-trip/
+├── ui-design-guideline.md  # Design tokens, component specs, layout patterns (READ BEFORE UI WORK)
 ├── reference/              # Raw trip data, prototype, and information
 │   ├── schedule.txt        # Daily itinerary
 │   ├── spot.txt            # Spot details
@@ -176,7 +160,7 @@ Best time to visit...
    - What feature/page you're implementing
    - Files to create or modify
    - Step-by-step implementation approach
-   - Design considerations (refer to prototype)
+   - Design considerations (refer to `ui-design-guideline.md` for tokens, component specs, and layout patterns)
    - Testing/verification steps
 
 **Example plan structure:**
@@ -211,6 +195,7 @@ Brief description of what will be implemented
 - All app code should be written in the `trip/` folder.
 - Documentation and data files go in the `docs/` folder as markdown.
 - **Every implementation must refer to the prototype under `/reference/prototype/`** for design, layout, and styling guidance.
+- **Before writing any UI code, read `ui-design-guideline.md`** — it contains the authoritative design tokens, component specs, and layout patterns extracted from the Figma prototype. Do not guess color values, spacing, or border radii; look them up in the guideline.
 
 ### Pages to Implement
 

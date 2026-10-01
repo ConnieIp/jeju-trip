@@ -24,7 +24,7 @@ export interface BaseSpot {
 
 export interface Attraction extends BaseSpot {
   category: 'attraction';
-  hours?: HoursEntry[];
+  hours?: string[];
   admission?: string;
   transport?: string;
   hikingInfo?: HikingInfo;
@@ -97,6 +97,8 @@ export interface DaySchedule {
   title: string;
   route: string;
   stops: ScheduleStop[];
+  driveTime?: string;
+  distance?: string;
   accommodation?: {
     name: string;
     slug: string;

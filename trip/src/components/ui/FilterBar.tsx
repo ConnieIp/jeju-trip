@@ -11,10 +11,10 @@ function FilterBar({ filters, active, onChange }: FilterBarProps) {
         <button
           key={filter}
           onClick={() => onChange(filter)}
-          className={`px-3.5 py-1.5 border rounded-pill text-[13px] cursor-pointer transition-colors ${
+          className={`px-3 py-[7px] border rounded-pill text-[12px] font-semibold cursor-pointer transition-colors ${
             active === filter
-              ? 'bg-ink text-white border-ink'
-              : 'bg-card text-ink border-border hover:border-ink/30'
+              ? 'bg-teal-dark text-white border-teal-dark'
+              : 'bg-bg text-muted border-border hover:border-ink/30'
           }`}
         >
           {filter}

@@ -15,18 +15,18 @@ function PhotoGallery({ photos }: PhotoGalleryProps) {
   const sidePhotos = photos.slice(1, 3)
 
   return (
-    <div className="grid grid-cols-[2fr_0.92fr] gap-3 h-[430px] max-md:grid-cols-1 max-md:h-auto">
+    <div className="grid grid-cols-[2fr_0.92fr] gap-3.5 h-[430px] mb-[26px] max-[640px]:grid-cols-1 max-[640px]:grid-rows-[2fr_1fr] max-[640px]:h-[430px]">
       <div className="relative rounded-card overflow-hidden">
-        <img src={heroPhoto} alt="" className="w-full h-full object-cover" />
+        <img src={heroPhoto} alt="" className="w-full h-full object-cover block" />
       </div>
-      <div className="grid grid-rows-2 gap-3 max-md:grid-cols-2 max-md:grid-rows-1">
+      <div className="flex flex-col gap-3.5 max-[640px]:flex-row max-[640px]:min-h-0">
         {sidePhotos.map((photo, idx) => (
-          <div key={idx} className="relative rounded-card overflow-hidden">
-            <img src={photo} alt="" className="w-full h-full object-cover" />
+          <div key={idx} className="relative rounded-card overflow-hidden flex-1 max-[640px]:w-[calc(50%-7px)] max-[640px]:h-full">
+            <img src={photo} alt="" className="w-full h-full object-cover block" />
           </div>
         ))}
         {sidePhotos.length === 0 && (
-          <div className="relative rounded-card overflow-hidden bg-border" />
+          <div className="relative rounded-card overflow-hidden bg-border flex-1" />
         )}
       </div>
     </div>

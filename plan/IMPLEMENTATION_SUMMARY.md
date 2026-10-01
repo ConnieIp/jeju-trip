@@ -157,9 +157,30 @@ trip/
 
 ## Design Fidelity
 
-The implementation closely matches the Figma prototype at `/reference/prototype/`:
+The implementation closely matches the Figma prototype at `https://tint-cloudy-33853921.figma.site/`:
 - All color tokens match exactly
 - Typography scale and weights match
 - Card styles, borders, and shadows match
 - Layout patterns (two-column grids, timeline, photo gallery) match
 - Responsive behavior matches prototype breakpoints
+
+### Session 3 Fixes (Visual Comparison via Playwright)
+
+Fixed the following styling mismatches identified through side-by-side screenshot comparison:
+
+1. **PlaceCard title** - Changed from teal to dark ink color; removed truncation
+2. **SpotsPage stats widget** - Changed from full-width dark bar to floating card on right ("Saved across Jeju")
+3. **SpotsPage filter labels** - Updated to "All spots · N", "Accommodation", "Restaurant", "Cafe", "Sight", "Souvenir"
+4. **SpotsPage title label** - Changed from teal "Saved places" to amber "ISLAND SHORTLIST"
+5. **SchedulePage title label** - Changed from teal to amber "FIVE DAYS AROUND THE ISLAND"
+6. **DayTabs button padding** - Changed from `px-[18px] py-[14px]` to `px-[16px] py-[12px]` to match prototype's `padding: 12px 16px`; removed conflicting CSS reset from `index.css`
+
+### Remaining Differences (Require Data/Content Changes)
+
+See `plan/plan-03.md` for full list. Key items:
+- DayTabs content format (needs day abbreviation + subtitle fields in data)
+- Sidebar "Day at a glance" vs "Route Overview" (needs per-day stats calculation)
+- PlaceCard day/time info (needs schedule data join)
+- SearchBox placeholder text
+- "Local rhythm" vs "Local Note" label
+- "Nearby backup" vs "Backup Plan" format

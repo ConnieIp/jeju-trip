@@ -21,17 +21,9 @@ function getCategoryLabel(type: string): string {
 }
 
 function getCategoryColor(type: string): string {
-  const colors: Record<string, string> = {
-    attraction: 'bg-teal text-white',
-    restaurant: 'bg-green-100 text-green-800',
-    cafe: 'bg-yellow-100 text-yellow-800',
-    bakery: 'bg-yellow-100 text-yellow-800',
-    souvenir: 'bg-pink-100 text-pink-800',
-    transport: 'bg-gray-100 text-gray-700',
-    checkin: 'bg-purple-100 text-purple-800',
-    activity: 'bg-blue-100 text-blue-800',
-  }
-  return colors[type] || 'bg-gray-100 text-gray-700'
+  if (type === 'attraction') return 'text-teal bg-teal-light border border-border'
+  if (['restaurant', 'cafe', 'bakery', 'souvenir'].includes(type)) return 'text-amber bg-amber-light'
+  return 'text-muted-light bg-bg'
 }
 
 function StopCard({ stop, spot }: StopCardProps) {
@@ -41,21 +33,21 @@ function StopCard({ stop, spot }: StopCardProps) {
 
   const cardContent = (
     <>
-      <img src={photo} alt={stop.title} className="w-16 h-16 rounded-lg object-cover" />
-      <div className="flex-1 min-w-0">
-        <div className="flex items-center gap-2 mb-1">
-          <span className={`inline-flex items-center px-2 py-0.5 rounded-pill text-[11px] font-semibold ${categoryColor}`}>
+      <img src={photo} alt={stop.title} className="w-[150px] h-[106px] rounded-[15px] object-cover flex-shrink-0 max-[640px]:w-[82px] max-[640px]:h-[82px]" />
+      <div className="flex flex-col flex-1 min-w-0 gap-2">
+        <div className="flex items-center justify-between gap-2.5">
+          <span className={`inline-flex items-center px-3 py-[7px] rounded-pill text-[12px] font-semibold leading-none ${categoryColor}`}>
             {categoryLabel}
           </span>
           {stop.endTime && (
-            <small className="text-muted text-[11px]">
+            <small className="text-muted-light text-[11px]">
               {stop.time} – {stop.endTime}
             </small>
           )}
         </div>
-        <b className="text-sm font-semibold block truncate">{stop.title}</b>
+        <b className="text-teal text-[19px] font-bold block truncate max-[640px]:text-[15px]">{stop.title}</b>
         {spot?.features?.[0] && (
-          <small className="text-muted text-xs block truncate">{spot.features[0]}</small>
+          <small className="text-muted text-[12px] block truncate max-[640px]:text-[10px]">{spot.features[0]}</small>
         )}
       </div>
     </>
@@ -65,7 +57,7 @@ function StopCard({ stop, spot }: StopCardProps) {
     return (
       <Link
         to={`/spot/${spot.slug}`}
-        className="flex gap-3 p-3 bg-card border border-border rounded-card cursor-pointer hover:shadow-md transition-shadow no-underline text-ink"
+        className="flex items-center gap-[18px] p-[14px] bg-card border border-border rounded-card-sm cursor-pointer hover:shadow-md transition-shadow no-underline text-ink min-h-[134px] shadow-[0_8px_24px_#15323a0d] max-[640px]:gap-2.5 max-[640px]:p-2.5 max-[640px]:min-h-[112px]"
       >
         {cardContent}
       </Link>
@@ -73,7 +65,7 @@ function StopCard({ stop, spot }: StopCardProps) {
   }
 
   return (
-    <div className="flex gap-3 p-3 bg-card border border-border rounded-card">
+    <div className="flex items-center gap-[18px] p-[14px] bg-card border border-border rounded-card-sm min-h-[134px] shadow-[0_8px_24px_#15323a0d] max-[640px]:gap-2.5 max-[640px]:p-2.5 max-[640px]:min-h-[112px]">
       {cardContent}
     </div>
   )
