@@ -20,6 +20,7 @@ export interface BaseSpot {
   links?: { label: string; url: string }[];
   photos: string[];
   status?: 'open' | 'closed';
+  backupFor?: number[];
 }
 
 export interface Attraction extends BaseSpot {

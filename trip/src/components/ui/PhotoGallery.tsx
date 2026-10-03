@@ -17,7 +17,7 @@ function PhotoGallery({ photos }: PhotoGalleryProps) {
   const sidePhotos = photos.slice(1, 3)
 
   return (
-    <div className="grid grid-cols-[2fr_0.92fr] gap-3.5 h-[430px] mb-[26px] max-[640px]:grid-cols-1 max-[640px]:grid-rows-[2fr_1fr] max-[640px]:h-[430px]">
+    <div className="grid grid-cols-[2fr_0.92fr] gap-3.5 h-[430px] mb-[26px] overflow-hidden max-[640px]:grid-cols-1 max-[640px]:grid-rows-[2fr_1fr] max-[640px]:h-[430px]">
       <div className="relative rounded-card overflow-hidden">
         <img src={photoUrl(heroPhoto)} alt="" className="w-full h-full object-cover block" />
       </div>

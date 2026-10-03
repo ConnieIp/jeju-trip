@@ -56,6 +56,8 @@ function SchedulePage() {
   const displayWeather = currentWeather || todayWeather
   const hasTripForecast = !!currentWeather
 
+  const backupSpots = spots.filter(s => s.backupFor?.includes(activeDay))
+
   return (
     <div className="mx-auto w-[min(1310px,100%-80px)] max-[980px]:w-[min(100%-36px,760px)] max-[640px]:w-[calc(100%-28px)]">
       <div className="pt-[46px] pb-[34px] px-8 max-[980px]:px-[18px] max-[640px]:px-[14px]">
@@ -167,7 +169,7 @@ function SchedulePage() {
         <div className="flex flex-col gap-[18px] max-[980px]:order-first max-[980px]:grid max-[980px]:grid-cols-2 max-[640px]:flex">
           <RouteOverview route={currentDay.route} stopCount={currentDay.stops.length} driveTime={currentDay.driveTime} distance={currentDay.distance} />
           <LocalNote />
-          <BackupCard />
+          <BackupCard spots={backupSpots} />
         </div>
       </div>
     </div>

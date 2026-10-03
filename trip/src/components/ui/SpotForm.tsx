@@ -57,6 +57,10 @@ function SpotForm({ initial, onSubmit, onCancel, submitLabel }: SpotFormProps) {
         .map((s) => s.trim())
         .filter(Boolean),
       status: (fd.get('status') as 'open' | 'closed') || undefined,
+      backupFor: (() => {
+        const days = (fd.getAll('backupFor') as string[]).map(Number).filter(n => !isNaN(n))
+        return days.length > 0 ? days : undefined
+      })(),
     }
 
     const hoursStr = (fd.get('hours') as string).trim()
@@ -162,6 +166,24 @@ function SpotForm({ initial, onSubmit, onCancel, submitLabel }: SpotFormProps) {
             <option value="open">Open</option>
             <option value="closed">Closed</option>
           </select>
+        </div>
+      </div>
+
+      <div>
+        <label className={labelClass}>Backup for days</label>
+        <div className="flex gap-4 flex-wrap">
+          {[1, 2, 3, 4, 5].map(day => (
+            <label key={day} className="flex items-center gap-1.5 text-[13px] text-ink cursor-pointer">
+              <input
+                type="checkbox"
+                name="backupFor"
+                value={day}
+                defaultChecked={initial?.backupFor?.includes(day)}
+                className="accent-teal-dark w-4 h-4"
+              />
+              Day {day}
+            </label>
+          ))}
         </div>
       </div>
 
