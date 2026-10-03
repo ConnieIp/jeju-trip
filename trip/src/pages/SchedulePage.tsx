@@ -8,10 +8,20 @@ import BackupCard from '../components/schedule/BackupCard'
 
 function SchedulePage() {
   const { spots } = useSpots()
-  const { schedule } = useSchedule()
+  const { schedule, loading } = useSchedule()
   const [activeDay, setActiveDay] = useState(1)
 
-  if (!schedule) return null
+  if (loading) return (
+    <div className="flex items-center justify-center min-h-[60vh]">
+      <p className="text-muted text-[14px]">Loading schedule…</p>
+    </div>
+  )
+
+  if (!schedule) return (
+    <div className="flex items-center justify-center min-h-[60vh]">
+      <p className="text-muted text-[14px]">No schedule available.</p>
+    </div>
+  )
 
   const currentDay = schedule.days.find(d => d.day === activeDay) || schedule.days[0]
 
