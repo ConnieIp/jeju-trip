@@ -57,6 +57,16 @@ function PlaceCard({ spot }: PlaceCardProps) {
         {spot.features?.[0] && (
           <p className="text-[12px] text-muted leading-[1.45] m-0 -mt-[7px]">{spot.features[0]}</p>
         )}
+        {(spot.addressKo || spot.addressEn || spot.address) && (
+          <div className="flex flex-col gap-0.5 mt-0.5">
+            {(spot.addressKo || spot.address) && (
+              <span className="text-[11px] text-ink-light leading-[1.4]">📍 {spot.addressKo || spot.address}</span>
+            )}
+            {spot.addressEn && (
+              <span className="text-[10px] text-muted-light leading-[1.4]">{spot.addressEn}</span>
+            )}
+          </div>
+        )}
       </div>
     </Link>
   )

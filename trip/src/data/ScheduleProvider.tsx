@@ -5,11 +5,13 @@ import type { TripSchedule } from './types'
 interface ScheduleContextValue {
   schedule: TripSchedule | null
   loading: boolean
+  updateSchedule: (updater: (prev: TripSchedule) => TripSchedule) => Promise<void>
 }
 
 const ScheduleContext = createContext<ScheduleContextValue>({
   schedule: null,
   loading: true,
+  updateSchedule: async () => {},
 })
 
 export function useSchedule() {
@@ -30,6 +32,21 @@ export function ScheduleProvider({ children }: { children: ReactNode }) {
     setSchedule(data.data as TripSchedule)
   }, [])
 
+  const updateSchedule = useCallback(async (updater: (prev: TripSchedule) => TripSchedule) => {
+    setSchedule(prev => {
+      if (!prev) return prev
+      const next = updater(prev)
+      supabase
+        .from('schedule')
+        .update({ data: next })
+        .eq('id', 'default')
+        .then(({ error }) => {
+          if (error) console.warn('Failed to save schedule:', error)
+        })
+      return next
+    })
+  }, [])
+
   useEffect(() => {
     const envUrl = import.meta.env.VITE_SUPABASE_URL
     const envKey = import.meta.env.VITE_SUPABASE_ANON_KEY
@@ -45,7 +62,7 @@ export function ScheduleProvider({ children }: { children: ReactNode }) {
   }, [fetchSchedule])
 
   return (
-    <ScheduleContext.Provider value={{ schedule, loading }}>
+    <ScheduleContext.Provider value={{ schedule, loading, updateSchedule }}>
       {children}
     </ScheduleContext.Provider>
   )

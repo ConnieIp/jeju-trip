@@ -5,13 +5,13 @@ import { useAuth } from '../auth/AuthContext'
 import SearchBox from '../components/ui/SearchBox'
 import PlaceCard from '../components/ui/PlaceCard'
 
-const FILTERS = ['All spots', 'Accommodation', 'Restaurant', 'Cafe', 'Sight', 'Souvenir']
+const FILTERS = ['All spots', 'Restaurant', 'Cafe', 'Bakery', 'Sight', 'Souvenir']
 
 const FILTER_MAP: Record<string, string> = {
   'All spots': 'all',
-  Accommodation: 'accommodation',
   Restaurant: 'restaurant',
   Cafe: 'cafe',
+  Bakery: 'bakery',
   Sight: 'attraction',
   Souvenir: 'souvenir',
 }

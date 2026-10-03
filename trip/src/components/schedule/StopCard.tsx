@@ -5,6 +5,8 @@ import { photoUrl } from '../../lib/photoUrl'
 interface StopCardProps {
   stop: ScheduleStop
   spot?: Spot
+  onEdit?: () => void
+  onDelete?: () => void
 }
 
 function getCategoryLabel(type: string): string {
@@ -27,7 +29,7 @@ function getCategoryColor(type: string): string {
   return 'text-muted-light bg-bg'
 }
 
-function StopCard({ stop, spot }: StopCardProps) {
+function StopCard({ stop, spot, onEdit, onDelete }: StopCardProps) {
   const photo = spot?.photos?.[0] || '/photos/placeholder.jpg'
   const categoryLabel = getCategoryLabel(stop.type)
   const categoryColor = getCategoryColor(stop.type)
@@ -54,20 +56,49 @@ function StopCard({ stop, spot }: StopCardProps) {
     </>
   )
 
+  const actionButtons = (onEdit || onDelete) && (
+    <div className="absolute top-2 right-2 flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+      {onEdit && (
+        <button
+          onClick={(e) => { e.preventDefault(); onEdit() }}
+          className="w-7 h-7 flex items-center justify-center rounded-full bg-card border border-border text-muted text-[12px] cursor-pointer hover:border-teal-mid hover:text-teal transition-colors"
+          title="Edit"
+        >
+          ✎
+        </button>
+      )}
+      {onDelete && (
+        <button
+          onClick={(e) => { e.preventDefault(); onDelete() }}
+          className="w-7 h-7 flex items-center justify-center rounded-full bg-card border border-border text-muted text-[12px] cursor-pointer hover:border-red-500 hover:text-red-500 transition-colors"
+          title="Delete"
+        >
+          ✕
+        </button>
+      )}
+    </div>
+  )
+
   if (spot) {
     return (
-      <Link
-        to={`/spot/${spot.slug}`}
-        className="flex items-center gap-[18px] p-[14px] bg-card border border-border rounded-card-sm cursor-pointer hover:shadow-md transition-shadow no-underline text-ink min-h-[134px] shadow-[0_8px_24px_#15323a0d] max-[640px]:gap-2.5 max-[640px]:p-2.5 max-[640px]:min-h-[112px]"
-      >
-        {cardContent}
-      </Link>
+      <div className="relative group">
+        <Link
+          to={`/spot/${spot.slug}`}
+          className="flex items-center gap-[18px] p-[14px] bg-card border border-border rounded-card-sm cursor-pointer hover:shadow-md transition-shadow no-underline text-ink min-h-[134px] shadow-[0_8px_24px_#15323a0d] max-[640px]:gap-2.5 max-[640px]:p-2.5 max-[640px]:min-h-[112px]"
+        >
+          {cardContent}
+        </Link>
+        {actionButtons}
+      </div>
     )
   }
 
   return (
-    <div className="flex items-center gap-[18px] p-[14px] bg-card border border-border rounded-card-sm min-h-[134px] shadow-[0_8px_24px_#15323a0d] max-[640px]:gap-2.5 max-[640px]:p-2.5 max-[640px]:min-h-[112px]">
-      {cardContent}
+    <div className="relative group">
+      <div className="flex items-center gap-[18px] p-[14px] bg-card border border-border rounded-card-sm min-h-[134px] shadow-[0_8px_24px_#15323a0d] max-[640px]:gap-2.5 max-[640px]:p-2.5 max-[640px]:min-h-[112px]">
+        {cardContent}
+      </div>
+      {actionButtons}
     </div>
   )
 }

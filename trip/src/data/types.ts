@@ -91,6 +91,16 @@ export interface ScheduleStop {
   note?: string;
 }
 
+export interface FlightInfo {
+  flightNumber: string;
+  departure: string;
+  arrival: string;
+  departureTime: string;
+  arrivalTime: string;
+  departureTerminal?: string;
+  arrivalTerminal?: string;
+}
+
 export interface DaySchedule {
   day: number;
   date: string;
@@ -104,7 +114,11 @@ export interface DaySchedule {
     name: string;
     slug: string;
     night: string;
+    addressKo?: string;
+    addressEn?: string;
+    bookingUrl?: string;
   };
+  flight?: FlightInfo;
 }
 
 export interface TripSchedule {
