@@ -28,6 +28,14 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
+    const envUrl = import.meta.env.VITE_SUPABASE_URL
+    const envKey = import.meta.env.VITE_SUPABASE_ANON_KEY
+    if (!envUrl || !envKey) {
+      console.warn('Supabase env vars not set — auth disabled')
+      setLoading(false)
+      return
+    }
+
     supabase.auth.getSession().then(({ data: { session: s } }) => {
       setSession(s)
       setUser(s?.user ?? null)
