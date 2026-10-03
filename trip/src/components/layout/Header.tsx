@@ -58,14 +58,14 @@ function Header() {
         ))}
       </nav>
 
-      <div className="flex items-center gap-3 max-[640px]:hidden">
-        <div className="flex items-center gap-2 px-3.5 py-2 bg-bg rounded-pill text-[12px] font-semibold">
-          <span>Oct 25 – 30, 2026</span>
-        </div>
-        {!authLoading && (
-          user ? (
+      <div className="flex items-center gap-3 max-[640px]:ml-auto max-[640px]:gap-2">
+        {!authLoading && user && (
+          <>
+            <div className="flex items-center gap-2 px-3.5 py-2 bg-bg rounded-pill text-[12px] font-semibold max-[640px]:hidden">
+              <span>Oct 25 – 30, 2026</span>
+            </div>
             <div className="flex items-center gap-2">
-              <span className="text-[11px] text-muted max-w-[120px] truncate">{user.email}</span>
+              <span className="text-[11px] text-muted max-w-[120px] truncate max-[640px]:hidden">{user.email}</span>
               <button
                 onClick={signOut}
                 className="px-3 py-1.5 text-[11px] font-semibold text-muted border border-border rounded-pill cursor-pointer bg-card hover:text-ink transition-colors"
@@ -73,7 +73,9 @@ function Header() {
                 Sign out
               </button>
             </div>
-          ) : (
+          </>
+        )}
+        {!authLoading && !user && (
             <div className="relative">
               {showSignIn ? (
                 <div className="absolute right-0 top-full mt-2 bg-card border border-border rounded-card p-4 shadow-[0_8px_24px_#15323a14] w-[280px] z-30">
@@ -121,7 +123,6 @@ function Header() {
                 </button>
               )}
             </div>
-          )
         )}
       </div>
     </header>
