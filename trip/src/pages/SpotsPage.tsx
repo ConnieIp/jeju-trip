@@ -1,5 +1,7 @@
 import { useState, useMemo } from 'react'
-import { allSpots } from '../data/spots'
+import { Link } from 'react-router-dom'
+import { useSpots } from '../data/SpotsProvider'
+import { useAuth } from '../auth/AuthContext'
 import SearchBox from '../components/ui/SearchBox'
 import PlaceCard from '../components/ui/PlaceCard'
 
@@ -15,28 +17,30 @@ const FILTER_MAP: Record<string, string> = {
 }
 
 function SpotsPage() {
+  const { spots } = useSpots()
+  const { user } = useAuth()
   const [search, setSearch] = useState('')
   const [activeFilter, setActiveFilter] = useState('All spots')
 
   const filteredSpots = useMemo(() => {
-    let spots = allSpots
+    let s = spots
 
     if (activeFilter !== 'All spots') {
       const category = FILTER_MAP[activeFilter]
-      spots = spots.filter(s => s.category === category)
+      s = s.filter(sp => sp.category === category)
     }
 
     if (search.trim()) {
       const query = search.toLowerCase()
-      spots = spots.filter(s =>
-        s.name.toLowerCase().includes(query) ||
-        s.features?.some(f => f.toLowerCase().includes(query)) ||
-        s.region.toLowerCase().includes(query)
+      s = s.filter(sp =>
+        sp.name.toLowerCase().includes(query) ||
+        sp.features?.some(f => f.toLowerCase().includes(query)) ||
+        sp.region.toLowerCase().includes(query)
       )
     }
 
-    return spots
-  }, [search, activeFilter])
+    return s
+  }, [spots, search, activeFilter])
 
   return (
     <div className="mx-auto w-[min(1310px,100%-80px)] max-[980px]:w-[min(100%-36px,760px)] max-[640px]:w-[calc(100%-28px)]">
@@ -54,12 +58,25 @@ function SpotsPage() {
               A curated collection of sights, cafes, and restaurants across Jeju island.
             </p>
           </div>
-          <div className="bg-dark-card text-white rounded-card p-5 shadow-[0_8px_24px_#15323a14] max-[640px]:w-full">
-            <div className="flex items-center gap-3">
-              <strong className="bg-amber rounded-full w-[42px] h-[42px] flex items-center justify-center text-[15px] font-bold flex-shrink-0">{allSpots.length}</strong>
-              <div className="flex flex-col gap-[3px]">
-                <b className="text-[13px] font-bold whitespace-nowrap">Saved across Jeju</b>
-                <small className="text-sidebar-muted text-[12px]">{allSpots.length} already in your schedule</small>
+          <div className="flex flex-col gap-3">
+            {user && (
+              <Link
+                to="/spot/new"
+                className="flex items-center gap-2 px-5 py-3 bg-teal-dark text-white rounded-[13px] text-[13px] font-semibold no-underline hover:opacity-90 transition-opacity"
+              >
+                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M12 5v14M5 12h14" />
+                </svg>
+                Add spot
+              </Link>
+            )}
+            <div className="bg-dark-card text-white rounded-card p-5 shadow-[0_8px_24px_#15323a14] max-[640px]:w-full">
+              <div className="flex items-center gap-3">
+                <strong className="bg-amber rounded-full w-[42px] h-[42px] flex items-center justify-center text-[15px] font-bold flex-shrink-0">{spots.length}</strong>
+                <div className="flex flex-col gap-[3px]">
+                  <b className="text-[13px] font-bold whitespace-nowrap">Saved across Jeju</b>
+                  <small className="text-sidebar-muted text-[12px]">{spots.length} already in your schedule</small>
+                </div>
               </div>
             </div>
           </div>
@@ -70,7 +87,7 @@ function SpotsPage() {
         <SearchBox value={search} onChange={setSearch} />
         <div className="flex gap-2 flex-wrap">
           {FILTERS.map(filter => {
-            const count = filter === 'All spots' ? filteredSpots.length : allSpots.filter(s => s.category === FILTER_MAP[filter]).length
+            const count = filter === 'All spots' ? filteredSpots.length : spots.filter(s => s.category === FILTER_MAP[filter]).length
             const label = filter === 'All spots' ? `${filter} · ${count}` : filter
             return (
               <button

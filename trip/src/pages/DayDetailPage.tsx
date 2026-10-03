@@ -1,10 +1,13 @@
-import { useParams, Link } from 'react-router-dom'
-import { getSpotBySlug } from '../data/spots'
-import { schedule } from '../data/schedule'
+import { useState } from 'react'
+import { useParams, Link, useNavigate } from 'react-router-dom'
+import { useSpots } from '../data/SpotsProvider'
+import { useSchedule } from '../data/ScheduleProvider'
+import { useAuth } from '../auth/AuthContext'
 import Breadcrumbs from '../components/ui/Breadcrumbs'
 import PhotoGallery from '../components/ui/PhotoGallery'
 import InfoCard from '../components/ui/InfoCard'
 import MapButton from '../components/ui/MapButton'
+import ConfirmDialog from '../components/ui/ConfirmDialog'
 import type { Attraction } from '../data/types'
 
 function getCategoryLabel(category: string): string {
@@ -26,7 +29,14 @@ function getCategoryBadgeColor(category: string): string {
 
 function DayDetailPage() {
   const { slug } = useParams<{ slug: string }>()
-  const spot = slug ? getSpotBySlug(slug) : undefined
+  const navigate = useNavigate()
+  const { getSpot, removeSpot } = useSpots()
+  const { schedule } = useSchedule()
+  const { user } = useAuth()
+  const [showDeleteConfirm, setShowDeleteConfirm] = useState(false)
+  const [deleting, setDeleting] = useState(false)
+
+  const spot = slug ? getSpot(slug) : undefined
 
   if (!spot) {
     return (
@@ -42,7 +52,7 @@ function DayDetailPage() {
   const attraction = spot as Attraction
   const address = spot.addressKo || spot.addressEn || spot.address || ''
 
-  const scheduleInfo = schedule.days.find(day =>
+  const scheduleInfo = schedule?.days.find(day =>
     day.stops.some(stop =>
       stop.title.toLowerCase().includes(spot.name.toLowerCase()) ||
       spot.name.toLowerCase().includes(stop.title.toLowerCase().split(' ')[0])
@@ -53,6 +63,20 @@ function DayDetailPage() {
     stop.title.toLowerCase().includes(spot.name.toLowerCase()) ||
     spot.name.toLowerCase().includes(stop.title.toLowerCase().split(' ')[0])
   )
+
+  const handleDelete = async () => {
+    if (!slug) return
+    setDeleting(true)
+    try {
+      await removeSpot(slug)
+      navigate('/spots')
+    } catch (err) {
+      console.error('Failed to delete spot:', err)
+    } finally {
+      setDeleting(false)
+      setShowDeleteConfirm(false)
+    }
+  }
 
   return (
     <div className="mx-auto pt-[34px] pb-[72px] px-8 w-[min(1310px,100%-80px)] max-[980px]:w-[min(100%-36px,760px)] max-[980px]:px-[18px] max-[640px]:w-[calc(100%-28px)] max-[640px]:px-[14px]">
@@ -89,7 +113,31 @@ function DayDetailPage() {
             </div>
           )}
         </div>
-        <div className="flex gap-2.5">
+        <div className="flex gap-2.5 flex-wrap">
+          {user && (
+            <>
+              <Link
+                to={`/spot/${slug}/edit`}
+                className="flex items-center gap-2 px-4 py-[13px] border border-border bg-card rounded-[13px] text-[12px] font-semibold cursor-pointer no-underline text-ink hover:border-ink/30 transition-colors"
+              >
+                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+                  <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+                </svg>
+                Edit
+              </Link>
+              <button
+                onClick={() => setShowDeleteConfirm(true)}
+                className="flex items-center gap-2 px-4 py-[13px] border border-red-300 bg-card rounded-[13px] text-[12px] font-semibold text-red-600 cursor-pointer hover:bg-red-50 transition-colors"
+              >
+                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <polyline points="3 6 5 6 21 6" />
+                  <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                </svg>
+                Delete
+              </button>
+            </>
+          )}
           <button className="flex items-center gap-2 px-4 py-[13px] border border-border bg-card rounded-[13px] text-[12px] font-semibold cursor-pointer">
             <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <circle cx="18" cy="5" r="3" />
@@ -265,6 +313,16 @@ function DayDetailPage() {
           )}
         </div>
       </div>
+
+      {showDeleteConfirm && (
+        <ConfirmDialog
+          title="Delete spot"
+          message={`Are you sure you want to remove "${spot.name}"? It will be hidden from all views.`}
+          confirmLabel={deleting ? 'Deleting...' : 'Delete'}
+          onConfirm={handleDelete}
+          onCancel={() => setShowDeleteConfirm(false)}
+        />
+      )}
     </div>
   )
 }

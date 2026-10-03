@@ -1,13 +1,31 @@
+import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import { useAuth } from '../../auth/AuthContext'
 
 function Header() {
   const location = useLocation()
+  const { user, signInWithEmail, signOut, loading: authLoading } = useAuth()
+  const [email, setEmail] = useState('')
+  const [showSignIn, setShowSignIn] = useState(false)
+  const [signInError, setSignInError] = useState<string | null>(null)
+  const [signInSent, setSignInSent] = useState(false)
 
   const navItems = [
     { path: '/', label: 'Schedule' },
     { path: '/spots', label: 'Saved spots' },
     { path: '/notes', label: 'Island notes' },
   ]
+
+  const handleSignIn = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setSignInError(null)
+    const { error } = await signInWithEmail(email)
+    if (error) {
+      setSignInError(error)
+    } else {
+      setSignInSent(true)
+    }
+  }
 
   return (
     <header className="flex items-center justify-between h-[78px] border-b border-border bg-card sticky top-0 z-20 max-[980px]:px-[18px] max-[640px]:flex-wrap max-[640px]:h-auto max-[640px]:min-h-[68px] max-[640px]:py-2.5 max-[640px]:px-3.5" style={{ padding: '0 max(40px, calc(50% - 655px))' }}>
@@ -42,9 +60,63 @@ function Header() {
         <div className="flex items-center gap-2 px-3.5 py-2 bg-bg rounded-pill text-[12px] font-semibold">
           <span>Oct 25 – 30, 2026</span>
         </div>
-        <div className="w-[38px] h-[38px] rounded-full bg-amber-light text-amber flex items-center justify-center text-[12px] font-bold">
-          CJ
-        </div>
+        {!authLoading && (
+          user ? (
+            <div className="flex items-center gap-2">
+              <span className="text-[11px] text-muted max-w-[120px] truncate">{user.email}</span>
+              <button
+                onClick={signOut}
+                className="px-3 py-1.5 text-[11px] font-semibold text-muted border border-border rounded-pill cursor-pointer bg-card hover:text-ink transition-colors"
+              >
+                Sign out
+              </button>
+            </div>
+          ) : (
+            <div className="relative">
+              {showSignIn ? (
+                <div className="absolute right-0 top-full mt-2 bg-card border border-border rounded-card p-4 shadow-[0_8px_24px_#15323a14] w-[280px] z-30">
+                  {signInSent ? (
+                    <p className="text-[13px] text-teal font-medium">Check your email for a sign-in link!</p>
+                  ) : (
+                    <form onSubmit={handleSignIn} className="flex flex-col gap-2">
+                      <input
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="your@email.com"
+                        required
+                        className="w-full px-3 py-2 bg-bg border border-border rounded-[10px] text-[13px] text-ink placeholder:text-muted-light focus:outline-none focus:border-teal-mid"
+                      />
+                      {signInError && (
+                        <p className="text-[11px] text-red-600 m-0">{signInError}</p>
+                      )}
+                      <button
+                        type="submit"
+                        className="px-3 py-2 bg-teal-dark text-white rounded-[10px] text-[12px] font-semibold cursor-pointer border-none hover:opacity-90 transition-opacity"
+                      >
+                        Send magic link
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => { setShowSignIn(false); setSignInSent(false) }}
+                        className="px-3 py-1 text-[11px] text-muted cursor-pointer bg-transparent border-none hover:text-ink"
+                      >
+                        Cancel
+                      </button>
+                    </form>
+                  )}
+                </div>
+              ) : (
+                <button
+                  onClick={() => setShowSignIn(true)}
+                  className="w-[38px] h-[38px] rounded-full bg-amber-light text-amber flex items-center justify-center text-[12px] font-bold cursor-pointer border-none"
+                >
+                  CJ
+                </button>
+              )}
+            </div>
+          )
+        )}
       </div>
     </header>
   )

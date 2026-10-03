@@ -1,13 +1,18 @@
 import { useState } from 'react'
-import { schedule } from '../data/schedule'
-import { allSpots } from '../data/spots'
+import { useSpots } from '../data/SpotsProvider'
+import { useSchedule } from '../data/ScheduleProvider'
 import TimelineRow from '../components/schedule/TimelineRow'
 import RouteOverview from '../components/schedule/RouteOverview'
 import LocalNote from '../components/schedule/LocalNote'
 import BackupCard from '../components/schedule/BackupCard'
 
 function SchedulePage() {
+  const { spots } = useSpots()
+  const { schedule } = useSchedule()
   const [activeDay, setActiveDay] = useState(1)
+
+  if (!schedule) return null
+
   const currentDay = schedule.days.find(d => d.day === activeDay) || schedule.days[0]
 
   return (
@@ -75,7 +80,7 @@ function SchedulePage() {
 
           <div>
             {currentDay.stops.map((stop, idx) => {
-              const spot = allSpots.find(s =>
+              const spot = spots.find(s =>
                 stop.title.toLowerCase().includes(s.name.toLowerCase()) ||
                 s.name.toLowerCase().includes(stop.title.toLowerCase().split(' ')[0])
               )
