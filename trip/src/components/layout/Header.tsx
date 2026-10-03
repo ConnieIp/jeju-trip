@@ -4,11 +4,11 @@ import { useAuth } from '../../auth/AuthContext'
 
 function Header() {
   const location = useLocation()
-  const { user, signInWithEmail, signOut, loading: authLoading } = useAuth()
+  const { user, signInWithPassword, signOut, loading: authLoading } = useAuth()
   const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
   const [showSignIn, setShowSignIn] = useState(false)
   const [signInError, setSignInError] = useState<string | null>(null)
-  const [signInSent, setSignInSent] = useState(false)
 
   const navItems = [
     { path: '/', label: 'Schedule' },
@@ -19,11 +19,13 @@ function Header() {
   const handleSignIn = async (e: React.FormEvent) => {
     e.preventDefault()
     setSignInError(null)
-    const { error } = await signInWithEmail(email)
+    const { error } = await signInWithPassword(email, password)
     if (error) {
       setSignInError(error)
     } else {
-      setSignInSent(true)
+      setShowSignIn(false)
+      setEmail('')
+      setPassword('')
     }
   }
 
@@ -75,36 +77,40 @@ function Header() {
             <div className="relative">
               {showSignIn ? (
                 <div className="absolute right-0 top-full mt-2 bg-card border border-border rounded-card p-4 shadow-[0_8px_24px_#15323a14] w-[280px] z-30">
-                  {signInSent ? (
-                    <p className="text-[13px] text-teal font-medium">Check your email for a sign-in link!</p>
-                  ) : (
-                    <form onSubmit={handleSignIn} className="flex flex-col gap-2">
-                      <input
-                        type="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        placeholder="your@email.com"
-                        required
-                        className="w-full px-3 py-2 bg-bg border border-border rounded-[10px] text-[13px] text-ink placeholder:text-muted-light focus:outline-none focus:border-teal-mid"
-                      />
-                      {signInError && (
-                        <p className="text-[11px] text-red-600 m-0">{signInError}</p>
-                      )}
-                      <button
-                        type="submit"
-                        className="px-3 py-2 bg-teal-dark text-white rounded-[10px] text-[12px] font-semibold cursor-pointer border-none hover:opacity-90 transition-opacity"
-                      >
-                        Send magic link
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => { setShowSignIn(false); setSignInSent(false) }}
-                        className="px-3 py-1 text-[11px] text-muted cursor-pointer bg-transparent border-none hover:text-ink"
-                      >
-                        Cancel
-                      </button>
-                    </form>
-                  )}
+                  <form onSubmit={handleSignIn} className="flex flex-col gap-2">
+                    <input
+                      type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="your@email.com"
+                      required
+                      className="w-full px-3 py-2 bg-bg border border-border rounded-[10px] text-[13px] text-ink placeholder:text-muted-light focus:outline-none focus:border-teal-mid"
+                    />
+                    <input
+                      type="password"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                      placeholder="Password"
+                      required
+                      className="w-full px-3 py-2 bg-bg border border-border rounded-[10px] text-[13px] text-ink placeholder:text-muted-light focus:outline-none focus:border-teal-mid"
+                    />
+                    {signInError && (
+                      <p className="text-[11px] text-red-600 m-0">{signInError}</p>
+                    )}
+                    <button
+                      type="submit"
+                      className="px-3 py-2 bg-teal-dark text-white rounded-[10px] text-[12px] font-semibold cursor-pointer border-none hover:opacity-90 transition-opacity"
+                    >
+                      Sign in
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => { setShowSignIn(false); setSignInError(null) }}
+                      className="px-3 py-1 text-[11px] text-muted cursor-pointer bg-transparent border-none hover:text-ink"
+                    >
+                      Cancel
+                    </button>
+                  </form>
                 </div>
               ) : (
                 <button
