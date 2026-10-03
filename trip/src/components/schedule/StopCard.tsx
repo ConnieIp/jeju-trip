@@ -33,10 +33,13 @@ function StopCard({ stop, spot, onEdit, onDelete }: StopCardProps) {
   const photo = spot?.photos?.[0] || '/photos/placeholder.jpg'
   const categoryLabel = getCategoryLabel(stop.type)
   const categoryColor = getCategoryColor(stop.type)
+  const showPhoto = stop.type !== 'activity' && stop.type !== 'transport'
 
   const cardContent = (
     <>
-      <img src={photoUrl(photo)} alt={stop.title} className="w-[150px] h-[106px] rounded-[15px] object-cover flex-shrink-0 max-[640px]:w-[82px] max-[640px]:h-[82px]" />
+      {showPhoto && (
+        <img src={photoUrl(photo)} alt={stop.title} className="w-[150px] h-[106px] rounded-[15px] object-cover flex-shrink-0 max-[640px]:w-[82px] max-[640px]:h-[82px]" />
+      )}
       <div className="flex flex-col flex-1 min-w-0 gap-2">
         <div className="flex items-center justify-between gap-2.5">
           <span className={`inline-flex items-center px-3 py-[7px] rounded-pill text-[12px] font-semibold leading-none ${categoryColor}`}>

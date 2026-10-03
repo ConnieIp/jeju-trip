@@ -80,11 +80,14 @@ export interface Accommodation {
 
 export type Spot = Attraction | Restaurant | Cafe | Bakery | Souvenir;
 
+export type TransportMode = 'drive' | 'walk' | 'bus' | 'ferry' | 'taxi' | 'bike';
+
 export interface ScheduleStop {
   time: string;
   endTime?: string;
   duration?: string;
   type: Category | 'transport' | 'checkin' | 'activity';
+  transportMode?: TransportMode;
   title: string;
   slug?: string;
   description?: string;

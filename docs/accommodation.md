@@ -6,6 +6,7 @@
 
 - **區域**：舊左邑（濟州東部）
 - **類型**：民宿
+- **地址： 제주 제주시 조천읍 신촌북3길 30-7 스트레스리스
 - **預訂**：[Airbnb](https://www.airbnb.com.hk/rooms/1389539647954836162?unique_share_id=f0f2c729-d9a2-4768-9cae-455fbbaf69b6&viralityEntryPoint=1&s=7&source_impression_id=p3_1790864245_P37sXuQYAX5crwO0)
 
 ---

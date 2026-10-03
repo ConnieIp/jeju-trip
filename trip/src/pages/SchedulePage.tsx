@@ -4,6 +4,7 @@ import { useSchedule } from '../data/ScheduleProvider'
 import { useAuth } from '../auth/AuthContext'
 import { useWeather } from '../hooks/useWeather'
 import TimelineRow from '../components/schedule/TimelineRow'
+import TransportIndicator from '../components/schedule/TransportIndicator'
 import SpecialTimelineRow from '../components/schedule/SpecialTimelineRow'
 import AccommodationCard from '../components/schedule/AccommodationCard'
 import FlightCard from '../components/schedule/FlightCard'
@@ -355,6 +356,18 @@ function SchedulePage() {
               const isLastStop = idx === currentDay.stops.length - 1
               const hasTrailingContent = !!currentDay.accommodation ||
                 (isLastDay && currentDay.flight)
+
+              if (stop.type === 'transport') {
+                return (
+                  <TransportIndicator
+                    key={idx}
+                    stop={stop}
+                    isLast={isLastStop && !hasTrailingContent}
+                    onEdit={user ? () => setModal({ type: 'edit-activity', index: idx }) : undefined}
+                    onDelete={user ? () => setModal({ type: 'delete-activity', index: idx }) : undefined}
+                  />
+                )
+              }
 
               return (
                 <TimelineRow

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import type { ScheduleStop, Category, Spot } from '../../data/types'
+import type { ScheduleStop, Category, Spot, TransportMode } from '../../data/types'
 
 interface ActivityFormProps {
   initial?: ScheduleStop
@@ -18,12 +18,22 @@ const TYPES: { value: Category | 'transport' | 'activity'; label: string }[] = [
   { value: 'transport', label: 'Transport' },
 ]
 
+const TRANSPORT_MODES: { value: TransportMode; label: string }[] = [
+  { value: 'drive', label: 'Drive' },
+  { value: 'walk', label: 'Walk' },
+  { value: 'bus', label: 'Bus' },
+  { value: 'ferry', label: 'Ferry' },
+  { value: 'taxi', label: 'Taxi' },
+  { value: 'bike', label: 'Bike' },
+]
+
 function spotToStopType(category: Category): ScheduleStop['type'] {
   return category
 }
 
 function ActivityForm({ initial, spots, onSubmit, onCancel }: ActivityFormProps) {
   const [selectedSlug, setSelectedSlug] = useState(initial?.slug || '')
+  const [selectedType, setSelectedType] = useState(initial?.type || 'attraction')
 
   const handleSpotSelect = (slug: string) => {
     setSelectedSlug(slug)
@@ -39,6 +49,7 @@ function ActivityForm({ initial, spots, onSubmit, onCancel }: ActivityFormProps)
         if (slugInput) slugInput.value = spot.slug
         if (typeSelect) typeSelect.value = spotToStopType(spot.category)
         if (descInput) descInput.value = spot.features?.[0] || ''
+        setSelectedType(spotToStopType(spot.category))
       }
     }
   }
@@ -46,11 +57,13 @@ function ActivityForm({ initial, spots, onSubmit, onCancel }: ActivityFormProps)
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const fd = new FormData(e.currentTarget)
+    const type = (fd.get('type') as ScheduleStop['type'])
     const stop: ScheduleStop = {
       time: (fd.get('time') as string).trim(),
       endTime: (fd.get('endTime') as string).trim() || undefined,
       duration: (fd.get('duration') as string).trim() || undefined,
-      type: (fd.get('type') as ScheduleStop['type']),
+      type,
+      transportMode: type === 'transport' ? (fd.get('transportMode') as TransportMode) || undefined : undefined,
       title: (fd.get('title') as string).trim(),
       slug: (fd.get('slug') as string).trim() || undefined,
       description: (fd.get('description') as string).trim() || undefined,
@@ -88,13 +101,24 @@ function ActivityForm({ initial, spots, onSubmit, onCancel }: ActivityFormProps)
         </div>
         <div>
           <label className={labelClass}>Type *</label>
-          <select name="type" defaultValue={initial?.type || 'attraction'} className={inputClass}>
+          <select name="type" defaultValue={initial?.type || 'attraction'} className={inputClass} onChange={(e) => setSelectedType(e.target.value as ScheduleStop['type'])}>
             {TYPES.map((t) => (
               <option key={t.value} value={t.value}>{t.label}</option>
             ))}
           </select>
         </div>
       </div>
+
+      {selectedType === 'transport' && (
+        <div>
+          <label className={labelClass}>Transport Mode</label>
+          <select name="transportMode" defaultValue={initial?.transportMode || 'drive'} className={inputClass}>
+            {TRANSPORT_MODES.map((m) => (
+              <option key={m.value} value={m.value}>{m.label}</option>
+            ))}
+          </select>
+        </div>
+      )}
 
       <div className="grid grid-cols-3 gap-4 max-[640px]:grid-cols-1">
         <div>
