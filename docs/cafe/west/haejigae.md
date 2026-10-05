@@ -3,7 +3,8 @@
 ## 基本資訊
 - 地區：西北部 - 涯月
 - 類型：Cafe
-- 地址：52 Aewolbukseo-gil, Aewol-eup, 특별자치도, Jeju-si, Jeju-do, 南韓
+- 韓文地址：제주특별자치도 제주시 애월읍 애월북서길 52
+- 英文地址：52 Aewolbukseo-gil, Aewol-eup, Jeju-si, Jeju-do
 
 ## 特色
 - 韓屋海景咖啡廳

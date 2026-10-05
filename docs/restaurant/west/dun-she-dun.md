@@ -3,4 +3,5 @@
 ## 基本資訊
 - 地區：西北部
 - 類型：Restaurant
-- 地址：3086-3 노형동 Jeju-si, Jeju-do, 南韓
+- 韓文地址：제주특별자치도 제주시 우평로 19, 1층
+- 英文地址：19 Upyeong-ro, Nohyeong-dong, Jeju-si, Jeju-do, 1F

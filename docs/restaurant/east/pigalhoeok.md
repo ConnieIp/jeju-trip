@@ -3,7 +3,8 @@
 ## 基本資訊
 - 地區：東部
 - 類型：Restaurant
-- 地址：濟州特別自治道西歸浦市城山邑申報路22番街39號
+- 韓文地址：제주특별자치도 서귀포시 성산읍 신고로22번길 39
+- 英文地址：39 Singo-ro 22beon-gil, Seongsan-eup, Seogwipo-si, Jeju-do
 
 ## 特色
 - 海鮮刺身料理
