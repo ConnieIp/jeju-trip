@@ -1,6 +1,7 @@
-const base = import.meta.env.BASE_URL.replace(/\/$/, '')
+import { supabase } from './supabaseClient'
 
 export function photoUrl(path: string): string {
   if (!path) return ''
-  return `${base}${path}`
+  const { data } = supabase.storage.from('photos').getPublicUrl(path)
+  return data.publicUrl
 }

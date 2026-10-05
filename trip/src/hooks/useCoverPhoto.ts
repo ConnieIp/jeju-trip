@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 
 export function useCoverPhoto(
   photos: string[] | undefined,
-  fallback: string = '/photos/placeholder.jpg'
+  fallback: string = 'placeholder.jpg'
 ): { src: string; ready: boolean } {
   const firstPhoto = photos?.[0] || fallback
   const key = photos?.join(',') ?? ''

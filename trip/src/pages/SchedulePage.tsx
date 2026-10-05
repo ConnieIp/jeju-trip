@@ -35,9 +35,9 @@ function getWeatherIcon(weather: string): string {
 }
 
 const accommodationPhotos: Record<string, string> = {
-  'stay-stressless': '/photos/accommodation/stay-stressless-1.jpg',
-  'hygge-hotel': '/photos/accommodation/hygge-hotel-1.jpg',
-  'regentmarine-the-blue': '/photos/accommodation/regentmarine-1.jpg',
+  'stay-stressless': 'accommodation/stay-stressless-1.jpg',
+  'hygge-hotel': 'accommodation/hygge-hotel-1.jpg',
+  'regentmarine-the-blue': 'accommodation/regentmarine-1.jpg',
 }
 
 type ModalState =

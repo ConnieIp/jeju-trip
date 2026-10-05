@@ -11,6 +11,7 @@
     "seed": "tsx scripts/seed-supabase.ts",
     "seed:spots": "tsx scripts/seed-supabase.ts spots",
     "seed:schedule": "tsx scripts/seed-supabase.ts schedule",
+    "upload:photos": "tsx scripts/upload-photos.ts",
     "deploy": "npm run build && gh-pages -d dist"
   },
   "dependencies": {

@@ -1,4 +1,6 @@
+import { useState } from 'react'
 import type { Spot, Region } from '../../data/types'
+import PhotoUploader from './PhotoUploader'
 
 type FormCategory = 'attraction' | 'restaurant' | 'cafe' | 'bakery' | 'souvenir'
 
@@ -26,11 +28,13 @@ const REGIONS: { value: Region; label: string }[] = [
 ]
 
 function SpotForm({ initial, onSubmit, onCancel, submitLabel }: SpotFormProps) {
+  const [photos, setPhotos] = useState<string[]>(initial?.photos || [])
+  const [category, setCategory] = useState<FormCategory>(initial?.category as FormCategory || 'attraction')
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const fd = new FormData(e.currentTarget)
 
-    const category = fd.get('category') as FormCategory
     const base: Partial<Spot> = {
       slug: initial?.slug || `user-${crypto.randomUUID()}`,
       name: (fd.get('name') as string).trim(),
@@ -52,10 +56,7 @@ function SpotForm({ initial, onSubmit, onCancel, submitLabel }: SpotFormProps) {
         .split('\n')
         .map((s) => s.trim())
         .filter(Boolean),
-      photos: (fd.get('photos') as string)
-        .split('\n')
-        .map((s) => s.trim())
-        .filter(Boolean),
+      photos,
       status: (fd.get('status') as 'open' | 'closed') || undefined,
       backupFor: (() => {
         const days = (fd.getAll('backupFor') as string[]).map(Number).filter(n => !isNaN(n))
@@ -122,7 +123,7 @@ function SpotForm({ initial, onSubmit, onCancel, submitLabel }: SpotFormProps) {
       <div className="grid grid-cols-2 gap-4 max-[640px]:grid-cols-1">
         <div>
           <label className={labelClass}>Category *</label>
-          <select name="category" defaultValue={initial?.category || 'attraction'} className={inputClass}>
+          <select name="category" value={category} onChange={(e) => setCategory(e.target.value as FormCategory)} className={inputClass}>
             {CATEGORIES.map((c) => (
               <option key={c.value} value={c.value}>{c.label}</option>
             ))}
@@ -233,8 +234,8 @@ function SpotForm({ initial, onSubmit, onCancel, submitLabel }: SpotFormProps) {
       </div>
 
       <div>
-        <label className={labelClass}>Photo URLs (one per line)</label>
-        <textarea name="photos" defaultValue={initial?.photos?.join('\n')} rows={3} className={inputClass} placeholder="/photos/attraction/example.jpg" />
+        <label className={labelClass}>Photos</label>
+        <PhotoUploader photos={photos} onChange={setPhotos} category={category} />
       </div>
 
       <div className="flex gap-3 pt-2">

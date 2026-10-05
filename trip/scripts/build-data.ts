@@ -220,7 +220,7 @@ function resolvePhotos(slug: string, category: string): string[] {
       const photoName = `${variant}-${i}.jpg`
       const photoPath = path.join(photoDir, photoName)
       if (fs.access(photoPath).then(() => true).catch(() => false)) {
-        photos.push(`/photos/${category}/${photoName}`)
+        photos.push(`${category}/${photoName}`)
       }
     }
     if (photos.length > 0) break
@@ -257,7 +257,7 @@ async function resolvePhotosAsync(slug: string, category: string): Promise<strin
       const photoName = `${variant}-${i}.jpg`
       const photoPath = path.join(photoDir, photoName)
       if (await checkPhotoExists(photoPath)) {
-        photos.push(`/photos/${category}/${photoName}`)
+        photos.push(`${category}/${photoName}`)
       }
     }
     if (photos.length > 0) break
