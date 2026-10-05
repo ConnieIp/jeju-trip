@@ -120,6 +120,8 @@ export interface DaySchedule {
     addressKo?: string;
     addressEn?: string;
     bookingUrl?: string;
+    checkInTime?: string;
+    checkOutTime?: string;
   };
   flight?: FlightInfo;
 }

@@ -290,9 +290,61 @@ async function processCategory(category: string, regions: string[]): Promise<Par
   return spots
 }
 
-function parseSchedule(content: string): any {
+function parseSchedule(content: string, allSpots: ParsedSpot[]): any {
   const days: any[] = []
   const dayBlocks = content.split('## Day ')
+
+  const ACCOMMODATION_KEYWORDS = [
+    'stay stressless',
+    'hygge hotel',
+    'hotel regentmarine',
+    'regentmarine',
+    '舊左邑',
+  ]
+
+  function isAccommodationStop(title: string): boolean {
+    const lower = title.toLowerCase()
+    return ACCOMMODATION_KEYWORDS.some(keyword => lower.includes(keyword))
+  }
+
+  function findSpotCategory(title: string): { category: string; slug: string } | null {
+    const lower = title.toLowerCase()
+    
+    if (lower.includes('airport') || lower.includes('機場') || lower.includes('入境') || lower.includes('取車')) {
+      return null
+    }
+    
+    for (const spot of allSpots) {
+      const spotNameLower = spot.name.toLowerCase()
+      
+      if (lower.includes(spotNameLower) || spotNameLower.includes(lower)) {
+        return { category: spot.category, slug: spot.slug }
+      }
+      
+      if (spot.nameZh) {
+        const nameZhLower = spot.nameZh.toLowerCase()
+        if (lower.includes(nameZhLower) || nameZhLower.includes(lower)) {
+          return { category: spot.category, slug: spot.slug }
+        }
+      }
+      
+      if (spot.nameKo) {
+        const nameKoLower = spot.nameKo.toLowerCase()
+        if (lower.includes(nameKoLower) || nameKoLower.includes(lower)) {
+          return { category: spot.category, slug: spot.slug }
+        }
+      }
+      
+      const nameParts = spot.name.split(/\s+/).filter(p => p.length > 3)
+      for (const part of nameParts) {
+        const partLower = part.toLowerCase()
+        if (lower.includes(partLower) && !partLower.includes('jeju') && !partLower.includes('제주')) {
+          return { category: spot.category, slug: spot.slug }
+        }
+      }
+    }
+    return null
+  }
 
   for (let i = 1; i < dayBlocks.length; i++) {
     const block = dayBlocks[i]
@@ -314,7 +366,35 @@ function parseSchedule(content: string): any {
 
     for (const line of lines.slice(1)) {
       if (line.startsWith('**路線：')) {
-        day.route = line.replace('**路線：', '').replace('**', '').trim()
+        const rawRoute = line.replace('**路線：', '').replace('**', '').trim()
+        const routeStops = rawRoute.split('➔').map(s => s.trim())
+        const filteredStops = routeStops.filter(stop => !isAccommodationStop(stop))
+        day.route = filteredStops.join(' ➔ ')
+      } else if (line.startsWith('Flight:')) {
+        // Format 1: Flight: UO640 HKG Terminal 2 15:25 -> CJU 19:10
+        const flightMatch1 = line.match(/Flight:\s*(\w+)\s*(\w+)\s*(Terminal\s*\d+)?\s*(\d{2}:\d{2})\s*->\s*(\w+)\s*(\d{2}:\d{2})/)
+        // Format 2: Flight: UO641 CJU 20:00 -> HKG Terminal 2 22:30
+        const flightMatch2 = line.match(/Flight:\s*(\w+)\s*(\w+)\s*(\d{2}:\d{2})\s*->\s*(\w+)\s*(Terminal\s*\d+)?\s*(\d{2}:\d{2})/)
+        
+        if (flightMatch1) {
+          day.flight = {
+            flightNumber: flightMatch1[1],
+            departure: flightMatch1[2],
+            departureTerminal: flightMatch1[3] || undefined,
+            departureTime: flightMatch1[4],
+            arrival: flightMatch1[5],
+            arrivalTime: flightMatch1[6],
+          }
+        } else if (flightMatch2) {
+          day.flight = {
+            flightNumber: flightMatch2[1],
+            departure: flightMatch2[2],
+            departureTime: flightMatch2[3],
+            arrival: flightMatch2[4],
+            arrivalTerminal: flightMatch2[5] || undefined,
+            arrivalTime: flightMatch2[6],
+          }
+        }
       } else if (line.match(/^-?\s*\d{2}:\d{2}/)) {
         const timeRangeMatch = line.match(/(\d{2}:\d{2})\s*-\s*(\d{2}:\d{2})\s+(.+)/)
         const singleTimeMatch = line.match(/(\d{2}:\d{2})\s+(.+)/)
@@ -346,14 +426,23 @@ function parseSchedule(content: string): any {
               currentStop.type = 'souvenir'
             } else if (categoryStr.includes('體驗')) {
               currentStop.type = 'attraction'
+            } else if (categoryStr.includes('交通')) {
+              currentStop.type = 'transport'
             }
 
             currentStop.title = title
           } else {
             currentStop.title = rest
+            const spotMatch = findSpotCategory(rest)
+            if (spotMatch) {
+              currentStop.type = spotMatch.category
+              currentStop.slug = spotMatch.slug
+            }
           }
 
-          day.stops.push(currentStop)
+          if (!isAccommodationStop(currentStop.title)) {
+            day.stops.push(currentStop)
+          }
         } else if (singleTimeMatch) {
           currentStop = {
             time: singleTimeMatch[1],
@@ -383,20 +472,54 @@ function parseSchedule(content: string): any {
             currentStop.title = title
           } else {
             currentStop.title = rest
+            const spotMatch = findSpotCategory(rest)
+            if (spotMatch) {
+              currentStop.type = spotMatch.category
+              currentStop.slug = spotMatch.slug
+            }
           }
 
-          day.stops.push(currentStop)
+          if (!isAccommodationStop(currentStop.title)) {
+            day.stops.push(currentStop)
+          }
         }
       } else if (line.startsWith('🏨 入住：')) {
         const accMatch = line.match(/🏨 入住：(.+)/)
         if (accMatch) {
+          const name = accMatch[1].trim()
+          const nightMatch = name.match(/第(\d+)晚/)
           day.accommodation = {
-            name: accMatch[1].trim(),
+            name: name.replace(/（第\d+晚）/, '').trim(),
             slug: '',
-            night: '',
+            night: nightMatch ? `night-${nightMatch[1]}` : `night-${day.day}`,
           }
         }
+      } else if (day.accommodation && line.startsWith('- 地址：')) {
+        day.accommodation.addressKo = line.replace('- 地址：', '').trim()
+      } else if (day.accommodation && line.startsWith('- 英文地址：')) {
+        day.accommodation.addressEn = line.replace('- 英文地址：', '').trim()
+      } else if (day.accommodation && line.startsWith('- 入住：')) {
+        const timeMatch = line.match(/入住：(\d{2}:\d{2})\s*\/\s*退房：(\d{2}:\d{2})/)
+        if (timeMatch) {
+          day.accommodation.checkInTime = timeMatch[1]
+          day.accommodation.checkOutTime = timeMatch[2]
+        }
       }
+    }
+
+    const transportStops = day.stops.filter((s: any) => s.type === 'transport' && s.time && s.endTime)
+    let totalDriveMinutes = 0
+    for (const stop of transportStops) {
+      const [startH, startM] = stop.time.split(':').map(Number)
+      const [endH, endM] = stop.endTime.split(':').map(Number)
+      const duration = (endH * 60 + endM) - (startH * 60 + startM)
+      if (duration > 0) totalDriveMinutes += duration
+    }
+
+    if (totalDriveMinutes > 0) {
+      const hours = Math.floor(totalDriveMinutes / 60)
+      const mins = totalDriveMinutes % 60
+      day.driveTime = hours > 0 ? `${hours}h ${mins}m` : `${mins}m`
     }
 
     days.push(day)
@@ -406,6 +529,37 @@ function parseSchedule(content: string): any {
     overview: '6天5夜自駕順時針環島 (10/25 - 10/30)',
     days,
   }
+}
+
+async function parseAccommodation(): Promise<Map<string, { bookingUrl?: string }>> {
+  const content = await fs.readFile(path.join(DOCS_DIR, 'accommodation.md'), 'utf-8')
+  const bookings = new Map<string, { bookingUrl?: string }>()
+  
+  const sections = content.split('## ')
+  for (const section of sections) {
+    if (!section.trim() || section.startsWith('Jeju Trip')) continue
+    
+    const bookingMatch = section.match(/\*\*預訂\*\*：\[.+?\]\((.+?)\)/)
+    if (bookingMatch) {
+      const bookingUrl = bookingMatch[1]
+      
+      const nightRangeMatch = section.match(/Night\s+(\d+)\s*&\s*(\d+)/)
+      const singleNightMatch = section.match(/Night\s+(\d+)/)
+      
+      if (nightRangeMatch) {
+        const startNight = parseInt(nightRangeMatch[1])
+        const endNight = parseInt(nightRangeMatch[2])
+        for (let i = startNight; i <= endNight; i++) {
+          bookings.set(`night-${i}`, { bookingUrl })
+        }
+      } else if (singleNightMatch) {
+        const nightNum = singleNightMatch[1]
+        bookings.set(`night-${nightNum}`, { bookingUrl })
+      }
+    }
+  }
+  
+  return bookings
 }
 
 async function main() {
@@ -441,7 +595,19 @@ async function main() {
   )
 
   const scheduleContent = await fs.readFile(path.join(DOCS_DIR, 'schedule/schedule.md'), 'utf-8')
-  const schedule = parseSchedule(scheduleContent)
+  const allSpots = [...attractions, ...restaurants, ...cafes, ...bakeries, ...souvenirs]
+  const schedule = parseSchedule(scheduleContent, allSpots)
+  
+  const accommodationBookings = await parseAccommodation()
+  for (const day of schedule.days) {
+    if (day.accommodation && day.accommodation.night) {
+      const booking = accommodationBookings.get(day.accommodation.night)
+      if (booking?.bookingUrl) {
+        day.accommodation.bookingUrl = booking.bookingUrl
+      }
+    }
+  }
+  
   await fs.writeFile(
     path.join(OUTPUT_DIR, 'schedule.json'),
     JSON.stringify(schedule, null, 2)

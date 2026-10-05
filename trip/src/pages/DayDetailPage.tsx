@@ -27,6 +27,25 @@ function getCategoryBadgeColor(category: string): string {
   return 'text-muted bg-bg'
 }
 
+function parseHoursData(hours: string[]) {
+  const tableRows: string[] = []
+  const regularItems: string[] = []
+
+  hours.forEach(line => {
+    if (line.startsWith('|') && !line.match(/^\|[-\s|]+\|$/)) {
+      tableRows.push(line)
+    } else if (!line.match(/^\|[-\s|]+\|$/)) {
+      regularItems.push(line)
+    }
+  })
+
+  return { tableRows, regularItems }
+}
+
+function parseTableRow(row: string): string[] {
+  return row.split('|').slice(1, -1).map(cell => cell.trim())
+}
+
 function DayDetailPage() {
   const { slug } = useParams<{ slug: string }>()
   const navigate = useNavigate()
@@ -261,18 +280,42 @@ function DayDetailPage() {
               title="Hours & practical info"
             >
               <div className="p-5">
-                <dl className="my-3.5 text-[11px]">
-                  {Array.isArray(attraction.hours) && attraction.hours.length > 0 && (
+                {Array.isArray(attraction.hours) && attraction.hours.length > 0 && (() => {
+                  const { tableRows, regularItems } = parseHoursData(attraction.hours)
+
+                  return (
                     <>
-                      {attraction.hours.map((hour, idx) => (
-                        <div key={idx} className="flex justify-between py-1.5">
-                          <dt className="text-muted">{idx === 0 ? 'Today · Thursday' : `Day ${idx + 1}`}</dt>
-                          <dd className="m-0 font-semibold">{hour}</dd>
-                        </div>
-                      ))}
+                      {tableRows.length > 0 && (
+                        <table className="w-full my-3.5 text-[11px] border-collapse">
+                          <thead>
+                            <tr className="border-b border-border">
+                              {parseTableRow(tableRows[0]).map((cell, idx) => (
+                                <th key={idx} className="text-left py-2 px-2 font-semibold text-muted">{cell}</th>
+                              ))}
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {tableRows.slice(1).map((row, idx) => (
+                              <tr key={idx} className="border-b border-border last:border-b-0">
+                                {parseTableRow(row).map((cell, cellIdx) => (
+                                  <td key={cellIdx} className="py-2 px-2 font-semibold">{cell}</td>
+                                ))}
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      )}
+
+                      {regularItems.length > 0 && (
+                        <ul className="my-3.5 text-[11px] space-y-1.5">
+                          {regularItems.map((hour, idx) => (
+                            <li key={idx} className="font-semibold">{hour}</li>
+                          ))}
+                        </ul>
+                      )}
                     </>
-                  )}
-                </dl>
+                  )
+                })()}
                 <hr className="border-0 border-t border-border my-3.5" />
                 {spot.phone && (
                   <div className="flex items-start gap-3 text-[11px] leading-[1.35] mt-3">

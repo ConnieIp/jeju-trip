@@ -1,4 +1,5 @@
 import type { DaySchedule } from '../../data/types'
+import { useAuth } from '../../auth/AuthContext'
 
 interface DayTabsProps {
   days: DaySchedule[]
@@ -7,6 +8,7 @@ interface DayTabsProps {
 }
 
 function DayTabs({ days, activeDay, onDayChange }: DayTabsProps) {
+  const { user } = useAuth()
   return (
     <div className="grid grid-cols-5 gap-2.5">
       {days.map(day => (
@@ -20,12 +22,14 @@ function DayTabs({ days, activeDay, onDayChange }: DayTabsProps) {
           }`}
         >
           <small className={`text-[11px] font-bold uppercase ${activeDay === day.day ? 'text-amber' : 'text-muted'}`}>
-            {activeDay === day.day ? `${day.weekday} · DAY ${day.day}` : day.date}
+            {activeDay === day.day ? (user ? `${day.weekday} · DAY ${day.day}` : `DAY ${day.day}`) : (user ? day.date : `DAY ${day.day}`)}
           </small>
           <b className="text-[20px] font-bold">Day {day.day}</b>
-          <span className={`text-[11px] ${activeDay === day.day ? 'text-[#c9d7d9]' : 'text-muted-light'}`}>
-            {day.weekday}
-          </span>
+          {user && (
+            <span className={`text-[11px] ${activeDay === day.day ? 'text-[#c9d7d9]' : 'text-muted-light'}`}>
+              {day.weekday}
+            </span>
+          )}
         </button>
       ))}
     </div>

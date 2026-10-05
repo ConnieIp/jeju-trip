@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import type { ScheduleStop, Spot } from '../../data/types'
 import { photoUrl } from '../../lib/photoUrl'
+import { useCoverPhoto } from '../../hooks/useCoverPhoto'
 
 interface StopCardProps {
   stop: ScheduleStop
@@ -30,14 +31,15 @@ function getCategoryColor(type: string): string {
 }
 
 function StopCard({ stop, spot, onEdit, onDelete }: StopCardProps) {
-  const photo = spot?.photos?.[0] || '/photos/placeholder.jpg'
-  const categoryLabel = getCategoryLabel(stop.type)
-  const categoryColor = getCategoryColor(stop.type)
+  const { src: photo, ready } = useCoverPhoto(spot?.photos)
+  const category = spot?.category || stop.type
+  const categoryLabel = getCategoryLabel(category)
+  const categoryColor = getCategoryColor(category)
   const showPhoto = stop.type !== 'activity' && stop.type !== 'transport'
 
   const cardContent = (
     <>
-      {showPhoto && (
+      {showPhoto && ready && (
         <img src={photoUrl(photo)} alt={stop.title} className="w-[150px] h-[106px] rounded-[15px] object-cover flex-shrink-0 max-[640px]:w-[82px] max-[640px]:h-[82px]" />
       )}
       <div className="flex flex-col flex-1 min-w-0 gap-2">

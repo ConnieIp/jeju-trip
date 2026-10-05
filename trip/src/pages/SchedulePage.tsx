@@ -235,7 +235,7 @@ function SchedulePage() {
                 }`}
               >
                 <small className={`text-[11px] font-bold uppercase ${activeDay === day.day ? 'text-amber' : 'text-muted'}`}>
-                  {activeDay === day.day ? `${day.weekday} · DAY ${day.day}` : day.date}
+                  {activeDay === day.day ? (user ? `${day.weekday} · DAY ${day.day}` : `DAY ${day.day}`) : (user ? day.date : `DAY ${day.day}`)}
                 </small>
                 <div className="flex items-center justify-between">
                   <b className="text-[20px] font-bold">Day {day.day}</b>
@@ -243,9 +243,11 @@ function SchedulePage() {
                     <span className="text-[16px]">{getWeatherIcon(dayWeather.weather)}</span>
                   )}
                 </div>
-                <span className={`text-[11px] ${activeDay === day.day ? 'text-[#c9d7d9]' : 'text-muted-light'}`}>
-                  {dayWeather ? `${Math.round(dayWeather.temperatureMin)}° – ${Math.round(dayWeather.temperatureMax)}°` : day.weekday}
-                </span>
+                {user && (
+                  <span className={`text-[11px] ${activeDay === day.day ? 'text-[#c9d7d9]' : 'text-muted-light'}`}>
+                    {dayWeather ? `${Math.round(dayWeather.temperatureMin)}° – ${Math.round(dayWeather.temperatureMax)}°` : day.weekday}
+                  </span>
+                )}
               </button>
             )
           })}
@@ -349,10 +351,12 @@ function SchedulePage() {
 
             {/* Regular stops */}
             {currentDay.stops.map((stop, idx) => {
-              const spot = spots.find(s =>
-                stop.title.toLowerCase().includes(s.name.toLowerCase()) ||
-                s.name.toLowerCase().includes(stop.title.toLowerCase().split(' ')[0])
-              )
+              const spot = stop.slug
+                ? spots.find(s => s.slug === stop.slug)
+                : spots.find(s =>
+                    stop.title.toLowerCase().includes(s.name.toLowerCase()) ||
+                    s.name.toLowerCase().includes(stop.title.toLowerCase().split(' ')[0])
+                  )
               const isLastStop = idx === currentDay.stops.length - 1
               const hasTrailingContent = !!currentDay.accommodation ||
                 (isLastDay && currentDay.flight)

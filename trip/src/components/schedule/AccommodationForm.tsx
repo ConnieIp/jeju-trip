@@ -1,6 +1,6 @@
 interface AccommodationFormProps {
-  initial?: { name: string; slug: string; night: string; addressKo?: string; addressEn?: string; bookingUrl?: string }
-  onSubmit: (data: { name: string; slug: string; night: string; addressKo?: string; addressEn?: string; bookingUrl?: string }) => void
+  initial?: { name: string; slug: string; night: string; addressKo?: string; addressEn?: string; bookingUrl?: string; checkInTime?: string; checkOutTime?: string }
+  onSubmit: (data: { name: string; slug: string; night: string; addressKo?: string; addressEn?: string; bookingUrl?: string; checkInTime?: string; checkOutTime?: string }) => void
   onCancel: () => void
 }
 
@@ -11,6 +11,8 @@ function AccommodationForm({ initial, onSubmit, onCancel }: AccommodationFormPro
     const addressKo = (fd.get('addressKo') as string).trim()
     const addressEn = (fd.get('addressEn') as string).trim()
     const bookingUrl = (fd.get('bookingUrl') as string).trim()
+    const checkInTime = (fd.get('checkInTime') as string).trim()
+    const checkOutTime = (fd.get('checkOutTime') as string).trim()
     onSubmit({
       name: (fd.get('name') as string).trim(),
       slug: (fd.get('slug') as string).trim(),
@@ -18,6 +20,8 @@ function AccommodationForm({ initial, onSubmit, onCancel }: AccommodationFormPro
       addressKo: addressKo || undefined,
       addressEn: addressEn || undefined,
       bookingUrl: bookingUrl || undefined,
+      checkInTime: checkInTime || undefined,
+      checkOutTime: checkOutTime || undefined,
     })
   }
 
@@ -50,6 +54,16 @@ function AccommodationForm({ initial, onSubmit, onCancel }: AccommodationFormPro
       <div>
         <label className={labelClass}>Address (English)</label>
         <input name="addressEn" defaultValue={initial?.addressEn} className={inputClass} placeholder="30-7, Sinchonbuk 3-gil, Jeju-si" />
+      </div>
+
+      <div>
+        <label className={labelClass}>Check-in Time</label>
+        <input name="checkInTime" defaultValue={initial?.checkInTime} className={inputClass} placeholder="e.g. 15:00" />
+      </div>
+
+      <div>
+        <label className={labelClass}>Check-out Time</label>
+        <input name="checkOutTime" defaultValue={initial?.checkOutTime} className={inputClass} placeholder="e.g. 11:00" />
       </div>
 
       <div>

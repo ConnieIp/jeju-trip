@@ -28,7 +28,7 @@ const files = [
   'souvenirs.json',
 ]
 
-async function seed() {
+async function seedSpots() {
   const spots: Record<string, unknown>[] = []
 
   for (const file of files) {
@@ -56,7 +56,9 @@ async function seed() {
   }
 
   console.log('Spots done.')
+}
 
+async function seedSchedule() {
   const schedulePath = resolve(dataDir, 'schedule.json')
   const scheduleData = JSON.parse(readFileSync(schedulePath, 'utf-8'))
 
@@ -71,7 +73,21 @@ async function seed() {
     process.exit(1)
   }
 
+  console.log('Schedule done.')
+}
+
+const mode = process.argv[2] || 'all'
+
+async function main() {
+  if (mode === 'spots') {
+    await seedSpots()
+  } else if (mode === 'schedule') {
+    await seedSchedule()
+  } else {
+    await seedSpots()
+    await seedSchedule()
+  }
   console.log('All done.')
 }
 
-seed()
+main()

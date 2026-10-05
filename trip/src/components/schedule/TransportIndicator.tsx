@@ -97,7 +97,28 @@ function TransportIndicator({ stop, isLast, onEdit, onDelete }: TransportIndicat
   const [open, setOpen] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
   const mode = detectTransportMode(stop)
-  const duration = stop.description || ''
+  const timeRange = stop.endTime ? `${stop.time} – ${stop.endTime}` : stop.time
+  
+  // Calculate duration from time range
+  let duration = stop.description || ''
+  if (!duration && stop.endTime) {
+    const [startH, startM] = stop.time.split(':').map(Number)
+    const [endH, endM] = stop.endTime.split(':').map(Number)
+    const startMins = startH * 60 + startM
+    const endMins = endH * 60 + endM
+    const diffMins = endMins - startMins
+    if (diffMins > 0) {
+      const hours = Math.floor(diffMins / 60)
+      const mins = diffMins % 60
+      if (hours > 0 && mins > 0) {
+        duration = `${hours}hr ${mins}mins`
+      } else if (hours > 0) {
+        duration = `${hours}hr`
+      } else {
+        duration = `${mins}mins`
+      }
+    }
+  }
 
   useEffect(() => {
     if (!open) return
@@ -112,7 +133,7 @@ function TransportIndicator({ stop, isLast, onEdit, onDelete }: TransportIndicat
 
   return (
     <div className="group grid grid-cols-[74px_16px_1fr] gap-3 relative max-[640px]:grid-cols-[48px_12px_1fr] max-[640px]:gap-[7px]" style={{ marginBottom: isLast ? 0 : '18px' }}>
-      <div />
+      <div className="text-[11px] text-muted-light font-medium pt-1">{timeRange}</div>
       <div className="flex justify-center">
         <div className="w-[11px] h-[11px] rounded-full bg-white border-[3px] border-teal-bright flex-shrink-0 z-[1]" style={{ marginTop: '6px' }} />
       </div>

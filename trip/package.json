@@ -9,6 +9,8 @@
     "preview": "vite preview",
     "build:data": "tsx scripts/build-data.ts",
     "seed": "tsx scripts/seed-supabase.ts",
+    "seed:spots": "tsx scripts/seed-supabase.ts spots",
+    "seed:schedule": "tsx scripts/seed-supabase.ts schedule",
     "deploy": "npm run build && gh-pages -d dist"
   },
   "dependencies": {

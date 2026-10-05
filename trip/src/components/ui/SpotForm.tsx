@@ -172,7 +172,7 @@ function SpotForm({ initial, onSubmit, onCancel, submitLabel }: SpotFormProps) {
       <div>
         <label className={labelClass}>Backup for days</label>
         <div className="flex gap-4 flex-wrap">
-          {[1, 2, 3, 4, 5].map(day => (
+          {[1, 2, 3, 4, 5, 6].map(day => (
             <label key={day} className="flex items-center gap-1.5 text-[13px] text-ink cursor-pointer">
               <input
                 type="checkbox"
