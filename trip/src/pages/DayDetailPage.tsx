@@ -69,7 +69,9 @@ function DayDetailPage() {
   }
 
   const attraction = spot as Attraction
-  const address = spot.addressKo || spot.addressEn || spot.address || ''
+  const addressKo = spot.addressKo || spot.address || ''
+  const addressEn = spot.addressEn || ''
+  const address = addressKo || addressEn
 
   const scheduleInfo = schedule?.days.find(day =>
     day.stops.some(stop =>
@@ -122,13 +124,18 @@ function DayDetailPage() {
           <h1 className="text-[46px] font-extrabold tracking-[-1.5px] leading-[1.08] mt-2 mb-2 max-[640px]:text-[34px]">
             {spot.name}
           </h1>
-          {address && (
-            <div className="flex items-center gap-2 text-muted text-[12px]">
-              <svg className="w-[15px] h-[15px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                <circle cx="12" cy="10" r="3" />
-              </svg>
-              <span>{address}</span>
+          {(addressKo || addressEn) && (
+            <div className="flex flex-col gap-1 text-muted text-[12px]">
+              <div className="flex items-center gap-2">
+                <svg className="w-[15px] h-[15px] flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                <span>{addressKo || addressEn}</span>
+              </div>
+              {addressKo && addressEn && (
+                <span className="text-muted-light text-[11px] pl-[23px]">{addressEn}</span>
+              )}
             </div>
           )}
         </div>
