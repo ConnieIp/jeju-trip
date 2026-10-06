@@ -40,6 +40,46 @@ Full prototype details: `reference/prototype/README.md`
 - `reference/spot.txt` - Detailed information about spots, restaurants, and cafes
 - `docs/` - Structured markdown data for all trip content (attractions, restaurants, cafes, etc.)
 
+## Data Management
+
+**IMPORTANT: All trip data is stored in Supabase database, NOT seeded from files.**
+
+### Database-First Approach
+
+1. **DO NOT seed data** unless explicitly instructed by the user
+2. **Data already exists** in the Supabase database - query it directly from the DB
+3. **When updating data**, update the Supabase database directly
+4. **Before ANY data change** (insert, update, delete), you MUST:
+   - Backup the affected table data to `/db_backup/` folder first
+   - Use filename pattern: `{table_name}_{YYYY-MM-DD_HH-MM-SS}.json`
+   - Include all rows from the table being modified
+
+### Backup Procedure
+
+Before modifying any data in the database:
+
+```bash
+# Create backup directory if it doesn't exist
+mkdir -p /db_backup
+
+# Backup format: {table_name}_{timestamp}.json
+# Example: attractions_2026-10-05_14-30-00.json
+```
+
+**Backup must include:**
+- All rows from the table being modified
+- Timestamp of backup
+- Clear filename indicating which table and when
+
+### Why This Matters
+
+- Prevents accidental data loss
+- Allows rollback if changes cause issues
+- Maintains data integrity
+- User has explicitly requested this workflow
+
+**NEVER skip the backup step when making database changes.**
+
 ## Project Structure
 
 ```

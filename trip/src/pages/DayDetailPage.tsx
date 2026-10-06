@@ -42,6 +42,12 @@ function parseHoursData(hours: string[]) {
   return { tableRows, regularItems }
 }
 
+function normalizeHours(hours: string | string[] | undefined): string[] {
+  if (!hours) return []
+  if (Array.isArray(hours)) return hours
+  return hours.split('\n').map(s => s.trim()).filter(Boolean)
+}
+
 function parseTableRow(row: string): string[] {
   return row.split('|').slice(1, -1).map(cell => cell.trim())
 }
@@ -287,8 +293,13 @@ function DayDetailPage() {
               title="Hours & practical info"
             >
               <div className="p-5">
-                {Array.isArray(attraction.hours) && attraction.hours.length > 0 && (() => {
-                  const { tableRows, regularItems } = parseHoursData(attraction.hours)
+                {(() => {
+                  const hoursArray = normalizeHours(
+                    (spot as unknown as { hours?: string | string[] }).hours
+                  )
+                  if (hoursArray.length === 0) return null
+
+                  const { tableRows, regularItems } = parseHoursData(hoursArray)
 
                   return (
                     <>

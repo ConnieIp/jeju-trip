@@ -7,6 +7,7 @@ import SchedulePage from './pages/SchedulePage'
 import SpotsPage from './pages/SpotsPage'
 import DayDetailPage from './pages/DayDetailPage'
 import SpotFormPage from './pages/SpotFormPage'
+import NotesPage from './pages/NotesPage'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Routes>
               <Route path="/" element={<SchedulePage />} />
               <Route path="/spots" element={<SpotsPage />} />
+              <Route path="/notes" element={<NotesPage />} />
               <Route path="/day/:dayNumber" element={<DayDetailPage />} />
               <Route path="/spot/new" element={<SpotFormPage />} />
               <Route path="/spot/:slug" element={<DayDetailPage />} />

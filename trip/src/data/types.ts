@@ -48,12 +48,12 @@ export interface HikingInfo {
 
 export interface Restaurant extends BaseSpot {
   category: 'restaurant';
-  hours?: string;
+  hours?: string[];
 }
 
 export interface Cafe extends BaseSpot {
   category: 'cafe';
-  hours?: string;
+  hours?: string[];
   bestTime?: string;
 }
 

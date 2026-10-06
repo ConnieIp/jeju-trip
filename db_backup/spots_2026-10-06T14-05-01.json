@@ -1,0 +1,1697 @@
+[
+  {
+    "slug": "seongsan-ilchulbong",
+    "source": "builtin",
+    "deleted": false,
+    "data": {
+      "name": "城山日出峰 (Seongsan Ilchulbong / 성산일출봉)",
+      "slug": "seongsan-ilchulbong",
+      "type": "自然景點 / UNESCO 世界自然遺產",
+      "hours": [
+        "| 季節 | 開放時間 |",
+        "|------|----------|",
+        "| 3月–4月 / 9月–10月 | 05:00–19:00 |",
+        "| 5月–8月 | 04:30–20:00 |",
+        "| 11月–2月 | 06:00–18:00 |",
+        "最後售票時間：關閉前 1 小時",
+        "全年無休"
+      ],
+      "notes": [
+        "日出時分最為壯觀（需凌晨出發）",
+        "建議停留：1.5 小時"
+      ],
+      "phone": "+82-64-783-0959 / +82-64-710-7923",
+      "nameKo": "Seongsan Ilchulbong / 성산일출봉",
+      "nameZh": "城山日出峰",
+      "photos": [
+        "attraction/seongsan-ilchulbong-1.jpg",
+        "attraction/seongsan-ilchulbong-2.jpg",
+        "attraction/seongsan-ilchulbong-3.jpg"
+      ],
+      "region": "east",
+      "website": "https://visitjeju.net/en/detail/view?contentsid=CONT_000000000500349",
+      "category": "attraction",
+      "features": [
+        "天然紀念物第 420 號",
+        "約 10 萬年前海底火山爆發形成的凝灰岩火山錐，海拔 180 公尺",
+        "登頂可俯瞰牛島與海岸線美景",
+        "山頂火山口形成寬廣盆地",
+        "瀛州十景之首，濟州島最具代表性景點"
+      ],
+      "isUNESCO": true,
+      "addressEn": "284-12 Ilchul-ro, Seongsan-eup, Seogwipo-si, Jeju-do",
+      "addressKo": "제주특별자치도 서귀포시 성산읍 일출로 284-12",
+      "admission": "成人：₩5,000\n青少年 / 兒童（未滿 13 歲）：免費\n付費路線（登頂火山口）：₩10,000",
+      "websiteLabel": "Visit Jeju",
+      "recommendedTime": "13:30 - 15:00"
+    },
+    "created_by": null,
+    "updated_at": "2026-10-03T05:58:08.177147+00:00"
+  },
+  {
+    "slug": "comma",
+    "source": "builtin",
+    "deleted": false,
+    "data": {
+      "name": "카페 쉼표 Cafe Comma",
+      "slug": "comma",
+      "notes": [
+        "建議停留：1-1.5小時",
+        "3樓拍照效果最佳",
+        "可結合挾才海水浴場行程安排"
+      ],
+      "phone": "010-9657-2204",
+      "photos": [
+        "cafe/b8805a57-3dd4-43fa-82bb-2a53ab3b49ef.jpg",
+        "cafe/55d48841-4b30-477c-968f-469e73a0180f.jpg",
+        "cafe/bbb3ba00-666e-4f2a-a26b-4fef84e58efc.jpg"
+      ],
+      "region": "west",
+      "category": "cafe",
+      "features": [
+        "挾才海水浴場旁的海景咖啡廳",
+        "可眺望飛揚島的絕美海景",
+        "1-3樓皆為咖啡空間",
+        "3樓及戶外設有吊床、鞦韆等網美打卡點",
+        "巴厘島風格的放鬆氛圍"
+      ],
+      "addressEn": "359 Hallim-ro, Hallim-eup, Jeju-si, Jeju-do",
+      "addressKo": "제주특별자치도 제주시 한림읍 한림로 359"
+    },
+    "created_by": "a4d7f64d-24ba-44ab-8e6e-74128f71529b",
+    "updated_at": "2026-10-05T15:06:41.253+00:00"
+  },
+  {
+    "slug": "osulloc-tea-museum",
+    "source": "builtin",
+    "deleted": false,
+    "data": {
+      "name": "Osulloc 茶博物館 (Osulloc Tea Museum / 오설록 티뮤지엄)",
+      "slug": "osulloc-tea-museum",
+      "type": "博物館 / 茶文化",
+      "hours": [
+        "| 季節 | 開放時間 |",
+        "|------|----------|",
+        "| 夏季 | 09:00–19:00 |",
+        "| 冬季 | 09:00–18:00 |",
+        "全年無休（惡劣天氣可能調整）"
+      ],
+      "notes": [
+        "建議停留：1–1.5 小時",
+        "必嚐綠茶冰淇淋與茶甜點",
+        "可結合 Innisfree Jeju House 一起參觀",
+        "參考連結：https://couplehuang.com/osulloc-x-innisfree-jeju-house/"
+      ],
+      "nameKo": "Osulloc Tea Museum / 오설록 티뮤지엄",
+      "nameZh": "Osulloc 茶博物館",
+      "photos": [
+        "attraction/osulloc-tea-museum-1.jpg",
+        "attraction/osulloc-tea-museum-2.jpg",
+        "attraction/osulloc-tea-museum-3.jpg"
+      ],
+      "region": "north",
+      "website": "https://www.osulloc.com/kr/ko/store-introduction/jeju-map",
+      "category": "attraction",
+      "features": [
+        "環繞綠茶園的博物館",
+        "介紹韓國茶的歷史與文化",
+        "設有茶博物館商店、烘焙工坊（Roastery）、茶咖啡廳（Teacafe）",
+        "著名綠茶冰淇淋與茶甜點",
+        "緊鄰 Innisfree Jeju House（悅詩風吟濟州之家）"
+      ],
+      "addressEn": "15 Sinhwayeoksa-ro, Seogwipo-si, Jeju-do",
+      "addressKo": "제주특별자치도 서귀포시 신화역사로 15",
+      "admission": "免費入場",
+      "websiteLabel": "Osulloc 官網"
+    },
+    "created_by": null,
+    "updated_at": "2026-10-03T05:58:08.177147+00:00"
+  },
+  {
+    "slug": "hallim-cactus-village",
+    "source": "builtin",
+    "deleted": false,
+    "data": {
+      "name": "翰林邑仙人掌村 (Wolryeong-ri Cactus Village / 월령리선인장군락지)",
+      "slug": "hallim-cactus-village",
+      "hours": [
+        "全年無休（戶外村落，無固定開放時間）",
+        "建議白天前往"
+      ],
+      "notes": [
+        "建議停留：30–60 分鐘",
+        "可結合挾才海水浴場安排同一天",
+        "沿村莊步道散步即可，不需門票"
+      ],
+      "nameKo": "Wolryeong-ri Cactus Village / 월령리선인장군락지",
+      "nameZh": "翰林邑仙人掌村",
+      "photos": [
+        "attraction/879bc8e5-0fcf-4963-a3af-ab9ad5503ed2.jpg",
+        "attraction/c970e226-3a46-48df-971a-51adce157751.jpg",
+        "attraction/hallyeop-cactus-2.jpg"
+      ],
+      "region": "north",
+      "website": "https://m.visitjeju.net/zh/detail/view?contentsid=CONT_000000000500494",
+      "category": "attraction",
+      "features": [
+        "天然紀念物第 429 號",
+        "韓國唯一的野生仙人掌群落",
+        "位於翰林邑月嶺里海邊的村莊",
+        "多種仙人掌沿著海邊石牆自然生長",
+        "濟州偶來步道第 14 路線沿線",
+        "韓綜《姜食堂》拍攝地",
+        "西海岸仙人掌原生群落步道"
+      ],
+      "addressEn": "359-3 Wolryeong-ri, Hallim-eup, Jeju-si, Jeju-do",
+      "addressKo": "제주특별자치도 제주시 한림읍 월령리 359-3",
+      "admission": "免費",
+      "websiteLabel": "Visit Jeju",
+      "recommendedTime": "14:30 - 15:30"
+    },
+    "created_by": "a4d7f64d-24ba-44ab-8e6e-74128f71529b",
+    "updated_at": "2026-10-06T13:28:01.08+00:00"
+  },
+  {
+    "slug": "perfume-museum",
+    "source": "builtin",
+    "deleted": false,
+    "data": {
+      "name": "香水博物館 Musee de Parfum (무제드파팡)",
+      "slug": "perfume-museum",
+      "hours": [
+        "| 日 | 開放時間 |",
+        "|----|----------|",
+        "| 週一 / 週三 / 週五 | 12:00–17:00 |",
+        "| 週二 | 公休 |",
+        "| 最後入場 | 16:00 |",
+        "**香水製作體驗課程時間：** 14:00 / 15:30（每堂 45 分鐘）"
+      ],
+      "notes": [
+        "建議停留：1.5–2 小時（含課程）",
+        "建議事先預約香水製作課程",
+        "位於城山區域，可結合城山日出峰安排",
+        "建議使用計程車或自駕前往",
+        "參考連結：https://www.seoultravelpass.com/zh-TW/products/1565-濟州-香水博物館-muzede-papang-展覽-製作香水一日課程"
+      ],
+      "nameKo": "무제드파팡",
+      "nameZh": "香水博物館 Musee de Parfum",
+      "photos": [
+        "attraction/0cb53566-b3df-412e-925e-09bd0fd6d392.jpg",
+        "attraction/28c7c554-5055-4d7e-8cfc-3a90bd098ad3.jpg"
+      ],
+      "region": "west",
+      "website": "https://www.klook.com/activity/144279-jeju-perfume-museum-one-day-class/",
+      "category": "attraction",
+      "features": [
+        "展示超過 2,000 款全球香水",
+        "親手製作個人專屬香水體驗課程（45 分鐘）",
+        "位於城山邑柑橘園旁",
+        "以成為「韓國的格拉斯（Grasse）」為願景",
+        "香水展覽",
+        "香水製作一日課程"
+      ],
+      "addressEn": "239 Samdal-ro, Seongsan-eup, Seogwipo-si, Jeju-do",
+      "addressKo": "제주특별자치도 서귀포시 성산읍 삼달로 239",
+      "admission": "參觀 + 香水製作體驗：費用依方案而異建議事先於 Klook / KKDay 預約",
+      "websiteLabel": "Klook"
+    },
+    "created_by": "a4d7f64d-24ba-44ab-8e6e-74128f71529b",
+    "updated_at": "2026-10-06T13:31:55.81+00:00"
+  },
+  {
+    "slug": "hyeopjae-beach",
+    "source": "builtin",
+    "deleted": false,
+    "data": {
+      "name": "挾才海水浴場 (Hyeopjae Beach / 협재해수욕장)",
+      "slug": "hyeopjae-beach",
+      "type": "海灘",
+      "hours": [
+        "24 小時開放",
+        "全年無休"
+      ],
+      "notes": [
+        "夏季適合戲水，秋冬適合散步賞景",
+        "可結合翰林仙人掌村安排同一天",
+        "建議停留：1–2 小時"
+      ],
+      "nameKo": "Hyeopjae Beach / 협재해수욕장",
+      "nameZh": "挾才海水浴場",
+      "photos": [
+        "attraction/hyeopjae-beach-1.jpg",
+        "attraction/hyeopjae-beach-2.jpg",
+        "attraction/hyeopjae-beach-3.jpg"
+      ],
+      "region": "north",
+      "website": "https://big5chinese.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=90937",
+      "category": "attraction",
+      "features": [
+        "貝殼砂沙灘，長約 200 公尺、寬 60 公尺",
+        "翠綠色海水、飛揚島（비양도）景",
+        "蔚藍海洋與茂盛松樹林",
+        "海岸線全長 9 公里",
+        "位於濟州市西邊 32 公里處"
+      ],
+      "addressEn": "329-10 Hyeopjae-ro, Hallim-eup, Jeju-si, Jeju-do",
+      "addressKo": "제주특별자치도 제주시 한림읍 협재로 329-10",
+      "admission": "免費",
+      "websiteLabel": "Visit Korea"
+    },
+    "created_by": null,
+    "updated_at": "2026-10-03T05:58:08.177147+00:00"
+  },
+  {
+    "slug": "camellia-forest",
+    "source": "builtin",
+    "deleted": false,
+    "data": {
+      "name": "山茶花森林 (Dongbaek Forest / 동백포레스트)",
+      "slug": "camellia-forest",
+      "type": "景點 / 體驗",
+      "hours": [
+        "09:00–18:00",
+        "最後入場時間：17:00"
+      ],
+      "notes": [
+        "建議停留：1–1.5 小時",
+        "傍晚前前往光線最美",
+        "門票含一杯飲品，可於園區咖啡廳休憩",
+        "注意：山茶花森林（동백포레스트）與山茶花之丘（카멜리아힐）是不同的景點"
+      ],
+      "nameKo": "Dongbaek Forest / 동백포레스트",
+      "nameZh": "山茶花森林",
+      "photos": [
+        "attraction/dongbaek-forest-1.jpg",
+        "attraction/dongbaek-forest-2.jpg",
+        "attraction/dongbaek-forest-3.jpg"
+      ],
+      "region": "central",
+      "website": "https://www.visitjeju.net/u/6tF",
+      "category": "attraction",
+      "features": [
+        "亞洲最大的山茶花植物園",
+        "超過 6,000 株山茶花樹，涵蓋 500 多個品種",
+        "美麗的庭院造景與花園步道",
+        "人文氛圍",
+        "溫室與荷塘倒影",
+        "結合花海的質感咖啡廳",
+        "冬季山茶花盛開（12月–2月），四季都有不同花卉"
+      ],
+      "addressEn": "53-38 Saenggiak-ro, Namwon-eup, Seogwipo-si, Jeju-do",
+      "addressKo": "제주특별자치도 서귀포시 남원읍 생기악로 53-38",
+      "admission": "約 ₩14,000（含咖啡飲品一杯）",
+      "websiteLabel": "Visit Jeju",
+      "recommendedTime": "16:00 - 17:15（傍晚前）"
+    },
+    "created_by": null,
+    "updated_at": "2026-10-03T05:58:08.177147+00:00"
+  },
+  {
+    "slug": "seongeup",
+    "source": "builtin",
+    "deleted": false,
+    "data": {
+      "name": "涉地可支 (Seopjikoji / 섭지코지)",
+      "slug": "seongeup",
+      "type": "自然景點",
+      "hours": [
+        "24 小時開放",
+        "全年無休"
+      ],
+      "notes": [
+        "距城山日出峰車程約 15 分鐘，適合排同一天",
+        "傍晚時分光線最佳",
+        "建議停留：45 分鐘–1 小時"
+      ],
+      "nameKo": "Seopjikoji / 섭지코지",
+      "nameZh": "涉地可支",
+      "photos": [
+        "attraction/seopjikoji-1.jpg",
+        "attraction/seopjikoji-2.jpg",
+        "attraction/seopjikoji-3.jpg"
+      ],
+      "region": "east",
+      "website": "https://english.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=110723",
+      "category": "attraction",
+      "features": [
+        "「涉地」為古地名，「可支」是濟州方言，意指向外突出的地形",
+        "約 20 萬年前火山噴發形成的玄武岩海岸",
+        "黑色火山岩石和紅色火山土",
+        "海岸步道與白色燈塔",
+        "懸崖草地無樹，視野開闊",
+        "可遠眺城山日出峰全貌"
+      ],
+      "addressEn": "107 Seopjikoji-ro, Seongsan-eup, Seogwipo-si, Jeju-do",
+      "addressKo": "제주특별자치도 서귀포시 성산읍 섭지코지로 107",
+      "admission": "免費",
+      "websiteLabel": "Visit Korea",
+      "recommendedTime": "15:30 - 16:30"
+    },
+    "created_by": null,
+    "updated_at": "2026-10-03T05:58:08.177147+00:00"
+  },
+  {
+    "slug": "udo",
+    "source": "builtin",
+    "deleted": false,
+    "data": {
+      "name": "牛島 (Udo / 우도)",
+      "slug": "udo",
+      "type": "跳島景點",
+      "hours": [
+        "島嶼本身：24 小時開放",
+        "渡輪（城山浦港 → 牛島）：",
+        "首班船：07:30",
+        "末班船：18:30",
+        "班次：每 30 分鐘一班",
+        "船程：約 15 分鐘"
+      ],
+      "phone": "+82-64-782-9810（牛島面事務所）",
+      "nameKo": "Udo / 우도",
+      "nameZh": "牛島",
+      "photos": [
+        "attraction/udo-1.jpg",
+        "attraction/udo-2.jpg",
+        "attraction/udo-3.jpg"
+      ],
+      "region": "east",
+      "website": "https://www.visitjeju.net/en/detail/view?contentsid=CONT_000000000500477",
+      "category": "attraction",
+      "features": [
+        "濟州島最大的離島，形狀如一頭臥牛",
+        "西濱白沙海灘（白色貝殼沙）",
+        "花生冰淇淋、漢拿峰冰淇淋",
+        "海鮮拉麵或漢堡",
+        "燈塔、多處海灘景點"
+      ],
+      "addressEn": "Udo-myeon, Jeju-si, Jeju-do",
+      "addressKo": "제주특별자치도 제주시 우도면 우도로",
+      "admission": "島嶼：免費\n渡輪往返：成人 ₩11,000 / 兒童 ₩13,000\n車輛渡輪：₩21,600",
+      "websiteLabel": "Visit Jeju"
+    },
+    "created_by": null,
+    "updated_at": "2026-10-03T05:58:08.177147+00:00"
+  },
+  {
+    "slug": "tongkeun-jang-eo",
+    "source": "builtin",
+    "deleted": false,
+    "data": {
+      "name": "통큰장어",
+      "slug": "tongkeun-jang-eo",
+      "type": "Restaurant - 鰻魚",
+      "links": [
+        {
+          "url": "https://www.instagram.com/jeju_tongkeun/",
+          "label": "Instagram"
+        },
+        {
+          "url": "https://autoreserve.com/en/restaurants/nENdcXQxxL6VL5yT1to9",
+          "label": "預訂"
+        }
+      ],
+      "photos": [],
+      "region": "north",
+      "category": "restaurant",
+      "features": [],
+      "addressEn": "50 Cheonggyul-ro 3-gil, Jeju-si, Jeju-do",
+      "addressKo": "제주특별자치도 제주시 청귤로3길 50"
+    },
+    "created_by": null,
+    "updated_at": "2026-10-03T05:58:08.177147+00:00"
+  },
+  {
+    "slug": "dun-she-dun",
+    "source": "builtin",
+    "deleted": false,
+    "data": {
+      "name": "豚舍豚 本店",
+      "slug": "dun-she-dun",
+      "type": "Restaurant",
+      "photos": [],
+      "region": "north",
+      "category": "restaurant",
+      "features": [],
+      "addressEn": "19 Upyeong-ro, Nohyeong-dong, Jeju-si, Jeju-do, 1F",
+      "addressKo": "제주특별자치도 제주시 우평로 19, 1층"
+    },
+    "created_by": null,
+    "updated_at": "2026-10-03T05:58:08.177147+00:00"
+  },
+  {
+    "slug": "nogorok",
+    "source": "builtin",
+    "deleted": false,
+    "data": {
+      "name": "노고록 Nogorok",
+      "slug": "nogorok",
+      "type": "Restaurant",
+      "photos": [],
+      "region": "west",
+      "category": "restaurant",
+      "features": [],
+      "addressEn": "7 Cheonjeyeon-ro 207beon-gil, Jungmun-dong, Seogwipo-si, Jeju-do",
+      "addressKo": "제주특별자치도 서귀포시 천제연로207번길 7"
+    },
+    "created_by": null,
+    "updated_at": "2026-10-03T05:58:08.177147+00:00"
+  },
+  {
+    "slug": "album-oedo",
+    "source": "builtin",
+    "deleted": false,
+    "data": {
+      "name": "Album Oedo (알범외도)",
+      "slug": "album-oedo",
+      "type": "Cafe",
+      "links": [
+        {
+          "url": "https://www.instagram.com/album.oedo/",
+          "label": "Instagram"
+        },
+        {
+          "url": "https://autoreserve.com/zh-hk/restaurants/cts4CiBQkogwR7sZ23Vm",
+          "label": "預訂"
+        }
+      ],
+      "nameKo": "알범외도",
+      "nameZh": "Album Oedo",
+      "photos": [
+        "cafe/album-oedo-1.jpg",
+        "cafe/album-oedo-2.jpg",
+        "cafe/album-oedo-3.jpg"
+      ],
+      "region": "north",
+      "bestTime": "10:00 - 11:30",
+      "category": "cafe",
+      "features": [
+        "位於外道海邊的質感文青咖啡空間",
+        "享受靜謐海岸晨光"
+      ],
+      "addressEn": "9 Woldae 1-gil, Aewol-eup, Jeju-si, Jeju-do, 3F",
+      "addressKo": "제주특별자치도 제주시 애월읍 월대1길 9, 3층"
+    },
+    "created_by": null,
+    "updated_at": "2026-10-03T05:58:08.177147+00:00"
+  },
+  {
+    "slug": "ige-bapdoduk",
+    "source": "builtin",
+    "deleted": false,
+    "data": {
+      "name": "이게밥도둑 Ige Bapdoduk",
+      "slug": "ige-bapdoduk",
+      "hours": [
+        "| 星期 | 開放時間 |",
+        "|----|----------|",
+        "| 星期二 / 星期三 / 星期四 / 星期五 / 星期六 / 星期日 | 11:00–22:00 |",
+        "| 星期一 | 公休 |",
+        "**備註：** 星期五為韓文日，營業時間可能有變"
+      ],
+      "notes": [],
+      "photos": [
+        "restaurant/ae3e9087-8644-4cf5-a5d4-eab7cd3fdec0.jpg",
+        "restaurant/411f4557-98af-43c8-87a2-3c47fdcbbb66.jpg"
+      ],
+      "region": "north",
+      "category": "restaurant",
+      "features": [
+        "醬蟹、醬蝦",
+        "濟州黑豬肉（如松阪肉部位）"
+      ],
+      "addressEn": "23 Sammu-ro 7-gil, Jeju-si, Jeju-do",
+      "addressKo": "제주특별자치도 제주시 삼무로7길 23"
+    },
+    "created_by": "a4d7f64d-24ba-44ab-8e6e-74128f71529b",
+    "updated_at": "2026-10-06T13:33:43.315+00:00"
+  },
+  {
+    "slug": "sangumbul",
+    "source": "builtin",
+    "deleted": false,
+    "data": {
+      "name": "山君不離 (Sangumburi / 산굼부리)",
+      "slug": "sangumbul",
+      "type": "自然景點 / 天然紀念物",
+      "hours": [
+        "| 季節 | 開放時間 |",
+        "|------|----------|",
+        "| 夏季 | 09:00–18:40 |",
+        "| 冬季 | 09:00–17:40 |"
+      ],
+      "notes": [
+        "建議停留：1–1.5 小時"
+      ],
+      "phone": "+82-64-783-9900",
+      "nameKo": "Sangumburi / 산굼부리",
+      "nameZh": "山君不離",
+      "photos": [
+        "attraction/sangumburi-1.jpg",
+        "attraction/sangumburi-2.jpg",
+        "attraction/sangumburi-3.jpg"
+      ],
+      "region": "east",
+      "website": "http://www.sangumburi.net",
+      "category": "attraction",
+      "features": [
+        "天然紀念物第 263 號，火山口地形",
+        "周長約 2 公里，底部平坦如盆地",
+        "十月底是銀白色紫芒花盛開期（10月–1月最佳）",
+        "上午光線極佳，適合攝影",
+        "步行環繞約 40 分鐘–1 小時",
+        "韓國電影《戀風戀歌》（張東健、高素英）外景地"
+      ],
+      "addressEn": "768 Bijarim-ro, Jocheon-eup, Jeju-si, Jeju-do",
+      "addressKo": "제주특별자치도 제주시 조천읍 비자림로 768",
+      "admission": "成人：₩6,000\n學生 / 老人：₩3,000",
+      "websiteLabel": "山君不離官網",
+      "recommendedTime": "10:00 - 11:30"
+    },
+    "created_by": null,
+    "updated_at": "2026-10-03T05:58:08.177147+00:00"
+  },
+  {
+    "slug": "dongmun-market",
+    "source": "builtin",
+    "deleted": false,
+    "data": {
+      "name": "東門傳統市場 (Dongmun Market / 동문재래시장)",
+      "slug": "dongmun-market",
+      "type": "傳統市場 / 夜市",
+      "hours": [
+        "| 區域 | 時間 |",
+        "|------|------|",
+        "| 白天市場 | 每日 08:00–21:00 |",
+        "| 東門夜市（8號）5月–10月 | 19:00–24:00 |",
+        "| 東門夜市（8號）11月–4月 | 18:00–23:00 |"
+      ],
+      "phone": "+82-64-752-3001",
+      "nameKo": "Dongmun Market / 동문재래시장",
+      "nameZh": "東門傳統市場",
+      "photos": [
+        "attraction/dongmun-market-1.jpg",
+        "attraction/dongmun-market-2.jpg",
+        "attraction/dongmun-market-3.jpg"
+      ],
+      "region": "north",
+      "website": "https://www.visitjeju.net/zh/detail/view?contentsid=CONT_000000000500745",
+      "category": "attraction",
+      "features": [
+        "濟州規模最大的傳統市場，60 年以上歷史",
+        "夜市熱鬧，可品嚐各式小吃與平價海鮮",
+        "黑豬肉串、柑橘點心、新鮮刺身",
+        "漢拿峰軟冰淇淋、橘子麻糬、오메기떡",
+        "現榨橘子汁、平價海鮮",
+        "附近有付費停車場",
+        "蓮洞商圈步行可達"
+      ],
+      "addressEn": "20, Gwandeokro 14-gil, Jeju-si, Jeju-do",
+      "addressKo": "제주특별자치도 제주시 관덕로 14길 20",
+      "admission": "免費入場",
+      "websiteLabel": "Visit Jeju"
+    },
+    "created_by": null,
+    "updated_at": "2026-10-03T05:58:08.177147+00:00"
+  },
+  {
+    "slug": "giho-hoejip",
+    "source": "builtin",
+    "deleted": false,
+    "data": {
+      "name": "기회횟집",
+      "slug": "giho-hoejip",
+      "type": "Restaurant - 生魚片",
+      "photos": [],
+      "region": "north",
+      "category": "restaurant",
+      "features": [],
+      "addressEn": "23 Jungang-ro, Geonip-dong, Jeju-si, Jeju-do, 1F",
+      "addressKo": "제주특별자치도 제주시 중앙로 23, 1층"
+    },
+    "created_by": null,
+    "updated_at": "2026-10-03T05:58:08.177147+00:00"
+  },
+  {
+    "slug": "assisi",
+    "source": "builtin",
+    "deleted": false,
+    "data": {
+      "name": "애월아시시 Aewol Assisi",
+      "slug": "assisi",
+      "type": "Cafe",
+      "phone": "010-4451-3400",
+      "photos": [
+        "cafe/assisi-1.jpg",
+        "cafe/assisi-2.jpg",
+        "cafe/assisi-3.jpg"
+      ],
+      "region": "north",
+      "category": "cafe",
+      "features": [
+        "涯月海岸道路旁的海景咖啡廳",
+        "以提拉米蘇聞名，多種口味可選",
+        "黑色系質感裝潢",
+        "距海邊僅3秒路程的絕佳海景"
+      ],
+      "addressEn": "474 Aewolhaean-ro, Aewol-eup, Jeju-si, Jeju-do, B1F",
+      "addressKo": "제주특별자치도 제주시 애월읍 애월해안로 474, 지하1층"
+    },
+    "created_by": null,
+    "updated_at": "2026-10-03T05:58:08.177147+00:00"
+  },
+  {
+    "slug": "flowave",
+    "source": "builtin",
+    "deleted": false,
+    "data": {
+      "name": "플로웨이브 Flowave",
+      "slug": "flowave",
+      "type": "Cafe / Restaurant",
+      "notes": [
+        "建議停留：1.5-2小時",
+        "落華秀約19:00開始，視天氣狀況可能取消",
+        "可結合翰林海水浴場、金石公園行程安排"
+      ],
+      "phone": "0507-1305-9367",
+      "photos": [
+        "cafe/flowave-1.jpg",
+        "cafe/flowave-2.jpg",
+        "cafe/flowave-3.jpg"
+      ],
+      "region": "west",
+      "category": "cafe",
+      "features": [
+        "翰林地區熱門打卡咖啡廳",
+        "每日晚上19:00舉行落華秀（낙화쇼），無需預約即可欣賞",
+        "10月有 Lava Flower & Busking 表演（19:00-19:30）",
+        "《換乘戀愛》節目取景咖啡廳",
+        "1人1菜單政策（落華活動期間）"
+      ],
+      "addressEn": "63-12 Jangwon-ro, Hallim-eup, Jeju-si, Jeju-do",
+      "addressKo": "제주특별자치도 제주시 한림읍 장원로 63-12"
+    },
+    "created_by": null,
+    "updated_at": "2026-10-03T05:58:08.177147+00:00"
+  },
+  {
+    "slug": "haejigae",
+    "source": "builtin",
+    "deleted": false,
+    "data": {
+      "name": "Haejigae (해지개)",
+      "slug": "haejigae",
+      "type": "Cafe",
+      "links": [
+        {
+          "url": "//maps.app.goo.gl/Z4y6sbD8pvUvKnUn7",
+          "label": "https"
+        }
+      ],
+      "nameKo": "해지개",
+      "nameZh": "Haejigae",
+      "photos": [
+        "cafe/haejigae-1.jpg",
+        "cafe/haejigae-2.jpg",
+        "cafe/haejigae-3.jpg"
+      ],
+      "region": "north",
+      "bestTime": "16:30 - 18:00",
+      "category": "cafe",
+      "features": [
+        "韓屋海景咖啡廳",
+        "欣賞著名的「涯月日落」",
+        "十月底日落時間約 17:30"
+      ],
+      "addressEn": "52 Aewolbukseo-gil, Aewol-eup, Jeju-si, Jeju-do",
+      "addressKo": "제주특별자치도 제주시 애월읍 애월북서길 52"
+    },
+    "created_by": null,
+    "updated_at": "2026-10-03T05:58:08.177147+00:00"
+  },
+  {
+    "slug": "jeju-art-museum",
+    "source": "builtin",
+    "deleted": false,
+    "data": {
+      "name": "濟州道立美術館 (Jeju Museum of Art / 제주도립미술관)",
+      "slug": "jeju-art-museum",
+      "type": "美術館",
+      "hours": [
+        "| 季節 | 開放時間 |",
+        "|------|----------|",
+        "| 一般 | 09:00–18:00 |",
+        "| 7月–8月 | 09:00–20:00 |",
+        "**週一休館**"
+      ],
+      "notes": [
+        "建議停留：1–1.5 小時",
+        "週一休館，請注意安排",
+        "參考連結：https://big5chinese.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=78294"
+      ],
+      "phone": "+82-64-710-4300",
+      "nameKo": "Jeju Museum of Art / 제주도립미술관",
+      "nameZh": "濟州道立美術館",
+      "photos": [
+        "attraction/jeju-art-museum-1.jpg",
+        "attraction/jeju-art-museum-2.jpg",
+        "attraction/jeju-art-museum-3.jpg"
+      ],
+      "region": "north",
+      "website": "https://www.jeju.go.kr/jmoa/index.htm",
+      "category": "attraction",
+      "features": [
+        "濟州島主要的公立美術館",
+        "位於漢拿山腳下",
+        "展示濟州藝術遺產與當代藝術展覽",
+        "定期舉辦繪畫、雕塑、裝置藝術等主題展覽"
+      ],
+      "addressEn": "2894-78, 1100-ro, Jeju-si, Jeju-do",
+      "addressKo": "제주특별자치도 제주시 1100로 2894-78",
+      "admission": "依展覽而異",
+      "websiteLabel": "濟州道立美術館官網"
+    },
+    "created_by": null,
+    "updated_at": "2026-10-03T05:58:08.177147+00:00"
+  },
+  {
+    "slug": "gyulkkot-darak",
+    "source": "builtin",
+    "deleted": false,
+    "data": {
+      "name": "橘花閣樓 귤꽃다락",
+      "slug": "gyulkkot-darak",
+      "type": "Cafe",
+      "photos": [
+        "cafe/gyulkkot-darak-1.jpg",
+        "cafe/gyulkkot-darak-2.jpg",
+        "cafe/gyulkkot-darak-3.jpg"
+      ],
+      "region": "west",
+      "category": "cafe",
+      "features": [],
+      "addressEn": "34 Ieodo-ro 1027beon-gil, Seoho-dong, Seogwipo-si, Jeju-do",
+      "addressKo": "제주특별자치도 서귀포시 이어도로1027번길 34"
+    },
+    "created_by": null,
+    "updated_at": "2026-10-03T05:58:08.177147+00:00"
+  },
+  {
+    "slug": "audrant-bakery",
+    "source": "builtin",
+    "deleted": false,
+    "data": {
+      "name": "Audrant Bakery (오드랑베이커리)",
+      "slug": "audrant-bakery",
+      "type": "Bakery",
+      "links": [
+        {
+          "url": "//www.instagram.com/popular/odeurang-bakery/",
+          "label": "https"
+        }
+      ],
+      "nameKo": "오드랑베이커리",
+      "nameZh": "Audrant Bakery",
+      "photos": [
+        "bakery/audrant-bakery-1.jpg",
+        "bakery/audrant-bakery-2.jpg",
+        "bakery/audrant-bakery-3.jpg"
+      ],
+      "region": "east",
+      "category": "bakery",
+      "features": [
+        "距離漢德浩海水浴場僅3分鐘步行距離",
+        "推薦：大蒜麵包"
+      ],
+      "addressEn": "552-3 Johamhaean-ro, Jocheon-eup, Jeju-si, Jeju-do",
+      "addressKo": "제주특별자치도 제주시 조천읍 조함해안로 552-3"
+    },
+    "created_by": null,
+    "updated_at": "2026-10-03T05:58:08.177147+00:00"
+  },
+  {
+    "slug": "coo-jeju",
+    "source": "builtin",
+    "deleted": false,
+    "data": {
+      "name": "쿠우 COO COO Jeju",
+      "slug": "coo-jeju",
+      "type": "Bakery / Dessert",
+      "notes": [
+        "建議停留：15-30分鐘",
+        "熱門商品可能售罄，建議盡早前往",
+        "可結合龍頭岩景點行程安排",
+        "支援快遞配送（需關注官方公告）"
+      ],
+      "photos": [
+        "bakery/coo-jeju-1.jpg",
+        "bakery/coo-jeju-2.jpg",
+        "bakery/coo-jeju-3.jpg"
+      ],
+      "region": "north",
+      "category": "bakery",
+      "features": [
+        "濟州熱門甜點名店",
+        "以杜拜巧克力脆餅（두쫀쿠）聞名",
+        "杜拜奶油年糕（두바이버터떡）人氣商品",
+        "可提前預約大量訂購，適合伴手禮"
+      ],
+      "addressEn": "14 Yongduam-gil, Jeju-si, Jeju-do, 1F",
+      "addressKo": "제주특별자치도 제주시 용두암길 14, 1층"
+    },
+    "created_by": null,
+    "updated_at": "2026-10-03T17:11:16.125659+00:00"
+  },
+  {
+    "slug": "my-jeju-gift",
+    "source": "builtin",
+    "deleted": false,
+    "data": {
+      "name": "마이제주기프트 My Jeju Gift",
+      "slug": "my-jeju-gift",
+      "type": "Souvenir / 購物",
+      "notes": [
+        "距離濟州機場極近，適合行程最後一站採購",
+        "限定商品可能售罄，建議盡早前往",
+        "營業時間後如需購物可提前電話聯繫",
+        "參考連結：https://maps.app.goo.gl/tmYn3U3o4WkFo42q9"
+      ],
+      "phone": "064-744-1005",
+      "photos": [
+        "souvenir/my-jeju-gift-1.jpg",
+        "souvenir/my-jeju-gift-2.jpg",
+        "souvenir/my-jeju-gift-3.jpg"
+      ],
+      "region": "north",
+      "category": "souvenir",
+      "features": [
+        "濟州機場附近的紀念品專賣店",
+        "濟州限定米飛（Miffy）商品獨家販售",
+        "濟州感性文創小物與伴手禮"
+      ],
+      "addressEn": "35 Sammu-ro, Jeju-si, Jeju-do, 1F",
+      "addressKo": "제주특별자치도 제주시 삼무로 35, 1층"
+    },
+    "created_by": null,
+    "updated_at": "2026-10-03T05:58:08.177147+00:00"
+  },
+  {
+    "slug": "arte-museum",
+    "source": "builtin",
+    "deleted": false,
+    "data": {
+      "name": "ARTE MUSEUM (아르떼뮤지엄 제주)",
+      "slug": "arte-museum",
+      "type": "沉浸式藝術展覽館",
+      "hours": [
+        "每日 10:00–20:00",
+        "最後入場時間：19:00",
+        "全年無休"
+      ],
+      "notes": [
+        "建議停留：1.5–2 小時",
+        "建議預留充足時間慢慢體驗每個展廳"
+      ],
+      "phone": "+82-64-900-1920",
+      "nameKo": "아르떼뮤지엄 제주",
+      "nameZh": "ARTE MUSEUM",
+      "photos": [
+        "attraction/arte-museum-1.jpg",
+        "attraction/arte-museum-2.jpg",
+        "attraction/arte-museum-3.jpg"
+      ],
+      "region": "north",
+      "website": "https://artemuseum.com/jeju",
+      "category": "attraction",
+      "features": [
+        "韓國最大的沉浸式數位藝術展覽館",
+        "10 個主題展廳",
+        "結合視覺藝術、聲音與氣味的多感官體驗",
+        "全年室內開放，不受天氣影響",
+        "適合雨天備案"
+      ],
+      "addressEn": "478 Eorimbi-ro, Jeju-si, Jeju-do",
+      "addressKo": "제주특별자치도 제주시 어림비로 478",
+      "admission": "成人：₩18,000\n建議事先於 Klook / Trip.com 購票可享折扣",
+      "websiteLabel": "ARTE MUSEUM 官網"
+    },
+    "created_by": "a4d7f64d-24ba-44ab-8e6e-74128f71529b",
+    "updated_at": "2026-10-03T16:55:04.641+00:00"
+  },
+  {
+    "slug": "hye-ri",
+    "source": "builtin",
+    "deleted": false,
+    "data": {
+      "name": "休愛里自然生活公園 (Hueree Nature Life Park / 휴애리자연생활공원)",
+      "slug": "hye-ri",
+      "type": "自然公園 / 景點",
+      "hours": [
+        "09:00–18:00",
+        "最後入場時間：16:30",
+        "部分季節有夜間延長開放"
+      ],
+      "notes": [
+        "建議停留：1.5–2 小時",
+        "園區很大，不是走馬看花型景點",
+        "午後前往可欣賞秋季花海",
+        "參考連結：https://big5chinese.visitkorea.or.kr/svc/whereToGo/locIntrdn/rgnContentsView.do?vcontsId=65059"
+      ],
+      "phone": "+82-64-772-2167",
+      "nameKo": "Hueree Nature Life Park / 휴애리자연생활공원",
+      "nameZh": "休愛里自然生活公園",
+      "photos": [
+        "attraction/hyairi-1.jpg",
+        "attraction/hyairi-2.jpg",
+        "attraction/hyairi-3.jpg"
+      ],
+      "region": "central",
+      "website": "http://www.hueree.com",
+      "category": "attraction",
+      "features": [
+        "位於漢拿山腳下，被稱為「小濟州」",
+        "粉紅亂子草（Pink Muhly）— 秋季最佳",
+        "四季花海（繡球花、山茶花、梅花等）",
+        "傳統濟州文化體驗區",
+        "韓式草屋觀景台",
+        "柑橘採摘體驗",
+        "黑豬表演"
+      ],
+      "addressEn": "256 Sinrye-dong-ro, Namwon-eup, Seogwipo-si, Jeju-do",
+      "addressKo": "제주특별자치도 서귀포시 남원읍 신례동로 256",
+      "admission": "成人：₩10,000–13,000\n青少年：₩11,000\n兒童（24個月以上）：₩7,000–10,000\n另付費體驗：柑橘採摘等",
+      "websiteLabel": "休愛里官網",
+      "recommendedTime": "14:00 - 15:30（午後）"
+    },
+    "created_by": null,
+    "updated_at": "2026-10-03T05:58:08.177147+00:00"
+  },
+  {
+    "slug": "geumdot-seongsan-black-pork",
+    "source": "builtin",
+    "deleted": false,
+    "data": {
+      "name": "금돗 성산흑돼지 Geumdot Seongsan Black Pork",
+      "slug": "geumdot-seongsan-black-pork",
+      "type": "Restaurant",
+      "phone": "0507-1402-9798",
+      "photos": [
+        "restaurant/geumdot-seongsan-black-pork-1.jpg",
+        "restaurant/geumdot-seongsan-black-pork-2.jpg",
+        "restaurant/geumdot-seongsan-black-pork-3.jpg"
+      ],
+      "region": "east",
+      "category": "restaurant",
+      "features": [
+        "濟州黑豬肉專門店，使用稻殼燻烤",
+        "城山日出峰附近，距離入口車程約2分鐘",
+        "高性價比黑豬肉料理"
+      ],
+      "addressEn": "17 Seongsandeungyong-ro, Seongsan-eup, Seogwipo-si, Jeju-do",
+      "addressKo": "제주특별자치도 서귀포시 성산읍 성산등용로 17"
+    },
+    "created_by": null,
+    "updated_at": "2026-10-03T17:11:16.125659+00:00"
+  },
+  {
+    "slug": "user-a3f57c82-ad10-4a21-8518-7dd3575f85de",
+    "source": "user",
+    "deleted": false,
+    "data": {
+      "name": "hallasando_jeju",
+      "slug": "user-a3f57c82-ad10-4a21-8518-7dd3575f85de",
+      "notes": [],
+      "phone": "+8250713593749",
+      "nameKo": "한라산도 동문시장점",
+      "photos": [
+        "souvenir/44e4c3cc-91de-4757-bdc7-439d11d82491.png",
+        "souvenir/b065f24e-c40e-4ea4-92ea-a59fd2464db1.png"
+      ],
+      "region": "north",
+      "status": "open",
+      "address": "제주 제주시 관덕로13길 10 1층",
+      "website": "https://www.instagram.com/hallasando_jeju/",
+      "category": "souvenir",
+      "features": [
+        "Buttersand 冰淇淋"
+      ],
+      "addressEn": "1/F, 10, Gwandeok-ro 13-gil, Jeju",
+      "addressKo": "제주 제주시 관덕로13길 10 1층",
+      "websiteLabel": "Instagram"
+    },
+    "created_by": "a4d7f64d-24ba-44ab-8e6e-74128f71529b",
+    "updated_at": "2026-10-05T15:18:02.549261+00:00"
+  },
+  {
+    "slug": "chilseong-ro",
+    "source": "builtin",
+    "deleted": false,
+    "data": {
+      "name": "七星路 칠성로 Chilseong-ro",
+      "slug": "chilseong-ro",
+      "type": "購物街 / 景點",
+      "notes": [
+        "建議停留：1-2小時",
+        "位於濟州市中心，交通便利",
+        "可結合東門市場、蓮洞商圈安排行程",
+        "官方Instagram：@jejuchilsungro"
+      ],
+      "phone": "064-721-7890",
+      "photos": [
+        "attraction/chilseong-ro-1.jpg",
+        "attraction/chilseong-ro-2.jpg",
+        "attraction/chilseong-ro-3.jpg"
+      ],
+      "region": "north",
+      "category": "attraction",
+      "features": [
+        "濟州歷史最悠久的傳統商業街",
+        "被譽為「濟州的明洞」，時尚購物第一街",
+        "街名源自北斗七星，設有星形照明裝飾",
+        "復古與潮流並存的拍照熱點",
+        "定期舉辦節慶活動與市集"
+      ],
+      "addressEn": "12 Gwandeok-ro 13-gil, Jeju-si, Jeju-do",
+      "addressKo": "제주특별자치도 제주시 관덕로13길 12"
+    },
+    "created_by": null,
+    "updated_at": "2026-10-03T17:11:16.125659+00:00"
+  },
+  {
+    "slug": "maeil-olle-market",
+    "source": "builtin",
+    "deleted": false,
+    "data": {
+      "name": "西歸浦每日偶來市場 서귀포매일올레시장 Seogwipo Maeil Olle Market",
+      "slug": "maeil-olle-market",
+      "type": "傳統市場",
+      "hours": [
+        "| 季節 | 營業時間 |",
+        "|------|----------|",
+        "| 夏季 | 07:00 21:00 |",
+        "| 冬季 | 07:00 20:00 |",
+        "| 夜市 | 17:00 22:00 |"
+      ],
+      "notes": [
+        "建議停留：1-2小時",
+        "位於西歸浦市中心，交通便利",
+        "可結合正房瀑布、天地淵瀑布等景點安排"
+      ],
+      "phone": "0507-1353-1949",
+      "photos": [
+        "attraction/maeil-olle-market-1.jpg",
+        "attraction/maeil-olle-market-2.jpg",
+        "attraction/maeil-olle-market-3.jpg"
+      ],
+      "region": "south",
+      "category": "attraction",
+      "features": [
+        "西歸浦市代表常設市場，64年歷史",
+        "農產品、畜產品、雜貨、服飾、餐廳等多元攤位",
+        "設有美食街，提供各種濟州小吃",
+        "夜間營業至22時，適合晚餐散步"
+      ],
+      "addressEn": "18 Jungang-ro 62beon-gil, Seogwipo-si, Jeju-do",
+      "addressKo": "제주특별자치도 서귀포시 중앙로62번길 18"
+    },
+    "created_by": null,
+    "updated_at": "2026-10-03T17:11:16.125659+00:00"
+  },
+  {
+    "slug": "981-park",
+    "source": "builtin",
+    "deleted": false,
+    "data": {
+      "name": "9.81 Park (9.81 파크 제주)",
+      "slug": "981-park",
+      "hours": [
+        "09:00–18:00（依月份可能調整，請以官網為準）",
+        "全年無休"
+      ],
+      "notes": [
+        "建議停留：2–2.5 小時",
+        "平日人潮較少",
+        "假日需預留排隊時間",
+        "Klook ticket - 981 Full Package 費用包含景點入場：",
+        "濟州9.81公園Race981賽車3次（預訂時間起1小時內可體驗3次; Sports Lab 3次激光生存PRO ARENA升級版1次; Ringgo碰碰車1次高空鞦韆(Heal Swing) 1次"
+      ],
+      "phone": "1833-9810 (09:20–18:20)",
+      "nameKo": "9.81 파크 제주",
+      "nameZh": "9.81 Park",
+      "photos": [
+        "attraction/981-park-1.jpg",
+        "attraction/981-park-2.jpg",
+        "attraction/981-park-3.jpg"
+      ],
+      "region": "north",
+      "website": "https://981park.com/?lang=en",
+      "category": "attraction",
+      "features": [
+        "韓國首座非機動（重力驅動）賽車主題公園",
+        "無重力賽車體驗",
+        "位於涯月海灘與漢拿山之間",
+        "海景與山景",
+        "早場排隊時間短",
+        "秋高氣爽體感最舒服"
+      ],
+      "addressEn": "880-24 Cheondeok-ro, Aewol-eup, Jeju-si, Jeju-do",
+      "addressKo": "제주특별자치도 제주시 애월읍 천덕로 880-24",
+      "admission": "Klook ticket - 981 Full Package",
+      "websiteLabel": "9.81 Park 官網",
+      "recommendedTime": "09:30 開門首批"
+    },
+    "created_by": "a0b86835-55cf-4a6a-875a-5ac893657e74",
+    "updated_at": "2026-10-06T02:07:56.749+00:00"
+  },
+  {
+    "slug": "itami-jun-museum",
+    "source": "builtin",
+    "deleted": false,
+    "data": {
+      "name": "伊丹潤博物館 ITAMI JUN Museum (이타미준미술관)",
+      "slug": "itami-jun-museum",
+      "hours": [
+        "週二–週日：10:00–18:00",
+        "最後入場時間：17:00",
+        "**週一休館**",
+        "1月1日休館",
+        "開放時間可能因內部情況調整，建議來電確認"
+      ],
+      "notes": [
+        "建議停留：1.5–2 小時",
+        "週一休館，請注意安排",
+        "位於翰林邑，可結合附近景點",
+        "參考連結：https://travelwithlinlin.com/itami-jun-museum/"
+      ],
+      "nameKo": "이타미준미술관",
+      "nameZh": "伊丹潤博物館 ITAMI JUN Museum",
+      "photos": [
+        "attraction/eb026810-eddd-4cce-aaf8-8f50f08901a8.jpg",
+        "attraction/1cba5af8-bbfd-4d4c-b26f-eb43a5ca4ab7.jpg"
+      ],
+      "region": "north",
+      "website": "https://www.archdaily.com/1036765/itami-jun-museum-itm-yooehwa-architects",
+      "category": "attraction",
+      "features": [
+        "紀念韓裔日本建築師伊丹潤（Itami Jun, 1946–2011）",
+        "由女兒為父親建造的博物館",
+        "建築本身即是一件藝術作品",
+        "透過建築圖稿、香氛、茶與音樂呈現伊丹潤的哲學",
+        "極簡主義建築風格，光影與空間的對話"
+      ],
+      "addressEn": "906-10 Yonggeum-ro, Hallim-eup, Jeju-si, Jeju-do",
+      "addressKo": "제주특별자치도 제주시 한림읍 용금로 906-10",
+      "admission": "成人：₩26,000",
+      "websiteLabel": "ArchDaily"
+    },
+    "created_by": "a4d7f64d-24ba-44ab-8e6e-74128f71529b",
+    "updated_at": "2026-10-06T13:28:51.743+00:00"
+  },
+  {
+    "slug": "hallaso-gopchang",
+    "source": "builtin",
+    "deleted": false,
+    "data": {
+      "name": "한라소곱창",
+      "slug": "hallaso-gopchang",
+      "type": "Restaurant - 烤內臟",
+      "photos": [],
+      "region": "north",
+      "category": "restaurant",
+      "features": [],
+      "addressEn": "19 Hagwi 9-gil, Aewol-eup, Jeju-si, Jeju-do",
+      "addressKo": "제주특별자치도 제주시 애월읍 하귀9길 19"
+    },
+    "created_by": null,
+    "updated_at": "2026-10-03T05:58:08.177147+00:00"
+  },
+  {
+    "slug": "jeju-bonyeon",
+    "source": "builtin",
+    "deleted": false,
+    "data": {
+      "name": "濟州本然 黑豬肉 城山本店",
+      "slug": "jeju-bonyeon",
+      "type": "Restaurant - 黑豬肉",
+      "photos": [],
+      "region": "north",
+      "category": "restaurant",
+      "features": [],
+      "addressEn": "2 Seongsandeungyong-ro, Seongsan-eup, Seogwipo-si, Jeju-do, 1F",
+      "addressKo": "제주특별자치도 서귀포시 성산읍 성산등용로 2, 1층"
+    },
+    "created_by": null,
+    "updated_at": "2026-10-03T05:58:08.177147+00:00"
+  },
+  {
+    "slug": "manwol-sutbul-gui",
+    "source": "builtin",
+    "deleted": false,
+    "data": {
+      "name": "만월숯불구이 애월본점 Manwol Sutbul Gui",
+      "slug": "manwol-sutbul-gui",
+      "type": "Restaurant - 烤肉",
+      "photos": [
+        "restaurant/manwol-sutbul-gui-1.jpg"
+      ],
+      "region": "north",
+      "category": "restaurant",
+      "features": [
+        "炭火烤肉"
+      ],
+      "addressEn": "34 Aewolbukseo-gil, Aewol-eup, Jeju-si, Jeju-do",
+      "addressKo": "제주특별자치도 제주시 애월읍 애월북서길 34"
+    },
+    "created_by": null,
+    "updated_at": "2026-10-03T05:58:08.177147+00:00"
+  },
+  {
+    "slug": "dalkom-ajae",
+    "source": "builtin",
+    "deleted": false,
+    "data": {
+      "name": "달콤아재 Dalkom Ajae",
+      "slug": "dalkom-ajae",
+      "type": "Cafe",
+      "phone": "0507-1322-3829",
+      "photos": [
+        "cafe/dalkom-ajae-1.jpg",
+        "cafe/dalkom-ajae-2.jpg",
+        "cafe/dalkom-ajae-3.jpg"
+      ],
+      "region": "east",
+      "category": "cafe",
+      "features": [
+        "牛島花生冰淇淋、漢拿峰冰淇淋",
+        "手沖咖啡及特調飲品",
+        "面對大海，設有戶外座位"
+      ],
+      "addressEn": "810 Udohaean-gil, Udo-myeon, Jeju-si, Jeju-do, 1F",
+      "addressKo": "제주특별자치도 제주시 우도면 우도해안길 810, 1층"
+    },
+    "created_by": null,
+    "updated_at": "2026-10-03T05:58:08.177147+00:00"
+  },
+  {
+    "slug": "mou-moon",
+    "source": "builtin",
+    "deleted": false,
+    "data": {
+      "name": "Mou Moon (월정리 모문)",
+      "slug": "mou-moon",
+      "type": "Cafe",
+      "links": [
+        {
+          "url": "//www.instagram.com/popular/cafe-mou-moon/",
+          "label": "https"
+        }
+      ],
+      "nameKo": "월정리 모문",
+      "nameZh": "Mou Moon",
+      "photos": [
+        "cafe/mou-moon-1.jpg",
+        "cafe/mou-moon-2.jpg",
+        "cafe/mou-moon-3.jpg"
+      ],
+      "region": "east",
+      "category": "cafe",
+      "features": [
+        "月汀里海邊的咖啡廳",
+        "全景大落地窗",
+        "可欣賞夕陽海景"
+      ],
+      "addressEn": "460 Haemajihaean-ro, Gujwa-eup, Jeju-si, Jeju-do, 2F",
+      "addressKo": "제주특별자치도 제주시 구좌읍 해맞이해안로 460, 2층"
+    },
+    "created_by": null,
+    "updated_at": "2026-10-03T05:58:08.177147+00:00"
+  },
+  {
+    "slug": "the-berlin",
+    "source": "builtin",
+    "deleted": false,
+    "data": {
+      "name": "The Berlin",
+      "slug": "the-berlin",
+      "type": "Cafe",
+      "links": [
+        {
+          "url": "https://www.instagram.com/thebarnberlin.korea/",
+          "label": "Instagram"
+        },
+        {
+          "url": "https://blog.naver.com/in_llight/223899399908?trackingCode=rss",
+          "label": "Blog"
+        }
+      ],
+      "photos": [],
+      "region": "north",
+      "category": "cafe",
+      "features": [],
+      "addressEn": "37-2 Sanji-ro, Jeju-si, Jeju-do, 1F",
+      "addressKo": "제주특별자치도 제주시 산지로 37-2, 1층"
+    },
+    "created_by": null,
+    "updated_at": "2026-10-03T05:58:08.177147+00:00"
+  },
+  {
+    "slug": "saebil-cafe",
+    "source": "builtin",
+    "deleted": false,
+    "data": {
+      "name": "Saebil Cafe (새빌카페)",
+      "slug": "saebil-cafe",
+      "type": "Cafe",
+      "links": [
+        {
+          "url": "//www.instagram.com/popular/saebil-cafe/",
+          "label": "https"
+        }
+      ],
+      "nameKo": "새빌카페",
+      "nameZh": "Saebil Cafe",
+      "photos": [
+        "cafe/saebil-cafe-1.jpg",
+        "cafe/saebil-cafe-2.jpg",
+        "cafe/saebil-cafe-3.jpg"
+      ],
+      "region": "north",
+      "status": "closed",
+      "bestTime": "12:30 - 14:00",
+      "category": "cafe",
+      "features": [
+        "位於曉星岳旁",
+        "十月底整片山丘佈滿芒草與粉紅亂子草",
+        "一邊享用輕食午餐一邊賞景"
+      ],
+      "addressEn": "1529 Pyeonghwa-ro, Aewol-eup, Jeju-si, Jeju-do",
+      "addressKo": "제주특별자치도 제주시 애월읍 평화로 1529"
+    },
+    "created_by": null,
+    "updated_at": "2026-10-03T05:58:08.177147+00:00"
+  },
+  {
+    "slug": "vadada",
+    "source": "builtin",
+    "deleted": false,
+    "data": {
+      "name": "Vadada",
+      "slug": "vadada",
+      "type": "Cafe",
+      "links": [
+        {
+          "url": "//www.instagram.com/vadada.jeju/",
+          "label": "https"
+        }
+      ],
+      "photos": [],
+      "region": "west",
+      "category": "cafe",
+      "features": [],
+      "addressEn": "148-15 Daepo-ro, Daepo-dong, Seogwipo-si, Jeju-do",
+      "addressKo": "제주특별자치도 서귀포시 대포로 148-15"
+    },
+    "created_by": null,
+    "updated_at": "2026-10-03T05:58:08.177147+00:00"
+  },
+  {
+    "slug": "eho-teawoo-beach",
+    "source": "builtin",
+    "deleted": false,
+    "data": {
+      "name": "梨湖木筏海邊 이호테우해변 Eho Teawoo Beach",
+      "slug": "eho-teawoo-beach",
+      "notes": [
+        "建議停留：30分鐘-1小時",
+        "距離濟州機場車程約10分鐘",
+        "可結合附近景點安排：機場附近咖啡廳、梨湖海水浴場",
+        "夜間燈台會亮燈，別有風味"
+      ],
+      "phone": "064-712-5223",
+      "photos": [
+        "attraction/80e62ab5-9bb0-405f-9912-d6e458e3828e.jpg",
+        "attraction/319d4f94-19cf-4fe8-b349-514e6a00d7bc.jpg",
+        "attraction/2d2948c0-22fa-4e8b-933c-d9a70a69c863.jpg"
+      ],
+      "region": "north",
+      "website": "https://big5chinese.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=78326",
+      "category": "attraction",
+      "features": [
+        "濟州市區最近的海灘，距離機場極近",
+        "標誌性的馬形燈台（말등대）：紅色與白色兩座",
+        "以濟州矮馬為靈感設計的12公尺高燈台",
+        "熱門IG打卡景點，適合拍攝人生照片",
+        "日落時分景色尤佳"
+      ],
+      "addressEn": "375-43 Iho 1-dong, Jeju-si, Jeju-do",
+      "addressKo": "제주특별자치도 제주시 이호일동 375-43"
+    },
+    "created_by": "a4d7f64d-24ba-44ab-8e6e-74128f71529b",
+    "updated_at": "2026-10-06T13:20:27.786+00:00"
+  },
+  {
+    "slug": "sukseongdo",
+    "source": "builtin",
+    "deleted": false,
+    "data": {
+      "name": "熟成到中文店 숙성도 중문점",
+      "slug": "sukseongdo",
+      "hours": [
+        "| 星期 | 開放時間 |",
+        "|----|----------|",
+        "| 星期一 / 星期二 / 星期三 / 星期四 / 星期六 / 星期日 | 11:30–21:00 |",
+        "| 星期五 | 11:30–21:00 (韓文日，營業時間可能有變) |"
+      ],
+      "notes": [
+        "熟成黑豬肉有深度的美味",
+        "當地居民推薦的黑豬肉烤肉專賣店。經過最短720小時到最長30天的交錯熟成，展現出將濟州黑豬肉的美味發揮到極致的製作 技巧。"
+      ],
+      "phone": "+82 64-739-5213",
+      "photos": [
+        "restaurant/1b63ac9b-9711-40b7-ac30-8cc5cc7a889e.jpg",
+        "restaurant/a16ac47c-7109-4bd4-9c1f-997a5456c0c5.jpg"
+      ],
+      "region": "north",
+      "website": "https://big5chinese.visitkorea.or.kr/svc/whereToGo/locIntrdn/rgnContentsView.do?vcontsId=216445",
+      "category": "restaurant",
+      "features": [],
+      "addressEn": "1101 Iljuseo-ro, Sangye-dong, Seogwipo-si, Jeju-do",
+      "addressKo": "제주특별자치도 서귀포시 일주서로 1101"
+    },
+    "created_by": "a4d7f64d-24ba-44ab-8e6e-74128f71529b",
+    "updated_at": "2026-10-06T13:44:04.815+00:00"
+  },
+  {
+    "slug": "yeondong-market",
+    "source": "builtin",
+    "deleted": false,
+    "data": {
+      "name": "蓮洞綜合市場 연동종합시장 Yeondong Comprehensive Market",
+      "slug": "yeondong-market",
+      "type": "傳統市場",
+      "notes": [
+        "距離蓮洞商圈極近",
+        "可結合附近景點安排：三無公園、蓮洞咖啡街",
+        "傳統市場氛圍，適合體驗在地生活"
+      ],
+      "photos": [
+        "attraction/yeondong-market-1.jpg",
+        "attraction/yeondong-market-2.jpg",
+        "attraction/yeondong-market-3.jpg"
+      ],
+      "region": "north",
+      "category": "attraction",
+      "features": [
+        "位於三多公園與三無公園之間的傳統市場",
+        "農水產品、生鮮食品、熟食小吃齊全",
+        "設有吃食街（먹거리골목）",
+        "附設公共停車場",
+        "可使用溫努里商品券"
+      ],
+      "addressEn": "16 Sammu-ro 11-gil, Yeon-dong, Jeju-si, Jeju-do",
+      "addressKo": "제주특별자치도 제주시 삼무로11길 16"
+    },
+    "created_by": null,
+    "updated_at": "2026-10-03T17:11:16.125659+00:00"
+  },
+  {
+    "slug": "jeju-yukuro",
+    "source": "builtin",
+    "deleted": false,
+    "data": {
+      "name": "제주육로 Jeju Yukuro",
+      "slug": "jeju-yukuro",
+      "type": "Restaurant - 黑豬肉燒肉",
+      "links": [
+        {
+          "url": "https://www.instagram.com/6_ro_jeju/?hl=ko",
+          "label": "Instagram"
+        },
+        {
+          "url": "https://autoreserve.com/en/restaurants/5X7aEFfDQUqozYVy21yJ",
+          "label": "預訂"
+        }
+      ],
+      "photos": [],
+      "region": "north",
+      "category": "restaurant",
+      "features": [
+        "濟州在地高檔黑豬肉燒肉"
+      ],
+      "addressEn": "38 Sindae-ro 14-gil, Jeju-si, Jeju-do, 1F",
+      "addressKo": "제주특별자치도 제주시 신대로14길 38, 1층"
+    },
+    "created_by": null,
+    "updated_at": "2026-10-03T05:58:08.177147+00:00"
+  },
+  {
+    "slug": "dodu-rainbow-coastal-road",
+    "source": "builtin",
+    "deleted": false,
+    "data": {
+      "name": "Dodu Rainbow Coastal Road (도두동 무지개해안도로)",
+      "slug": "dodu-rainbow-coastal-road",
+      "type": "海景步道 / 拍照熱點",
+      "hours": [
+        "24 小時開放",
+        "全年無休"
+      ],
+      "notes": [
+        "建議停留：20–30 分鐘",
+        "適合快速拍照打卡"
+      ],
+      "nameKo": "도두동 무지개해안도로",
+      "nameZh": "Dodu Rainbow Coastal Road",
+      "photos": [
+        "attraction/dodu-rainbow-coastal-road-1.jpg",
+        "attraction/dodu-rainbow-coastal-road-2.jpg",
+        "attraction/dodu-rainbow-coastal-road-3.jpg"
+      ],
+      "region": "north",
+      "website": "https://english.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=113034",
+      "category": "attraction",
+      "features": [
+        "靠近濟州國際機場",
+        "距離 Dodubong Peak 僅步行距離",
+        "彩虹海岸步道 — 彩虹色混凝土護欄沿海岸線",
+        "色彩繽紛的欄杆與蔚藍海岸形成對比，IG 打卡聖地",
+        "道路內側有多家餐廳和商店"
+      ],
+      "addressEn": "1734, Dodu 1(il)-dong, Jeju-si, Jeju-do",
+      "addressKo": "제주특별자치도 제주시 도두1동 1734 일대",
+      "admission": "免費",
+      "websiteLabel": "Visit Korea"
+    },
+    "created_by": null,
+    "updated_at": "2026-10-03T05:58:08.177147+00:00"
+  },
+  {
+    "slug": "camellia-hill",
+    "source": "builtin",
+    "deleted": false,
+    "data": {
+      "name": "山茶花之丘 Camellia Hill (카멜리아힐)",
+      "slug": "camellia-hill",
+      "type": "自然景點 / 花園",
+      "hours": [
+        "| 季節 | 開放時間 |",
+        "|------|----------|",
+        "| 夏季（6月–8月） | 08:30–19:00 |",
+        "| 春秋季 | 08:30–17:30 |",
+        "| 冬季 | 08:30–17:00 |"
+      ],
+      "notes": [
+        "建議停留：1–1.5 小時",
+        "注意：山茶花之丘（카멜리아힐）與山茶花森林（동백포레스트）是不同的景點",
+        "位於西歸浦市安德面，與 Osulloc 茶博物館同區域"
+      ],
+      "phone": "+82-64-792-2002",
+      "nameKo": "카멜리아힐",
+      "nameZh": "山茶花之丘 Camellia Hill",
+      "photos": [
+        "attraction/camellia-hill-1.jpg",
+        "attraction/camellia-hill-2.jpg",
+        "attraction/camellia-hill-3.jpg"
+      ],
+      "region": "north",
+      "website": "http://www.camelliahill.co.kr",
+      "category": "attraction",
+      "features": [
+        "亞洲最大的山茶花植物園，6,000 株山茶花樹",
+        "人工瀑布",
+        "花園步道",
+        "夏季繡球花、冬季山茶花",
+        "粉紅亂子草（Pink Muhly）— 秋季最佳",
+        "早秋花卉"
+      ],
+      "addressEn": "166 Byeongak-ro, Andeok-myeon, Seogwipo-si, Jeju-do",
+      "addressKo": "제주특별자치도 서귀포시 안덕면 병악로 166",
+      "admission": "成人：₩12,000\n另有兒童、老人優惠票",
+      "websiteLabel": "Camellia Hill 官網"
+    },
+    "created_by": null,
+    "updated_at": "2026-10-03T05:58:08.177147+00:00"
+  },
+  {
+    "slug": "london-bagel-museum",
+    "source": "builtin",
+    "deleted": false,
+    "data": {
+      "name": "London Bagel Museum",
+      "slug": "london-bagel-museum",
+      "type": "Bakery",
+      "photos": [
+        "bakery/london-bagel-museum-1.jpg",
+        "bakery/london-bagel-museum-2.jpg"
+      ],
+      "region": "east",
+      "category": "bakery",
+      "features": [],
+      "addressEn": "85 Dongbok-ro, Gujwa-eup, Jeju-si, Jeju-do, 1F",
+      "addressKo": "제주특별자치도 제주시 구좌읍 동복로 85, 1층"
+    },
+    "created_by": null,
+    "updated_at": "2026-10-03T05:58:08.177147+00:00"
+  },
+  {
+    "slug": "pigalhoeok",
+    "source": "builtin",
+    "deleted": false,
+    "data": {
+      "name": "피갈회옥 Pigalhoeok",
+      "slug": "pigalhoeok",
+      "type": "Restaurant",
+      "photos": [],
+      "region": "east",
+      "category": "restaurant",
+      "features": [
+        "海鮮刺身料理"
+      ],
+      "addressEn": "39 Singo-ro 22beon-gil, Seongsan-eup, Seogwipo-si, Jeju-do",
+      "addressKo": "제주특별자치도 서귀포시 성산읍 신고로22번길 39"
+    },
+    "created_by": null,
+    "updated_at": "2026-10-03T05:58:08.177147+00:00"
+  },
+  {
+    "slug": "annyeong-jeonbok",
+    "source": "builtin",
+    "deleted": false,
+    "data": {
+      "name": "안녕,전복 Annyeong Jeonbok",
+      "slug": "annyeong-jeonbok",
+      "type": "Restaurant - 鮑魚料理",
+      "photos": [
+        "restaurant/annyeong-jeonbok-1.jpg",
+        "restaurant/annyeong-jeonbok-2.jpg",
+        "restaurant/annyeong-jeonbok-3.jpg"
+      ],
+      "region": "north",
+      "category": "restaurant",
+      "features": [],
+      "addressEn": "89-16 Oiljangjung-gil, Dodu-il-dong, Jeju-si, Jeju-do, 1F",
+      "addressKo": "제주특별자치도 제주시 오일장중길 89-16, 1층"
+    },
+    "created_by": null,
+    "updated_at": "2026-10-03T05:58:08.177147+00:00"
+  }
+]

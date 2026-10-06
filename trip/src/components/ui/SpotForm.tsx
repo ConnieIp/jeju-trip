@@ -65,15 +65,16 @@ function SpotForm({ initial, onSubmit, onCancel, submitLabel }: SpotFormProps) {
     }
 
     const hoursStr = (fd.get('hours') as string).trim()
+    const hoursArray = hoursStr
+      ? hoursStr.split('\n').map((s) => s.trim()).filter(Boolean)
+      : undefined
 
     let spot: Spot
     if (category === 'attraction') {
       spot = {
         ...base,
         category: 'attraction',
-        hours: hoursStr
-          ? hoursStr.split('\n').map((s) => s.trim()).filter(Boolean)
-          : undefined,
+        hours: hoursArray,
         admission: (fd.get('admission') as string).trim() || undefined,
         bestTime: (fd.get('bestTime') as string).trim() || undefined,
         recommendedTime: (fd.get('recommendedTime') as string).trim() || undefined,
@@ -82,14 +83,14 @@ function SpotForm({ initial, onSubmit, onCancel, submitLabel }: SpotFormProps) {
       spot = {
         ...base,
         category: 'cafe',
-        hours: hoursStr || undefined,
+        hours: hoursArray,
         bestTime: (fd.get('bestTime') as string).trim() || undefined,
       } as Spot
     } else if (category === 'restaurant') {
       spot = {
         ...base,
         category: 'restaurant',
-        hours: hoursStr || undefined,
+        hours: hoursArray,
       } as Spot
     } else {
       spot = base as Spot
@@ -209,11 +210,14 @@ function SpotForm({ initial, onSubmit, onCancel, submitLabel }: SpotFormProps) {
       </div>
 
       <div>
-        <label className={labelClass}>Hours (one per line, or single line for cafe/restaurant)</label>
+        <label className={labelClass}>Hours (one per line)</label>
         <textarea name="hours" rows={2} className={inputClass} placeholder="e.g. 09:00-18:00" defaultValue={
-          Array.isArray((initial as { hours?: string | string[] })?.hours)
-            ? ((initial as { hours?: string[] }).hours || []).join('\n')
-            : ((initial as { hours?: string })?.hours || '')
+          (() => {
+            const h = (initial as { hours?: string | string[] })?.hours
+            if (Array.isArray(h)) return h.join('\n')
+            if (typeof h === 'string') return h
+            return ''
+          })()
         } />
       </div>
 
