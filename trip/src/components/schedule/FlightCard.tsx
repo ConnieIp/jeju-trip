@@ -43,7 +43,7 @@ function FlightCard({ flightNumber, departure, arrival, departureTime, arrivalTi
         </div>
       </div>
       {(onEdit || onDelete) && (
-        <div className="absolute top-2 right-2 flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+        <div className="absolute top-2 right-2 flex gap-1 opacity-0 group-hover:opacity-100 max-[640px]:opacity-100 transition-opacity">
           {onEdit && (
             <button
               onClick={onEdit}

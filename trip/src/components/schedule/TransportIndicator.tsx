@@ -149,7 +149,7 @@ function TransportIndicator({ stop, isLast, onEdit, onDelete }: TransportIndicat
           </button>
 
           {(onEdit || onDelete) && (
-            <div className="flex gap-1 ml-1.5 opacity-0 group-hover:opacity-100 transition-opacity">
+            <div className="flex gap-1 ml-1.5 opacity-0 group-hover:opacity-100 max-[640px]:opacity-100 transition-opacity">
               {onEdit && (
                 <button
                   onClick={(e) => { e.stopPropagation(); onEdit() }}
