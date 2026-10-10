@@ -1,0 +1,543 @@
+{
+  "table": "schedule",
+  "backedUpAt": "2026-10-10T15:50:42.430Z",
+  "rows": [
+    {
+      "id": "default",
+      "data": {
+        "days": [
+          {
+            "day": 1,
+            "date": "10/25",
+            "route": "濟州機場",
+            "stops": [
+              {
+                "time": "19:10",
+                "type": "activity",
+                "title": "濟州機場 (Jeju Airport) - 入境、取車",
+                "endTime": "20:10",
+                "description": ""
+              }
+            ],
+            "title": "抵達濟州",
+            "flight": {
+              "arrival": "CJU",
+              "departure": "HKG",
+              "arrivalTime": "19:10",
+              "flightNumber": "UO640",
+              "departureTime": "15:25",
+              "departureTerminal": "Terminal 2"
+            },
+            "weekday": "週六",
+            "accommodation": {
+              "name": "Stay_stressless",
+              "slug": "",
+              "night": "night-1",
+              "addressEn": "2283 Sinchon-ri, Jocheon-eup, Jeju-si, Jeju-do, South Korea",
+              "addressKo": "제주 제주시 조천읍 신촌북3길 30-7",
+              "bookingUrl": "https://www.airbnb.com.hk/rooms/1389539647954836162?unique_share_id=f0f2c729-d9a2-4768-9cae-455fbbaf69b6&viralityEntryPoint=1&s=7&source_impression_id=p3_1790864245_P37sXuQYAX5crwO0",
+              "checkInTime": "15:00",
+              "checkOutTime": "11:00"
+            }
+          },
+          {
+            "day": 2,
+            "date": "10/26",
+            "route": "奧德朗烘焙 ➔ 城山港 ➔ 達爾科姆阿傑 ➔ 牛島 ➔ 城山日出峰 ➔ 涉地可支 ➔ 金道城山黑豬肉",
+            "stops": [
+              {
+                "time": "10:00",
+                "type": "transport",
+                "title": "開車前往城山港（車程約 40分鐘）",
+                "endTime": "10:50",
+                "transportMode": "drive"
+              },
+              {
+                "time": "11:00",
+                "type": "transport",
+                "title": "搭乘渡輪前往牛島天津港（船程約 39 分鐘）",
+                "endTime": "11:15",
+                "transportMode": "ferry"
+              },
+              {
+                "slug": "dalkom-ajae",
+                "time": "12:30",
+                "type": "cafe",
+                "title": "Dalcomajae (달콤아재)",
+                "endTime": "13:00"
+              },
+              {
+                "time": "13:00",
+                "type": "transport",
+                "title": "返回牛島天津港",
+                "endTime": "13:15",
+                "transportMode": "drive"
+              },
+              {
+                "slug": "seongsan-ilchulbong",
+                "time": "16:20",
+                "type": "attraction",
+                "title": "城山日出峰 (Seongsan Ilchulbong)",
+                "endTime": "16:50"
+              },
+              {
+                "time": "16:10",
+                "type": "transport",
+                "title": "開車城山日出峰",
+                "endTime": "16:20",
+                "transportMode": "drive"
+              },
+              {
+                "slug": "seongeup",
+                "time": "15:40",
+                "type": "attraction",
+                "title": "Seopjikoji (涉地可支)",
+                "endTime": "16:10"
+              },
+              {
+                "time": "16:50",
+                "type": "transport",
+                "title": "開車前往金道城山黑豬肉（車程約 9 分鐘）",
+                "endTime": "17:00",
+                "transportMode": "drive"
+              },
+              {
+                "slug": "geumdot-seongsan-black-pork",
+                "time": "17:00",
+                "type": "restaurant",
+                "title": "Geumdot Seongsan Black Pork (金道城山黑豬肉)",
+                "endTime": "18:30",
+                "description": ""
+              },
+              {
+                "time": "12:15",
+                "type": "transport",
+                "title": "前往Dalkomajae",
+                "endTime": "12:30",
+                "transportMode": "bike"
+              },
+              {
+                "slug": "user-ecb0f042-0cc9-444b-8931-14c7a3847049",
+                "time": "11:45",
+                "type": "attraction",
+                "title": "牛島珊瑚海邊(西濱白沙)",
+                "endTime": "12:15"
+              },
+              {
+                "time": "11:15",
+                "type": "transport",
+                "title": "前往Dalkom Ajae",
+                "endTime": "11:30",
+                "transportMode": "bike"
+              },
+              {
+                "time": "11:30",
+                "type": "transport",
+                "title": "前往珊瑚海邊",
+                "endTime": "11:45",
+                "transportMode": "drive"
+              },
+              {
+                "time": "11:15",
+                "type": "transport",
+                "title": "前往Dalkom Ajae",
+                "endTime": "11:30",
+                "transportMode": "drive"
+              },
+              {
+                "time": "13:30",
+                "type": "transport",
+                "title": "返回城山港",
+                "endTime": "13:45",
+                "transportMode": "ferry"
+              },
+              {
+                "slug": "pigalhoeok",
+                "time": "14:00",
+                "type": "restaurant",
+                "title": "피갈회옥",
+                "endTime": "15:30",
+                "description": "濟州島城山的人氣海鮮餐廳"
+              },
+              {
+                "time": "13:45",
+                "type": "transport",
+                "title": "前往피갈회옥",
+                "endTime": "14:15",
+                "transportMode": "drive"
+              },
+              {
+                "time": "15:30",
+                "type": "transport",
+                "title": "前往涉地可支",
+                "endTime": "15:40",
+                "transportMode": "drive"
+              }
+            ],
+            "title": "城山日出峰 ➔ 牛島 ➔ 涉地可支",
+            "weekday": "週日",
+            "driveTime": "2h 30m",
+            "accommodation": {
+              "name": "Stay_stressless",
+              "slug": "",
+              "night": "night-2",
+              "addressEn": "2283 Sinchon-ri, Jocheon-eup, Jeju-si, Jeju-do, South Korea",
+              "addressKo": "제주 제주시 조천읍 신촌북3길 30-7",
+              "bookingUrl": "https://www.airbnb.com.hk/rooms/1389539647954836162?unique_share_id=f0f2c729-d9a2-4768-9cae-455fbbaf69b6&viralityEntryPoint=1&s=7&source_impression_id=p3_1790864245_P37sXuQYAX5crwO0",
+              "checkInTime": "15:00",
+              "checkOutTime": "11:00"
+            }
+          },
+          {
+            "day": 3,
+            "date": "10/27",
+            "route": "山君不離 ➔ 西歸浦每日偶來市場 ➔ 山茶花丘",
+            "stops": [
+              {
+                "time": "11:00",
+                "type": "transport",
+                "title": "開車前往山君不離（車程約 21 分鐘）",
+                "endTime": "11:21",
+                "description": ""
+              },
+              {
+                "slug": "sangumbul",
+                "time": "11:21",
+                "type": "attraction",
+                "title": "Sangumburi (山君不離)",
+                "endTime": "12:21",
+                "description": ""
+              },
+              {
+                "time": "12:21",
+                "type": "transport",
+                "title": "開車前往西歸浦每日偶來市場（車程約 37 分鐘）",
+                "endTime": "12:58",
+                "description": ""
+              },
+              {
+                "slug": "maeil-olle-market",
+                "time": "12:58",
+                "type": "attraction",
+                "title": "Seogwipomaeil-ollesijang (西歸浦每日偶來市場)",
+                "endTime": "13:58",
+                "description": ""
+              },
+              {
+                "time": "13:58",
+                "type": "transport",
+                "title": "開車前往山茶花丘（車程約 27 分鐘）",
+                "endTime": "14:26",
+                "description": ""
+              },
+              {
+                "slug": "camellia-hill",
+                "time": "14:26",
+                "type": "attraction",
+                "title": "Camellia Hill Botanical Garden (山茶花丘)",
+                "endTime": "15:26",
+                "description": ""
+              },
+              {
+                "slug": "audrant-bakery",
+                "time": "10:30",
+                "type": "bakery",
+                "title": "Audrant Bakery (오드랑베이커리)",
+                "endTime": "11:00",
+                "description": "距離漢德浩海水浴場僅3分鐘步行距離"
+              },
+              {
+                "time": "10:20",
+                "type": "transport",
+                "title": "開車前往奧德朗烘焙（車程約 10 分鐘）",
+                "endTime": "10:30",
+                "transportMode": "drive"
+              },
+              {
+                "slug": "user-230bf741-344b-41c1-8593-8cc173de23c0",
+                "time": "15:45",
+                "type": "attraction",
+                "title": "Manor blanc",
+                "endTime": "16:45",
+                "description": "秋季期間限定的粉紅色：「粉黛亂子草」"
+              },
+              {
+                "time": "15:30",
+                "type": "transport",
+                "title": "前往monor blanc",
+                "endTime": "15:45",
+                "transportMode": "drive"
+              }
+            ],
+            "title": "山君不離 ➔ 西歸浦每日偶來市場 ➔ 山茶花丘",
+            "weekday": "週一",
+            "driveTime": "1h 26m",
+            "accommodation": {
+              "name": "Hygge Hotel 舒適酒店",
+              "slug": "",
+              "night": "night-3",
+              "addressEn": "87-19 Sangmori, Daejeong-eup, Jeju, South Korea, 63512",
+              "addressKo": "제주 특별자치도 서귀포시 대정읍 상모리 87-19",
+              "bookingUrl": "https://www.agoda.com/zh-hk/whigge-hotel/hotel/jeju-kr.html?countryId=212&finalPriceView=1&isShowMobileAppPrice=false&cid=-999&numberOfBedrooms=&familyMode=false&adults=2&children=0&rooms=1&maxRooms=0&checkIn=2026-10-27&isCalendarCallout=false&childAges=&numberOfGuest=0&missingChildAges=false&travellerType=1&showReviewSubmissionEntry=false&currencyCode=HKD&isFreeOccSearch=false&los=1&searchrequestid=5c98c99f-87de-4ec5-8b3b-25f4c6a2140b&ds=IoTiX8IACdm3%2FLWk",
+              "checkInTime": "15:00",
+              "checkOutTime": "11:00"
+            }
+          },
+          {
+            "day": 4,
+            "date": "10/28",
+            "route": "9.81 Park ➔ Assisi ➔ Comma ➔ Haejigae ➔ Flowave",
+            "stops": [
+              {
+                "time": "9:50",
+                "type": "transport",
+                "title": "開車前往 9.81 Park（車程約 29 分鐘）",
+                "endTime": "10:20",
+                "transportMode": "drive"
+              },
+              {
+                "slug": "981-park",
+                "time": "10:20",
+                "type": "attraction",
+                "title": "9.81 Park Jeju",
+                "endTime": "12:30",
+                "description": "費用包含景點入場：濟州9.81公園Race981賽車3次（預訂時間起1小時內可體驗3次）Sports Lab 3次激光生存PRO ARENA升級版（1次）Ringgo碰碰車1次高空鞦韆（Heal Swing）1次"
+              },
+              {
+                "time": "12:29",
+                "type": "transport",
+                "title": "開車前往 Assisi（車程約 18 分鐘）",
+                "endTime": "12:47",
+                "description": ""
+              },
+              {
+                "slug": "assisi",
+                "time": "12:47",
+                "type": "cafe",
+                "title": "Assisi (阿西西)",
+                "endTime": "13:47",
+                "description": ""
+              },
+              {
+                "time": "13:47",
+                "type": "transport",
+                "title": "開車前往 Comma（車程約 20 分鐘）",
+                "endTime": "14:07",
+                "description": ""
+              },
+              {
+                "slug": "comma",
+                "time": "14:07",
+                "type": "cafe",
+                "title": "Comma (콤마)",
+                "endTime": "15:07",
+                "description": ""
+              },
+              {
+                "time": "15:07",
+                "type": "transport",
+                "title": "開車前往 Haejigae（車程約 15 分鐘）",
+                "endTime": "15:22",
+                "description": ""
+              },
+              {
+                "slug": "comma",
+                "time": "15:22",
+                "type": "cafe",
+                "title": "Haejigae Cafe (日落)",
+                "endTime": "16:22"
+              },
+              {
+                "time": "16:22",
+                "type": "transport",
+                "title": "開車前往 Flowave（車程約 11 分鐘）",
+                "endTime": "16:33",
+                "description": ""
+              },
+              {
+                "slug": "flowave",
+                "time": "16:33",
+                "type": "cafe",
+                "title": "Flowave Jeju (Flowave 濟州)",
+                "endTime": "17:33",
+                "description": ""
+              }
+            ],
+            "title": "9.81 Park ➔ 咖啡廳巡禮",
+            "weekday": "週二",
+            "driveTime": "1h 33m",
+            "accommodation": {
+              "name": "RegentMarine The Blue Hotel",
+              "slug": "",
+              "night": "night-4",
+              "addressEn": "20, Seobudu 2-gil, Jeju, South Korea, 63276",
+              "addressKo": "제주 특별자치도 제주시 서부두2길 20",
+              "bookingUrl": "https://www.agoda.com/zh-hk/hotel-regentmarine-the-blue/hotel/jeju-island-kr.html?site_id=1932640&tag=48bee912-eb9f-401d-90cd-544564e848a5&gad_source=1&gad_campaignid=22020094937&gbraid=0AAAAA9_WXQo43c8ZdFvUImOkqT6oAaE33&gclid=CjwKCAjwifjVBhBKEiwAYx4K9GelEl0_wP6HDSgUa5S78rwp_z57VTXqIMqwnu0N_CcXTqpAaGvNhhoCxWgQAvD_BwE&ds=fZLD6YVoxXJPP6EG",
+              "checkInTime": "15:00",
+              "checkOutTime": "11:00"
+            }
+          },
+          {
+            "day": 5,
+            "date": "10/29",
+            "route": "道頭洞彩虹海岸 ➔ 梨湖木筏海邊 ➔ MY JEJU GIFT ➔ 蓮洞綜合市場 ➔ 漢拿山道 ➔ 七星路",
+            "stops": [
+              {
+                "time": "09:00",
+                "type": "transport",
+                "title": "開車前往道頭洞彩虹海岸（車程約 10 分鐘）",
+                "endTime": "09:10",
+                "description": ""
+              },
+              {
+                "slug": "dodu-rainbow-coastal-road",
+                "time": "09:10",
+                "type": "attraction",
+                "title": "Dodu-dong Rainbow Coastal Road (道頭洞彩虹海岸道路)",
+                "endTime": "10:10",
+                "description": ""
+              },
+              {
+                "time": "10:10",
+                "type": "transport",
+                "title": "開車前往梨湖木筏海邊（車程約 4 分鐘）",
+                "endTime": "10:15",
+                "description": ""
+              },
+              {
+                "slug": "eho-teawoo-beach",
+                "time": "10:15",
+                "type": "attraction",
+                "title": "EHo-Teawoo Beach (梨湖木筏海邊)",
+                "endTime": "11:15",
+                "description": ""
+              },
+              {
+                "time": "11:15",
+                "type": "transport",
+                "title": "開車前往 MY JEJU GIFT（車程約 5 分鐘）",
+                "endTime": "11:20",
+                "description": ""
+              },
+              {
+                "slug": "my-jeju-gift",
+                "time": "11:20",
+                "type": "souvenir",
+                "title": "MY JEJU GIFT",
+                "endTime": "12:20",
+                "description": ""
+              },
+              {
+                "time": "12:20",
+                "type": "transport",
+                "title": "開車前往蓮洞綜合市場（車程約 1 分鐘）",
+                "endTime": "12:21",
+                "description": ""
+              },
+              {
+                "slug": "yeondong-market",
+                "time": "12:21",
+                "type": "attraction",
+                "title": "연동종합시장 (蓮洞綜合市場)",
+                "endTime": "13:21",
+                "description": ""
+              },
+              {
+                "time": "13:21",
+                "type": "transport",
+                "title": "開車前往漢拿山道（車程約 6 分鐘）",
+                "endTime": "13:27",
+                "description": ""
+              },
+              {
+                "slug": "user-a3f57c82-ad10-4a21-8518-7dd3575f85de",
+                "time": "13:27",
+                "type": "souvenir",
+                "title": "hallasando_jeju",
+                "endTime": "14:27",
+                "description": "Buttersand 冰淇淋"
+              },
+              {
+                "time": "14:27",
+                "type": "transport",
+                "title": "步行前往七星路（約 1 分鐘）",
+                "endTime": "14:28",
+                "description": ""
+              },
+              {
+                "slug": "chilseong-ro",
+                "time": "14:28",
+                "type": "attraction",
+                "title": "Chilseong-ro Shopping Town (七星路購物街)",
+                "endTime": "16:28",
+                "description": ""
+              }
+            ],
+            "title": "海岸道路 ➔ 購物",
+            "weekday": "週三",
+            "driveTime": "28m",
+            "accommodation": {
+              "name": "RegentMarine The Blue Hotel",
+              "slug": "",
+              "night": "night-5",
+              "addressEn": "20, Seobudu 2-gil, Jeju, South Korea, 63276",
+              "addressKo": "제주 특별자치도 제주시 서부두2길 20",
+              "bookingUrl": "https://www.agoda.com/zh-hk/hotel-regentmarine-the-blue/hotel/jeju-island-kr.html?site_id=1932640&tag=48bee912-eb9f-401d-90cd-544564e848a5&gad_source=1&gad_campaignid=22020094937&gbraid=0AAAAA9_WXQo43c8ZdFvUImOkqT6oAaE33&gclid=CjwKCAjwifjVBhBKEiwAYx4K9GelEl0_wP6HDSgUa5S78rwp_z57VTXqIMqwnu0N_CcXTqpAaGvNhhoCxWgQAvD_BwE&ds=fZLD6YVoxXJPP6EG",
+              "checkInTime": "15:00",
+              "checkOutTime": "11:00"
+            }
+          },
+          {
+            "day": 6,
+            "date": "10/30",
+            "route": "東門傳統市場 ➔ 濟州機場",
+            "stops": [
+              {
+                "time": "09:00",
+                "type": "transport",
+                "title": "開車前往東門傳統市場（車程約 3 分鐘）",
+                "endTime": "09:03",
+                "description": ""
+              },
+              {
+                "slug": "dongmun-market",
+                "time": "09:03",
+                "type": "attraction",
+                "title": "Dongmun Traditional Market (東門傳統市場)",
+                "endTime": "10:33",
+                "description": ""
+              },
+              {
+                "time": "10:33",
+                "type": "transport",
+                "title": "開車前往濟州機場（車程約 9 分鐘）",
+                "endTime": "10:42",
+                "description": ""
+              },
+              {
+                "time": "10:42",
+                "type": "activity",
+                "title": "Jeju Airport (濟州機場)",
+                "endTime": "11:42",
+                "description": ""
+              }
+            ],
+            "title": "東門市場 ➔ 返程",
+            "flight": {
+              "arrival": "HKG",
+              "departure": "CJU",
+              "arrivalTime": "22:30",
+              "flightNumber": "UO641",
+              "departureTime": "20:00",
+              "arrivalTerminal": "Terminal 2"
+            },
+            "weekday": "週四",
+            "driveTime": "12m"
+          }
+        ],
+        "overview": "6天5夜自駕順時針環島 (10/25 - 10/30)"
+      },
+      "updated_at": "2026-10-03T06:05:19.265102+00:00"
+    }
+  ]
+}
