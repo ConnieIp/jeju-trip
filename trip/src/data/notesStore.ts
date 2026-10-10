@@ -9,11 +9,10 @@ export interface Note {
   updated_at: string
 }
 
-export async function listNotes(userId: string): Promise<Note[]> {
+export async function listNotes(): Promise<Note[]> {
   const { data, error } = await supabase
     .from('notes')
     .select('*')
-    .eq('created_by', userId)
     .order('updated_at', { ascending: false })
   if (error) throw error
   return data as Note[]

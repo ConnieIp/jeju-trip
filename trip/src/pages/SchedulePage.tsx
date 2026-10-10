@@ -350,14 +350,16 @@ function SchedulePage() {
             })()}
 
             {/* Regular stops */}
-            {currentDay.stops.map((stop, idx) => {
+            {[...currentDay.stops]
+              .sort((a, b) => (a.time || '').localeCompare(b.time || ''))
+              .map((stop, idx, sortedStops) => {
               const spot = stop.slug
                 ? spots.find(s => s.slug === stop.slug)
                 : spots.find(s =>
                     stop.title.toLowerCase().includes(s.name.toLowerCase()) ||
                     s.name.toLowerCase().includes(stop.title.toLowerCase().split(' ')[0])
                   )
-              const isLastStop = idx === currentDay.stops.length - 1
+              const isLastStop = idx === sortedStops.length - 1
               const hasTrailingContent = !!currentDay.accommodation ||
                 (isLastDay && currentDay.flight)
 

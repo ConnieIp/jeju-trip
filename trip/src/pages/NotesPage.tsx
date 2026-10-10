@@ -17,7 +17,7 @@ function NotesPage() {
   const loadNotes = useCallback(async () => {
     if (!user) return
     try {
-      const data = await listNotes(user.id)
+      const data = await listNotes()
       setNotes(data)
     } catch (err) {
       console.error('Failed to load notes:', err)
@@ -182,6 +182,7 @@ function NotesPage() {
                 <NoteCard
                   key={note.id}
                   note={note}
+                  isOwner={note.created_by === user.id}
                   onEdit={openEdit}
                   onDelete={setDeletingNote}
                 />

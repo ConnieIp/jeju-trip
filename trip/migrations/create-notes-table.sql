@@ -11,10 +11,11 @@ CREATE TABLE IF NOT EXISTS notes (
 -- Enable Row Level Security
 ALTER TABLE notes ENABLE ROW LEVEL SECURITY;
 
--- Policy: users can view only their own notes
-CREATE POLICY "Users can view own notes"
+-- Policy: all authenticated users can view all notes
+CREATE POLICY "Authenticated users can view all notes"
   ON notes FOR SELECT
-  USING (created_by = auth.uid());
+  TO authenticated
+  USING (true);
 
 -- Policy: users can insert only their own notes
 CREATE POLICY "Users can insert own notes"
