@@ -369,8 +369,8 @@ function SchedulePage() {
                     key={idx}
                     stop={stop}
                     isLast={isLastStop && !hasTrailingContent}
-                    onEdit={user ? () => setModal({ type: 'edit-activity', index: idx }) : undefined}
-                    onDelete={user ? () => setModal({ type: 'delete-activity', index: idx }) : undefined}
+                    onEdit={user ? () => setModal({ type: 'edit-activity', index: currentDay.stops.indexOf(stop) }) : undefined}
+                    onDelete={user ? () => setModal({ type: 'delete-activity', index: currentDay.stops.indexOf(stop) }) : undefined}
                   />
                 )
               }
@@ -381,8 +381,8 @@ function SchedulePage() {
                   stop={stop}
                   spot={spot}
                   isLast={isLastStop && !hasTrailingContent}
-                  onEdit={user ? () => setModal({ type: 'edit-activity', index: idx }) : undefined}
-                  onDelete={user ? () => setModal({ type: 'delete-activity', index: idx }) : undefined}
+                  onEdit={user ? () => setModal({ type: 'edit-activity', index: currentDay.stops.indexOf(stop) }) : undefined}
+                  onDelete={user ? () => setModal({ type: 'delete-activity', index: currentDay.stops.indexOf(stop) }) : undefined}
                 />
               )
             })}
