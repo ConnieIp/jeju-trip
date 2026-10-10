@@ -27,21 +27,33 @@ const schedule = JSON.parse(
 )
 
 async function main() {
-  const { data, error } = await supabase
-    .from('schedule')
-    .update({ data: schedule })
-    .eq('id', 'default')
-    .select()
-
-  if (error) {
-    console.error('Error:', JSON.stringify(error))
+  if (!schedule.days?.length) {
+    console.error('No days found in generated/schedule.json')
     process.exit(1)
   }
 
-  console.log('Schedule updated successfully in Supabase')
-  if (data) {
-    console.log('Updated row count:', data.length)
+  const rows = schedule.days.map(d => ({ day: d.day, data: d }))
+  const { error: daysError } = await supabase
+    .from('schedule_day')
+    .upsert(rows, { onConflict: 'day' })
+
+  if (daysError) {
+    console.error('Error upserting schedule_day:', JSON.stringify(daysError))
+    process.exit(1)
   }
+  console.log('Upserted', rows.length, 'day rows into schedule_day')
+
+  const { error: overviewError } = await supabase
+    .from('schedule')
+    .update({ data: { overview: schedule.overview ?? '' } })
+    .eq('id', 'default')
+    .select()
+
+  if (overviewError) {
+    console.error('Error updating schedule overview:', JSON.stringify(overviewError))
+    process.exit(1)
+  }
+  console.log('Schedule overview updated in Supabase')
 }
 
 main()

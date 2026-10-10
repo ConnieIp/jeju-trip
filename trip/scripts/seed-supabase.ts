@@ -64,12 +64,25 @@ async function seedSchedule() {
 
   console.log('Seeding schedule...')
 
-  const { error: scheduleError } = await supabase
-    .from('schedule')
-    .upsert({ id: 'default', data: scheduleData }, { onConflict: 'id' })
+  const dayRows = (scheduleData.days as { day: number }[]).map(d => ({
+    day: d.day,
+    data: d,
+  }))
+  const { error: daysError } = await supabase
+    .from('schedule_day')
+    .upsert(dayRows, { onConflict: 'day' })
 
-  if (scheduleError) {
-    console.error('Schedule seed failed:', scheduleError)
+  if (daysError) {
+    console.error('Schedule day seed failed:', daysError)
+    process.exit(1)
+  }
+
+  const { error: overviewError } = await supabase
+    .from('schedule')
+    .upsert({ id: 'default', data: { overview: scheduleData.overview ?? '' } }, { onConflict: 'id' })
+
+  if (overviewError) {
+    console.error('Schedule overview seed failed:', overviewError)
     process.exit(1)
   }
 

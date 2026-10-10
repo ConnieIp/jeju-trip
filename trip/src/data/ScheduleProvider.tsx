@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, useEffect, useCallback, type ReactNode } from 'react'
 import { supabase } from '../lib/supabaseClient'
-import type { TripSchedule } from './types'
+import type { DaySchedule, TripSchedule } from './types'
 
 interface ScheduleContextValue {
   schedule: TripSchedule | null
@@ -23,26 +23,48 @@ export function ScheduleProvider({ children }: { children: ReactNode }) {
   const [loading, setLoading] = useState(true)
 
   const fetchSchedule = useCallback(async () => {
-    const { data, error } = await supabase
-      .from('schedule')
-      .select('data')
-      .eq('id', 'default')
-      .single()
-    if (error) throw error
-    setSchedule(data.data as TripSchedule)
+    const [metaResult, daysResult] = await Promise.all([
+      supabase.from('schedule').select('data').eq('id', 'default').single(),
+      supabase.from('schedule_day').select('day,data').order('day'),
+    ])
+    if (metaResult.error) throw metaResult.error
+    if (daysResult.error) throw daysResult.error
+    const overview =
+      (metaResult.data?.data as { overview?: string } | null)?.overview ?? ''
+    const days = (daysResult.data ?? [])
+      .map(row => row.data as DaySchedule)
+      .sort((a, b) => a.day - b.day)
+    setSchedule({ overview, days })
   }, [])
 
   const updateSchedule = useCallback(async (updater: (prev: TripSchedule) => TripSchedule) => {
     setSchedule(prev => {
       if (!prev) return prev
       const next = updater(prev)
-      supabase
-        .from('schedule')
-        .update({ data: next })
-        .eq('id', 'default')
-        .then(({ error }) => {
-          if (error) console.warn('Failed to save schedule:', error)
-        })
+      const changedDays = next.days.filter(d => {
+        const before = prev.days.find(p => p.day === d.day)
+        return !before || JSON.stringify(before) !== JSON.stringify(d)
+      })
+      if (changedDays.length > 0) {
+        supabase
+          .from('schedule_day')
+          .upsert(
+            changedDays.map(d => ({ day: d.day, data: d })),
+            { onConflict: 'day' }
+          )
+          .then(({ error }) => {
+            if (error) console.warn('Failed to save schedule days:', error)
+          })
+      }
+      if (next.overview !== prev.overview) {
+        supabase
+          .from('schedule')
+          .update({ data: { overview: next.overview } })
+          .eq('id', 'default')
+          .then(({ error }) => {
+            if (error) console.warn('Failed to save schedule overview:', error)
+          })
+      }
       return next
     })
   }, [])
